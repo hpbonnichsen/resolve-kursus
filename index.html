@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klip din første film færdig · Kursus i DaVinci Resolve</title>
+<meta name="description" content="Kursusmateriale til DaVinci Resolve for gymnasiet. Syv moduler fra råklip til færdig eksport, med øvelser, genvejstaster og ordbog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#moduler">Spring til modulerne</a>
+
+<!-- ── Hero: viewer-ramme ─────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="viewer">
+
+    <div class="viewer__tl">
+      <span class="viewer__rec" aria-hidden="true"></span>
+      <span>REC</span>
+      <span class="viewer__dim">DAVINCI RESOLVE 20</span>
+    </div>
+
+    <div class="hero__body">
+      <p class="hero__eyebrow">Kursus · Mediefag</p>
+      <h1 class="hero__title">Klip din første<br>film færdig</h1>
+      <div class="hero__rule" aria-hidden="true"></div>
+      <p class="hero__lede">
+        Fra råklip til eksport i DaVinci Resolve. Syv moduler, én film,
+        og et program der er gratis at hente.
+      </p>
+      <a class="btn btn--primary" href="#kom-i-gang">
+        Kom i gang
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <p class="hero__note">Første skridt: få Resolve til at køre på din egen maskine.</p>
+    </div>
+
+    <div class="viewer__br">
+      <span class="viewer__dim">TIMELINE</span>
+      <span class="viewer__tc">01:00:00:00</span>
+    </div>
+
+  </div>
+
+  <!-- Timeline-stribe: illustration og navigation i ét -->
+  <nav class="tl" aria-label="Moduloversigt">
+    <p class="tl__caption" id="tl-caption">Forløbet, modul for modul</p>
+    <div class="tl__scroll">
+    <ol class="tl__track" aria-labelledby="tl-caption">
+      <li class="tl__clip" style="--w:5"  data-tone="amber"><a href="#m01"><span class="tl__num">01</span><span class="tl__name">Media</span></a></li>
+      <li class="tl__clip" style="--w:7"  data-tone="amber"><a href="#m02"><span class="tl__num">02</span><span class="tl__name">Cut</span></a></li>
+      <li class="tl__clip is-active" style="--w:11" data-tone="amber"><a href="#m03" aria-current="step"><span class="tl__num">03</span><span class="tl__name">Edit</span></a></li>
+      <li class="tl__clip" style="--w:6"  data-tone="teal"><a href="#m04"><span class="tl__num">04</span><span class="tl__name">Fusion</span></a></li>
+      <li class="tl__clip" style="--w:9"  data-tone="rust"><a href="#m05"><span class="tl__num">05</span><span class="tl__name">Color</span></a></li>
+      <li class="tl__clip" style="--w:6"  data-tone="teal"><a href="#m06"><span class="tl__num">06</span><span class="tl__name">Fairlight</span></a></li>
+      <li class="tl__clip" style="--w:4"  data-tone="amber"><a href="#m07"><span class="tl__num">07</span><span class="tl__name">Deliver</span></a></li>
+    </ol>
+    </div>
+    <p class="tl__now">Vi er her nu: <strong>modul 03, Edit</strong></p>
+  </nav>
+</header>
+
+<main class="frame">
+  <div class="frame__inner">
+
+    <!-- ── Statuslinje ────────────────────────────────────────────────── -->
+    <section class="status" aria-label="Om forløbet">
+      <div class="status__item">
+        <span class="status__value">7</span>
+        <span class="status__unit">moduler</span>
+      </div>
+      <div class="status__item">
+        <span class="status__value">14</span>
+        <span class="status__unit">lektioner à 90 min</span>
+      </div>
+      <div class="status__item">
+        <span class="status__value">1</span>
+        <span class="status__unit">film du selv afleverer</span>
+      </div>
+      <div class="status__item">
+        <span class="status__value">0 kr</span>
+        <span class="status__unit">Resolve er gratis i gratisversionen</span>
+      </div>
+    </section>
+
+    <!-- ── Modulgitteret ──────────────────────────────────────────────── -->
+    <h2 class="section-head" id="moduler">
+      <span class="section-head__label">01 / Forløbet</span>
+      <span class="section-head__title">Syv moduler, én film</span>
+    </h2>
+
+    <ol class="bento" aria-label="Moduler">
+
+      <li class="card card--module" id="m01" data-tone="amber" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 01</span>
+          <span class="card__meta">Media</span>
+        </div>
+        <h3 class="card__title">Importér og organisér</h3>
+        <p class="card__text">
+          Du henter dit optagede materiale ind, navngiver det og lægger det i bins,
+          så du kan finde det igen når timelinen bliver lang.
+        </p>
+        <p class="card__outcome">Bagefter kan du: starte et projekt uden at miste filer.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module" id="m02" data-tone="amber" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 02</span>
+          <span class="card__meta">Cut</span>
+        </div>
+        <h3 class="card__title">Det hurtige førsteklip</h3>
+        <p class="card__text">
+          Cut-siden er bygget til fart. Du laver en grov version af hele filmen
+          på én lektion, så du tidligt ved om historien holder.
+        </p>
+        <p class="card__outcome">Bagefter kan du: bygge et råklip fra ende til anden.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module card--wide" id="m03" data-tone="amber" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 03</span>
+          <span class="card__meta">Edit · vi er her nu</span>
+        </div>
+        <h3 class="card__title card__title--lg">Den rigtige timeline</h3>
+        <p class="card__text">
+          Her strammer du klippet op: trim, spor, overgange, J- og L-klip.
+          Det er modulet hvor forskellen mellem et råklip og en film opstår,
+          og det er også det længste i forløbet.
+        </p>
+        <p class="card__outcome">Bagefter kan du: klippe på lyd, ikke kun på billede.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module" id="m04" data-tone="teal" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 04</span>
+          <span class="card__meta">Fusion</span>
+        </div>
+        <h3 class="card__title">Titler og effekter</h3>
+        <p class="card__text">
+          Rulletekster, undertekster og de effekter der faktisk kan lade sig gøre
+          på en skolecomputer. Vi holder os til det der renderer.
+        </p>
+        <p class="card__outcome">Bagefter kan du: lave en titelsekvens der ikke ligner en skabelon.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module" id="m05" data-tone="rust" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 05</span>
+          <span class="card__meta">Color</span>
+        </div>
+        <h3 class="card__title">Farvelæg din film</h3>
+        <p class="card__text">
+          Nodes, primary wheels og scopes. Først gør vi billederne ens,
+          derefter giver vi dem et udtryk. I den rækkefølge, altid.
+        </p>
+        <p class="card__outcome">Bagefter kan du: matche to klip fra samme scene.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module" id="m06" data-tone="teal" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 06</span>
+          <span class="card__meta">Fairlight</span>
+        </div>
+        <h3 class="card__title">Lyd der bærer</h3>
+        <p class="card__text">
+          Publikum tilgiver et sløret billede, men ikke dårlig lyd.
+          Niveauer, støjreduktion, musik under tale.
+        </p>
+        <p class="card__outcome">Bagefter kan du: få tale til at være tydelig hele vejen igennem.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+      <li class="card card--module" id="m07" data-tone="amber" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Modul 07</span>
+          <span class="card__meta">Deliver</span>
+        </div>
+        <h3 class="card__title">Eksportér og aflever</h3>
+        <p class="card__text">
+          De rigtige indstillinger til aflevering, til YouTube og til projektoren
+          i festsalen. Tre forskellige svar på samme spørgsmål.
+        </p>
+        <p class="card__outcome">Bagefter kan du: aflevere en fil der virker første gang.</p>
+        <span class="card__cta card__cta--soon">Materiale kommer snart</span>
+      </li>
+
+    </ol>
+
+    <!-- ── Kom i gang ─────────────────────────────────────────────────── -->
+    <h2 class="section-head" id="kom-i-gang">
+      <span class="section-head__label">02 / Før første lektion</span>
+      <span class="section-head__title">Kom i gang</span>
+    </h2>
+
+    <div class="bento">
+
+      <section class="card card--start" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Trin for trin</span>
+          <span class="card__meta">ca. 20 min</span>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">01</span>
+            <div>
+              <h3 class="step__title">Hent DaVinci Resolve</h3>
+              <p class="step__text">
+                Gratisversionen er nok til hele forløbet. Du skal udfylde en formular
+                med navn og mail før download starter. Vælg <em>Studio</em> kun hvis
+                skolen har givet dig en licensnøgle.
+              </p>
+              <a class="btn btn--sm" href="https://www.blackmagicdesign.com/dk/products/davinciresolve" rel="noopener">
+                Til download<span class="arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__num">02</span>
+            <div>
+              <h3 class="step__title">Tjek at din maskine kan følge med</h3>
+              <p class="step__text">
+                Se kravene i feltet ved siden af. Kan din maskine ikke, så sig det
+                inden første lektion, så finder vi en løsning med skolens udstyr.
+              </p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__num">03</span>
+            <div>
+              <h3 class="step__title">Hent øvelsesmaterialet</h3>
+              <p class="step__text">
+                Alle øvelser bruger det samme optagede materiale, så vi kan tale om
+                de samme klip. Pak mappen ud et sted du kan finde igen, ikke i
+                overførsler.
+              </p>
+              <span class="badge">Link følger</span>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__num">04</span>
+            <div>
+              <h3 class="step__title">Åbn programmet én gang</h3>
+              <p class="step__text">
+                Bare åbn det og luk det igen. Første opstart tager længst tid, og den
+                tid skal ikke gå fra lektionen.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <aside class="card card--specs" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Systemkrav</span>
+          <span class="card__meta">gratisversionen</span>
+        </div>
+        <dl class="facts">
+          <div>
+            <dt>Styresystem</dt>
+            <dd>Windows 10/11, macOS 13 eller nyere, Linux</dd>
+          </div>
+          <div>
+            <dt>Hukommelse</dt>
+            <dd><span class="facts__hi">16 GB RAM</span> anbefales, 8 GB er muligt</dd>
+          </div>
+          <div>
+            <dt>Grafikkort</dt>
+            <dd>Skal understøtte OpenCL 1.2 eller CUDA 11. Integreret grafik virker, men langsomt</dd>
+          </div>
+          <div>
+            <dt>Plads</dt>
+            <dd>Regn med 20 GB til program og øvelsesmateriale</dd>
+          </div>
+        </dl>
+        <p class="card__text">
+          Kører det trægt? Sæt <em>Playback</em> til <em>Proxy Mode: Half Resolution</em>.
+          Det ændrer intet i den færdige eksport.
+        </p>
+      </aside>
+
+    </div>
+
+    <!-- ── Ressourcer ─────────────────────────────────────────────────── -->
+    <h2 class="section-head" id="ressourcer">
+      <span class="section-head__label">03 / Slå op</span>
+      <span class="section-head__title">Ressourcer</span>
+    </h2>
+
+    <div class="bento">
+
+      <section class="card card--keys" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Genvejstaster</span>
+          <span class="card__meta">de otte der betaler sig</span>
+        </div>
+        <dl class="keys">
+          <div><dt><kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd></dt><dd>Spol tilbage, stop, spol frem</dd></div>
+          <div><dt><kbd>I</kbd> / <kbd>O</kbd></dt><dd>Sæt ind- og udpunkt</dd></div>
+          <div><dt><kbd>B</kbd></dt><dd>Barberblad: klip hvor playhead står</dd></div>
+          <div><dt><kbd>A</kbd></dt><dd>Tilbage til markørværktøjet</dd></div>
+          <div><dt><kbd>T</kbd></dt><dd>Trimværktøj</dd></div>
+          <div><dt><kbd>Shift</kbd> + <kbd>Z</kbd></dt><dd>Zoom timelinen ud så alt er synligt</dd></div>
+          <div><dt><kbd>Ctrl</kbd> + <kbd>Z</kbd></dt><dd>Fortryd. Resolve husker langt tilbage</dd></div>
+          <div><dt><kbd>Ctrl</kbd> + <kbd>S</kbd></dt><dd>Gem. Gør det oftere end du tror</dd></div>
+        </dl>
+      </section>
+
+      <section class="card card--glossary" data-reveal>
+        <div class="card__head">
+          <span class="card__label">Ordbog</span>
+          <span class="card__meta">ord vi bruger hver gang</span>
+        </div>
+        <dl class="glossary">
+          <div>
+            <dt>Timeline</dt>
+            <dd>Sporet hvor filmen bygges. Alt du ser i den færdige film ligger her.</dd>
+          </div>
+          <div>
+            <dt>Bin</dt>
+            <dd>En mappe inde i projektet. Findes kun i Resolve, ikke på harddisken.</dd>
+          </div>
+          <div>
+            <dt>Node</dt>
+            <dd>Et trin i farvelægningen. Flere noder efter hinanden er lag af rettelser.</dd>
+          </div>
+          <div>
+            <dt>LUT</dt>
+            <dd>En færdig farveopskrift du kan lægge på et klip. Et udgangspunkt, ikke et facit.</dd>
+          </div>
+          <div>
+            <dt>Log</dt>
+            <dd>Fladt, gråligt kamerabillede med al information gemt. Ser forkert ud med vilje.</dd>
+          </div>
+          <div>
+            <dt>Render</dt>
+            <dd>Når computeren regner den færdige video ud. Tager tid, kan ikke gøres hurtigere ved at klikke mere.</dd>
+          </div>
+        </dl>
+      </section>
+
+    </div>
+
+    <footer class="footer">
+      <span>Kursusmateriale · mediefag</span>
+      <span class="footer__dim">Sidst opdateret 19. august 2026</span>
+    </footer>
+
+  </div>
+</main>
+
+</body>
+</html>
