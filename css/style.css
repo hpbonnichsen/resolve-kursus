@@ -3,7 +3,7 @@
    Nostromo-paletten fra hpb_systems_portfolio, hvor amber er ACCENT og
    brødteksten er varm off-white. Resolve-logoets farver er trukket mod varme
    og bruges kun som kodning i små doser, aldrig som flader eller tekst.
-   Ren HTML/CSS/JS — ingen build, ingen afhængigheder.
+   Layoutet er fuldbredde med et foldbart sidepanel til venstre.
    ========================================================================== */
 
 :root {
@@ -26,7 +26,8 @@
 
   /* Resolve-logoet, roteret mod varme og med mætningen sat ned.
      Logoets gul-grønne dråbe har ingen egen token: den absorberes af --amber.
-     Begge klarer AA mod --panel, men bruges alligevel kun til kanter og blokke.
+     Begge klarer AA mod både --panel og --frame og bruges som kanter, blokke og
+     som farve på modulnumrene i sidepanelet, hvor selve tallet bærer betydningen.
      Farve må aldrig være eneste betydningsbærer, og amber skal blive ved med
      at være den eneste farve der betyder "det her er vigtigt". */
   --res-teal:    #3E9CB8;
@@ -43,7 +44,14 @@
   --radius: 14px;
   --gap: 14px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Panelets bredde styrer også indholdets venstremargin, så de to altid
+     følges ad. Ét tal, to steder. */
+  --side-w: 72px;
+  --pad-x: clamp(16px, 2.6vw, 52px);
 }
+
+html[data-nav="open"] { --side-w: 296px; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -67,6 +75,7 @@ ul, ol, dl { margin: 0; padding: 0; list-style: none; }
 dd { margin: 0; }
 a { color: inherit; text-decoration: none; }
 em { font-style: normal; color: var(--ink); }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
 ::selection { background: var(--amber-hot); color: #0a0a0a; }
 
@@ -77,7 +86,7 @@ em { font-style: normal; color: var(--ink); }
 }
 
 .skip-link {
-  position: absolute;
+  position: fixed;
   left: -9999px;
   top: 0;
   background: var(--amber-hot);
@@ -88,33 +97,257 @@ em { font-style: normal; color: var(--ink); }
 }
 .skip-link:focus { left: 12px; top: 12px; }
 
-/* ── Hero ─────────────────────────────────────────────────────────────── */
+/* ══ Sidepanel ═════════════════════════════════════════════════════════ */
 
-/* Hero stopper omkring 85vh, så timeline-striben og toppen af næste bånd lige
-   akkurat er synlig. Det fortæller at siden fortsætter, uden en scroll-pil. */
-.hero {
-  min-height: min(85vh, 760px);
+.side {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  width: var(--side-w);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: clamp(26px, 4vw, 44px);
-  padding: clamp(28px, 5vw, 56px) clamp(14px, 4vw, 64px) clamp(20px, 3vw, 36px);
-  max-width: 1440px;
-  margin: 0 auto;
+  border-right: 1px solid var(--line);
+  background: var(--frame);
+  transition: width 0.3s var(--ease);
+  overflow: hidden;
 }
 
-/* Viewer-rammen: kun fire hjørne-L'er, ingen hel ramme. Tegnet med otte
-   gradienter frem for fire ekstra elementer, så markuppet forbliver rent.
-   Det tomme felt indeni ER motivet — luften gør arbejdet. */
+.side__top {
+  flex: none;
+  padding: 14px 0 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.side__toggle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 10px 0 10px 23px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  transition: color 0.2s var(--ease);
+}
+.side__toggle:hover { color: var(--amber-hot); }
+
+/* Hamburger der bliver til et kryds. De tre streger er ét element hver, så
+   overgangen kan animeres uden at skifte ikon ud. */
+.side__bars { position: relative; flex: none; width: 22px; height: 14px; }
+.side__bars i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+.side__bars i:nth-child(1) { top: 0; }
+.side__bars i:nth-child(2) { top: 6px; }
+.side__bars i:nth-child(3) { top: 12px; }
+
+html[data-nav="open"] .side__bars i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+html[data-nav="open"] .side__bars i:nth-child(2) { opacity: 0; }
+html[data-nav="open"] .side__bars i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.side__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 18px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.side__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 18px 16px 23px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.side__brand-mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px; height: 26px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--amber-hot);
+}
+
+.side__brand-text { display: grid; gap: 1px; min-width: 0; }
+.side__brand-text strong {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.side__brand-text span {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.side__label {
+  padding: 14px 18px 6px 23px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.side__list a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 14px;
+  padding: 8px 18px 8px 23px;
+  transition: background 0.18s var(--ease);
+}
+.side__list a:hover { background: var(--panel); }
+
+/* Aktivt modul: amber kant i venstre side plus amber tekst, så markeringen
+   ikke hviler på farve alene. */
+.side__list li.is-active a::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 6px; bottom: 6px;
+  width: 2px;
+  background: var(--amber-hot);
+  border-radius: 0 2px 2px 0;
+}
+
+.side__num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--tone, var(--ink-dim));
+  transition: color 0.18s var(--ease);
+}
+.side__list a[data-tone="amber"] { --tone: var(--amber-hot); }
+.side__list a[data-tone="teal"]  { --tone: var(--res-teal); }
+.side__list a[data-tone="rust"]  { --tone: var(--res-rust); }
+
+/* Farvekodningen sidder på modulnummeret, som også står som tal. Numrene er
+   store nok til at klare AA, men tallet bærer betydningen, ikke farven. */
+
+.side__name {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.side__sub {
+  grid-column: 2;
+  font-size: 0.74rem;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.side__list li.is-active .side__name { color: var(--amber-hot); }
+
+.side__list--plain a { padding-top: 7px; padding-bottom: 7px; }
+.side__list--plain .side__num { color: var(--ink-dim); }
+
+.side__now {
+  margin: auto 18px 0 23px;
+  padding-top: 18px;
+  display: grid;
+  gap: 3px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.side__now strong {
+  font-weight: 500;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--amber-hot);
+}
+
+/* Sammenfoldet: kun ikonet og modulnumrene. Alt tekstligt fjernes fra både
+   skærm og oplæser, så panelet ikke læses op to gange i to tilstande. */
+html[data-nav="closed"] .side__toggle-text,
+html[data-nav="closed"] .side__brand-text,
+html[data-nav="closed"] .side__label,
+html[data-nav="closed"] .side__name,
+html[data-nav="closed"] .side__sub,
+html[data-nav="closed"] .side__now { display: none; }
+
+/* Sammenfoldet er striben så smal at venstrestillet indhold ser skævt ud.
+   Alt centreres i stedet, og de to listers indbyrdes skel skal tegnes med en
+   streg, fordi overskrifterne der ellers adskiller dem er skjult. */
+html[data-nav="closed"] .side__toggle,
+html[data-nav="closed"] .side__brand {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  gap: 0;
+}
+
+html[data-nav="closed"] .side__list a {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+html[data-nav="closed"] .side__list--plain {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+/* ══ Indholdets skal ═══════════════════════════════════════════════════ */
+
+.shell {
+  margin-left: var(--side-w);
+  transition: margin-left 0.3s var(--ease);
+}
+
+/* ══ Hero ══════════════════════════════════════════════════════════════ */
+
+/* Hero fylder skærmen alene. Rammen er det eneste man møder ved landing. */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  padding: clamp(20px, 2.6vw, 40px) var(--pad-x);
+}
+
+/* Viewer-rammen: fire hjørne-L'er, tegnet med otte gradienter frem for fire
+   ekstra elementer. Det tomme felt indeni ER motivet. */
 .viewer {
-  --corner: clamp(22px, 3vw, 40px);
+  --corner: clamp(26px, 3vw, 46px);
   --hair: 1px;
   position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  aspect-ratio: 2.39 / 1;
-  padding: clamp(20px, 4vw, 54px);
+  padding: clamp(24px, 4vw, 64px);
 
   background-image:
     linear-gradient(var(--viewer-line) 0 0), linear-gradient(var(--viewer-line) 0 0),
@@ -128,13 +361,12 @@ em { font-style: normal; color: var(--ink); }
     var(--corner) var(--hair), var(--hair) var(--corner),
     var(--corner) var(--hair), var(--hair) var(--corner);
   background-position:
-    0 0,          0 0,
-    100% 0,       100% 0,
-    0 100%,       0 100%,
-    100% 100%,    100% 100%;
+    0 0,       0 0,
+    100% 0,    100% 0,
+    0 100%,    0 100%,
+    100% 100%, 100% 100%;
 }
 
-/* Overlay-tekst i rammens hjørner: rent kamerasøger-idiom. */
 .viewer__tl,
 .viewer__br {
   position: absolute;
@@ -142,13 +374,13 @@ em { font-style: normal; color: var(--ink); }
   align-items: center;
   gap: 10px;
   font-family: var(--font-mono);
-  font-size: clamp(0.58rem, 1.1vw, 0.68rem);
+  font-size: clamp(0.6rem, 0.9vw, 0.7rem);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
-.viewer__tl { top: clamp(-4px, 0.6vw, 8px); left: calc(var(--corner) + 14px); }
-.viewer__br { bottom: clamp(-4px, 0.6vw, 8px); right: calc(var(--corner) + 14px); }
+.viewer__tl { top: 4px; left: calc(var(--corner) + 16px); }
+.viewer__br { bottom: 4px; right: calc(var(--corner) + 16px); }
 
 .viewer__tc { color: var(--amber-hot); font-variant-numeric: tabular-nums; letter-spacing: 0.12em; }
 
@@ -161,19 +393,19 @@ em { font-style: normal; color: var(--ink); }
 }
 @keyframes rec { 50% { opacity: 0.25; } }
 
-/* Indholdet holdes smalt og venstrestillet inde i en bred ramme. Forskellen
-   mellem tekstblokkens bredde og rammens bredde er hele pointen. */
+/* Teksten holdes smal inde i en meget bred ramme. Forskellen mellem de to
+   bredder er hele pointen. */
 .hero__body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(14px, 1.8vw, 22px);
-  max-width: min(100%, 620px);
+  gap: clamp(14px, 1.6vw, 24px);
+  max-width: min(100%, 660px);
 }
 
 .hero__eyebrow {
   font-family: var(--font-mono);
-  font-size: clamp(0.6rem, 1.2vw, 0.72rem);
+  font-size: clamp(0.62rem, 0.9vw, 0.74rem);
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--amber-hot);
@@ -181,7 +413,7 @@ em { font-style: normal; color: var(--ink); }
 
 .hero__title {
   font-weight: 700;
-  font-size: clamp(1.75rem, 4.3vw, 3.5rem);
+  font-size: clamp(1.9rem, 4vw, 3.9rem);
   line-height: 1.02;
   letter-spacing: -0.045em;
   color: var(--ink);
@@ -189,7 +421,7 @@ em { font-style: normal; color: var(--ink); }
 
 /* Logoets regnbuekant optræder her og kun her. */
 .hero__rule {
-  width: clamp(120px, 22vw, 260px);
+  width: clamp(140px, 18vw, 300px);
   height: 2px;
   border-radius: 2px;
   background: linear-gradient(90deg,
@@ -200,61 +432,69 @@ em { font-style: normal; color: var(--ink); }
 }
 
 .hero__lede {
-  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-size: clamp(0.98rem, 1.15vw, 1.14rem);
   line-height: 1.5;
   color: var(--ink-dim);
-  max-width: 38ch;
+  max-width: 40ch;
 }
 
 .hero__note {
   font-family: var(--font-mono);
-  font-size: clamp(0.62rem, 1.1vw, 0.72rem);
+  font-size: clamp(0.66rem, 0.85vw, 0.76rem);
   letter-spacing: 0.04em;
   color: var(--ink-dim);
 }
+
+/* ══ Indhold ═══════════════════════════════════════════════════════════ */
+
+.main { padding: 0 var(--pad-x) clamp(40px, 5vw, 80px); }
 
 /* ── Timeline-striben ─────────────────────────────────────────────────── */
 
 /* Modulerne tegnet som klipblokke: illustrationen ER indholdsfortegnelsen,
    og blokbredderne svarer til modulernes reelle vægt i forløbet. */
-.tl { display: grid; gap: 10px; }
+.tl {
+  display: grid;
+  gap: 14px;
+  padding: clamp(34px, 5vw, 68px) 0 clamp(30px, 4vw, 52px);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.tl__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
 .tl__caption,
 .tl__now {
   font-family: var(--font-mono);
-  font-size: clamp(0.6rem, 1.1vw, 0.7rem);
-  letter-spacing: 0.18em;
+  font-weight: 400;
+  font-size: clamp(0.64rem, 0.9vw, 0.74rem);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
 .tl__now strong { color: var(--amber-hot); font-weight: 500; }
 
-.tl__track {
-  display: flex;
-  gap: 3px;
-  min-width: 520px;
-}
-
+.tl__scroll { overflow-x: auto; padding-bottom: 4px; }
+.tl__track { display: flex; gap: 3px; min-width: 620px; }
 .tl__clip { flex: var(--w) 1 0; min-width: 0; }
 
-.tl__clip a {
-  display: grid;
-  gap: 7px;
-  padding-bottom: 2px;
-  transition: opacity 0.2s var(--ease);
-}
+.tl__clip a { display: grid; gap: 8px; padding-bottom: 2px; }
 
-/* Selve klipblokken. Farven er kodning, aldrig tekst — modulnummeret står
-   ved siden af, så farven aldrig er eneste betydningsbærer. */
 .tl__clip a::before {
   content: "";
   display: block;
-  height: 34px;
+  height: 38px;
   border-radius: 3px;
   border: 1px solid var(--line);
   background: var(--panel-hi);
   border-left: 3px solid var(--tone, var(--amber-dim));
-  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), height 0.2s var(--ease);
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
 .tl__clip[data-tone="amber"] { --tone: var(--amber); }
@@ -273,7 +513,7 @@ em { font-style: normal; color: var(--ink); }
 .tl__num,
 .tl__name {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: 0.66rem;
   letter-spacing: 0.1em;
   color: var(--ink-dim);
   white-space: nowrap;
@@ -284,79 +524,61 @@ em { font-style: normal; color: var(--ink); }
 .tl__clip.is-active .tl__num,
 .tl__clip.is-active .tl__name { color: var(--amber-hot); }
 
-/* Kun striben scroller vandret på smalle skærme, aldrig hele siden. */
-.tl__scroll { overflow-x: auto; padding-bottom: 4px; }
-
-/* ── Dashboard-ramme ──────────────────────────────────────────────────── */
-
-.frame { padding: 0 clamp(10px, 2.5vw, 32px) clamp(28px, 5vw, 64px); }
-
-.frame__inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(14px, 2vw, 22px);
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 6px);
-  background-color: var(--frame);
-  background-image: radial-gradient(rgba(236, 227, 214, 0.055) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
 /* ── Statuslinje ──────────────────────────────────────────────────────── */
 
 .status {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(16px, 3vw, 40px);
-  padding: clamp(18px, 2vw, 28px);
+  gap: clamp(16px, 3vw, 48px);
+  padding: clamp(20px, 2.2vw, 32px) clamp(20px, 2.4vw, 36px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
 }
 
 .status__item { display: flex; flex-direction: column; gap: 2px; }
-.status__item + .status__item { border-left: 1px solid var(--line); padding-left: clamp(16px, 3vw, 40px); }
+.status__item + .status__item { border-left: 1px solid var(--line); padding-left: clamp(16px, 3vw, 48px); }
 
 .status__value {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.8rem);
   line-height: 1;
   letter-spacing: -0.04em;
   color: var(--amber-hot);
   font-variant-numeric: tabular-nums;
 }
 
-.status__unit { font-size: 0.8rem; color: var(--ink-dim); max-width: 26ch; }
+.status__unit { font-size: 0.82rem; color: var(--ink-dim); max-width: 28ch; }
 
 /* ── Sektionsoverskrifter ─────────────────────────────────────────────── */
 
 .section-head {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
-  padding: clamp(30px, 5vw, 58px) 6px clamp(14px, 2vw, 20px);
+  padding: clamp(34px, 4.5vw, 68px) 2px clamp(16px, 2vw, 24px);
   scroll-margin-top: 20px;
 }
 
 .section-head__label {
   font-family: var(--font-mono);
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--amber-hot);
 }
 
 .section-head__title {
-  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  font-size: clamp(1.3rem, 2vw, 2rem);
   letter-spacing: -0.03em;
   color: var(--ink);
 }
 
-/* ── Bento-grid ───────────────────────────────────────────────────────── */
+/* ── Gitter ───────────────────────────────────────────────────────────── */
 
-.bento {
+.grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--gap);
@@ -367,14 +589,16 @@ em { font-style: normal; color: var(--ink); }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: clamp(18px, 2vw, 28px);
+  padding: clamp(20px, 1.8vw, 30px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
   scroll-margin-top: 20px;
 }
 
-.card--module  { grid-column: span 4; }
+/* Rytmen skal altid gå op i tolv. Modul 03 er det bredeste felt, fordi det er
+   forløbets længste modul. */
+.card--module { grid-column: span 4; }
 .card--module:nth-child(1),
 .card--module:nth-child(2) { grid-column: span 6; }
 .card--wide    { grid-column: span 8; }
@@ -383,14 +607,12 @@ em { font-style: normal; color: var(--ink); }
 .card--keys    { grid-column: span 5; }
 .card--glossary{ grid-column: span 7; }
 
-/* Modulkortets venstrekant er den anden dosis af Resolve-farverne. Den er
-   dekoration oven på information der allerede står som tekst i kortet. */
 .card--module::before {
   content: "";
   position: absolute;
   left: 0;
-  top: clamp(18px, 2vw, 28px);
-  bottom: clamp(18px, 2vw, 28px);
+  top: clamp(20px, 1.8vw, 30px);
+  bottom: clamp(20px, 1.8vw, 30px);
   width: 2px;
   border-radius: 0 2px 2px 0;
   background: var(--tone, var(--amber));
@@ -425,22 +647,25 @@ em { font-style: normal; color: var(--ink); }
   text-align: right;
 }
 
-.card__title { font-size: 1.05rem; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; }
-.card__title--lg { font-size: clamp(1.2rem, 1.9vw, 1.55rem); line-height: 1.16; letter-spacing: -0.03em; }
+.card__title { font-size: 1.08rem; color: var(--ink); letter-spacing: -0.015em; line-height: 1.3; }
+.card__title--lg { font-size: clamp(1.2rem, 1.5vw, 1.6rem); line-height: 1.16; letter-spacing: -0.03em; }
 
-.card__text { font-size: 0.9rem; color: var(--ink-dim); }
+.card__text { font-size: 0.92rem; color: var(--ink-dim); max-width: 62ch; }
 
 /* Udbyttet, ikke emnet. Det er den linje eleverne faktisk skal kunne bruge. */
 .card__outcome {
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   color: var(--ink);
   border-left: 2px solid var(--amber-hot);
   padding-left: 12px;
+  max-width: 62ch;
 }
 
+/* Undersiderne findes ikke endnu, så det her er en tilstand og ikke et link.
+   Intet dødt at klikke på, intet der kan fanges af tabulator. */
 .card__cta {
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 8px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -449,10 +674,7 @@ em { font-style: normal; color: var(--ink); }
   letter-spacing: 0.06em;
   color: var(--ink-dim);
 }
-
-/* Undersiderne findes ikke endnu. Tilstanden er synlig og fokuseres ikke,
-   frem for et dødt link der ligner noget man kan klikke på. */
-.card__cta--soon::before {
+.card__cta::before {
   content: "";
   width: 5px; height: 5px;
   border-radius: 50%;
@@ -463,7 +685,7 @@ em { font-style: normal; color: var(--ink); }
 
 .badge {
   align-self: flex-start;
-  margin-top: 8px;
+  margin-top: 10px;
   padding: 5px 12px;
   border: 1px dashed var(--amber-dim);
   border-radius: 999px;
@@ -497,44 +719,44 @@ em { font-style: normal; color: var(--ink); }
 
 /* ── Trin ─────────────────────────────────────────────────────────────── */
 
-.steps { display: grid; gap: 20px; }
-.step { display: flex; gap: 18px; align-items: flex-start; }
+.steps { display: grid; gap: 22px; }
+.step { display: flex; gap: 20px; align-items: flex-start; }
 
 .step__num {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   letter-spacing: 0.1em;
   color: var(--amber-hot);
   padding-top: 4px;
   min-width: 26px;
 }
 
-.step__title { font-size: 0.98rem; color: var(--ink); }
-.step__text { font-size: 0.88rem; color: var(--ink-dim); margin-top: 3px; max-width: 58ch; }
+.step__title { font-size: 1rem; color: var(--ink); }
+.step__text { font-size: 0.9rem; color: var(--ink-dim); margin-top: 3px; max-width: 62ch; }
 
 /* ── Fakta, genveje, ordbog ───────────────────────────────────────────── */
 
-.facts { display: grid; gap: 12px; }
+.facts { display: grid; gap: 13px; }
 .facts > div { display: grid; gap: 1px; }
 
 .facts dt {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-dim);
 }
-.facts dd { font-size: 0.84rem; color: var(--ink); }
+.facts dd { font-size: 0.86rem; color: var(--ink); }
 .facts__hi { color: var(--amber-hot); }
 
-.keys { display: grid; gap: 10px; }
+.keys { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; }
 .keys > div {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr);
+  grid-template-columns: 122px minmax(0, 1fr);
   gap: 14px;
   align-items: baseline;
 }
-.keys dd { font-size: 0.85rem; color: var(--ink-dim); }
+.keys dd { font-size: 0.86rem; color: var(--ink-dim); }
 
 kbd {
   display: inline-block;
@@ -548,17 +770,17 @@ kbd {
   color: var(--amber-hot);
 }
 
-.glossary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 26px; }
+.glossary { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 30px; }
 .glossary dt {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   letter-spacing: 0.06em;
   color: var(--ink);
-  padding-bottom: 3px;
+  padding-bottom: 4px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
-.glossary dd { font-size: 0.85rem; color: var(--ink-dim); }
+.glossary dd { font-size: 0.86rem; color: var(--ink-dim); }
 
 /* ── Footer ───────────────────────────────────────────────────────────── */
 
@@ -567,14 +789,14 @@ kbd {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px;
-  padding: clamp(24px, 3.4vw, 40px) 6px 4px;
+  padding: clamp(28px, 3.4vw, 48px) 2px 4px;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--ink-dim);
 }
 .footer__dim { opacity: 0.7; }
 
-/* ── Bevægelse ────────────────────────────────────────────────────────── */
+/* ══ Bevægelse ═════════════════════════════════════════════════════════ */
 
 /* Scroll-drevet indtoning uden JavaScript. Uden support for animation-timeline
    sker der ingenting, og kortene står som de skal fra start. */
@@ -593,50 +815,70 @@ kbd {
   to   { opacity: 1; transform: none; }
 }
 
-/* ── Responsivt ───────────────────────────────────────────────────────── */
+/* ══ Responsivt ════════════════════════════════════════════════════════ */
 
-@media (max-width: 1180px) {
-  .card--module   { grid-column: span 6; }
-  .card--wide     { grid-column: span 12; }
+/* Meget brede skærme: fire modulkort i rækken frem for tre, så linjelængderne
+   forbliver læsbare når layoutet får hele bredden at arbejde med. */
+@media (min-width: 1700px) {
+  .card--module { grid-column: span 3; }
+  .card--module:nth-child(1),
+  .card--module:nth-child(2) { grid-column: span 3; }
+  .card--wide { grid-column: span 6; }
+  .card--start { grid-column: span 8; }
+  .card--specs { grid-column: span 4; }
+  .card--keys { grid-column: span 4; }
+  .card--glossary { grid-column: span 8; }
+}
+
+@media (max-width: 1250px) {
+  .card--module { grid-column: span 6; }
+  .card--module:nth-child(1),
+  .card--module:nth-child(2) { grid-column: span 6; }
+  .card--wide,
   .card--start,
   .card--specs,
   .card--keys,
   .card--glossary { grid-column: span 12; }
+  .glossary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 860px) {
-  .status { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+/* Under denne bredde er der ikke plads til panel og indhold ved siden af
+   hinanden. Panelet lægger sig oven på i stedet, og indholdet får hele
+   bredden uanset paneltilstand. */
+@media (max-width: 900px) {
+  .shell { margin-left: 72px; }
+  html[data-nav="open"] .side { box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6); }
+  .status { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .status__item + .status__item { border-left: none; padding-left: 0; }
-  .status__item:nth-child(even) { border-left: 1px solid var(--line); padding-left: 22px; }
+  .status__item:nth-child(even) { border-left: 1px solid var(--line); padding-left: 24px; }
+  .keys { grid-template-columns: minmax(0, 1fr); }
   .glossary { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 640px) {
   body { font-size: 14.5px; }
+  :root { --side-w: 56px; }
+  .shell { margin-left: 56px; }
+  html[data-nav="open"] { --side-w: 276px; }
 
-  /* Rammen kan ikke være 2.39:1 på en telefon uden at klemme teksten flad.
-     Den lader indholdet bestemme højden i stedet, med luft i top og bund, så
-     hjørnerne og tidskoden stadig bærer motivet uden et tomt felt i midten.
-     Hjørneteksterne beholder deres indrykning: flyttes de ud til kanten,
-     lander de oven på selve hjørnemarkøren. */
-  .viewer {
-    aspect-ratio: auto;
-    padding-block: clamp(42px, 11vw, 68px);
-  }
+  .side__toggle { padding-left: 15px; }
+  .side__brand, .side__label, .side__list a, .side__now { padding-left: 15px; }
 
-  .hero { min-height: auto; }
+  .hero { padding-top: 16px; padding-bottom: 16px; }
+  .viewer { padding: clamp(28px, 8vw, 44px) clamp(18px, 5vw, 32px); }
+  .viewer__tl { left: 16px; }
+  .viewer__br { right: 16px; }
   .hero__body { max-width: none; }
 
   .status { grid-template-columns: 1fr; }
   .status__item:nth-child(even) { border-left: none; padding-left: 0; }
 
-  .card--module { grid-column: span 12; }
-  .frame__inner { background-size: 18px 18px; }
-
-  .keys > div { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+  .card--module,
+  .card--module:nth-child(1),
+  .card--module:nth-child(2) { grid-column: span 12; }
 }
 
-/* ── Reduceret bevægelse ──────────────────────────────────────────────── */
+/* ══ Reduceret bevægelse ═══════════════════════════════════════════════ */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -646,13 +888,13 @@ kbd {
   }
 }
 
-/* ── Print ────────────────────────────────────────────────────────────── */
+/* ══ Print ═════════════════════════════════════════════════════════════ */
 
 @media print {
   body { background: #fff; color: #000; }
-  .frame__inner { background: none; border: none; }
-  .card { border-color: #ccc; background: none; break-inside: avoid; }
+  .side, .skip-link, .card__cta { display: none; }
+  .shell { margin-left: 0; }
   .hero { min-height: auto; }
-  .viewer { aspect-ratio: auto; background-image: none; }
-  .skip-link, .card__cta { display: none; }
+  .viewer { background-image: none; }
+  .card { border-color: #ccc; background: none; break-inside: avoid; }
 }
