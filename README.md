@@ -1,90 +1,110 @@
-# Klip din første film færdig
+# Fra redigering til færdig film
 
-Kursusside til et forløb i DaVinci Resolve for gymnasiet. Siden er
-kursusmateriale til deltagere, ikke en salgsside: den skal på få sekunder svare
-en elev på hvad forløbet er, hvor vi er nået til, og hvad man skal gøre nu.
+Onboarding-side til et endagskursus i DaVinci Resolve for voksne begyndere.
+Kursisterne får linket i en mail før kursusdagen, og siden skal svare på tre
+ting: hvordan installerer jeg programmet, hvad skal jeg have gjort inden vi
+mødes, og hvad er det egentlig vi skal lave.
 
-Ren HTML, CSS og ganske lidt JavaScript. Ingen build, ingen afhængigheder.
+Ren HTML og CSS. Ingen build, ingen afhængigheder, intet JavaScript.
 Åbn `index.html` direkte i en browser.
 
-## Struktur
-
 ```
-index.html          hele forsiden
-css/style.css       alt design
-js/nav.js           sidepanelets folde-tilstand, intet andet
-assets/             tom indtil videre
+index.html       hele siden
+css/style.css    alt design
+assets/          det siden udgiver
+design/          mockups og kildegrafik, udgives ikke
 ```
 
-## Design
+## Hvorfor siden ser sådan ud
 
-Nostromo-paletten fra `hpb_systems_portfolio`, hvor amber er accent og
-brødteksten er varm off-white `#ece3d6`. Tokens er kopieret uændret, så de to
-sites ser ud til at høre sammen.
+Siden er en onepager uden navigation. Det er et valg, ikke en mangel: der er
+tre opgaver, de skal udføres i rækkefølge, og man kan ikke fare vild på en
+side der kun har én vej igennem.
 
-DaVinci Resolve-logoets tre dråber er tilpasset ind i paletten frem for at blive
-brugt råt: den gul-grønne absorberes af amber, og de to andre er roteret mod
-varme med mætningen sat ned til `--res-teal #3E9CB8` og `--res-rust #D9553F`.
-De optræder som venstrekant på et modulkort, som klipblok på timeline-striben og
-som farve på modulnumrene i sidepanelet, hvor tallet selv bærer betydningen.
-Amber skal blive ved med at være den eneste farve der betyder "det her er
-vigtigt". Logoets regnbuekant optræder ét sted: gradientlinjen under
-hero-overskriften.
+**Én knapform på hele siden.** Amber betyder handling og intet andet. Derfor
+er hero-billedet heller ikke selv en klikflade — kompositionen viser en
+pilleformet knap, og hvis hele fladen var klikbar, ville den knap lyve om sit
+eget mål.
 
-**Hero fylder skærmen alene.** Rammen er det eneste man møder ved landing:
-fire hjørne-L'er med tidskode og REC-markør, og næsten tomt indeni. Det negative
-rum er selve motivet, så siden signalerer film og postproduktion uden et eneste
-billede. Teksten er låst til 660 px inde i en ramme der fylder hele bredden, og
-forskellen mellem de to bredder er hele pointen.
+**Ingen tekst i billeder.** Hele hero-kompositionen er HTML og CSS.
+Petroleum-cirklen er et element med `border-radius: 50%`, ikke et billede, og
+overskriftens vægtskift er `font-weight` 300 mod 800. Det betyder at teksten
+kan markeres, zoomes, læses op og reflowe — hvilket er afgørende, når linket
+kommer fra en mail og bliver åbnet på en telefon.
 
-**Sidepanelet** er navigationen. Sammenfoldet er det en 72 px stribe med
-modulnumrene i deres farvekodning; udfoldet viser det modulnavne, undertitler og
-hvor holdet er nu. Tilstanden bor på `<html data-nav>`, gemmes i `localStorage`
-og læses tilbage af et inline-script i `<head>`, så et udfoldet panel ikke
-blinker sammenfoldet ved indlæsning. Under 900 px lægger panelet sig oven på
-indholdet, og et klik på et link lukker det igen.
+**Screenshot-annotationerne er SVG oven på billedet**, ikke brændt ind i
+JPEG'en. De kan rettes uden billedredigering, og de forbliver skarpe.
 
-**Timeline-striben** ligger under hero som overgangen til indholdet. Modulerne
-er tegnet som klipblokke med bredder der svarer til deres vægt i forløbet, så
-illustrationen også er indholdsfortegnelsen.
+## Palette
 
-Layoutet er fuldbredde uden `max-width`. Over 1700 px går modulgitteret fra tre
-til fire kort i rækken, så linjelængderne forbliver læsbare når siden får hele
-bredden at arbejde med.
+Målt direkte ud af mockuppen i `design/Page_hero.PNG`.
 
-Bevægelse er ren CSS via `animation-timeline: view()`, pakket i `@supports` og
-slået fra under `prefers-reduced-motion`.
+| Token | Værdi | Rolle |
+|---|---|---|
+| `--bg` | `#171717` | baggrund |
+| `--surface` | `#1e1e1e` | praktisk-stribe |
+| `--petrol` | `#0E3D42` | hero-cirklen |
+| `--amber` | `#FF9E00` | **primær** — kun handling |
+| `--rust` | `#E9967A` | **sekundær** — kun struktur |
+| `--ink` | `#ece3d6` | brødtekst |
+| `--ink-dim` | `#9c9287` | sekundær tekst på `--bg` |
+| `--ink-soft` | `#b8aea2` | kickeren i hero, som står på cirklen |
+
+Amber ejer alt der beder om et klik. Rust ejer det der ordner uden at kalde
+på et: trin-numre, skillelinjernes klipmarkering, annotationerne. Hold den
+fordeling — det er den, der gør at man kan se hvad man skal gøre uden at læse.
+
+`--ink-soft` findes udelukkende fordi `--ink-dim` kun når 3,9:1 mod
+petroleum-cirklen og altså falder i WCAG AA. Brug den ikke andre steder.
 
 ## Vedligehold
 
-**Flyt markøren når holdet rykker videre.** Tre steder i `index.html`:
+**Før siden sendes ud** skal pladsholderne udfyldes i `index.html`:
 
-1. Sidepanelet: flyt `class="is-active"` og `aria-current="step"` til det
-   aktuelle modul, og ret `<p class="side__now">`.
-2. Timeline-striben: flyt `class="tl__clip is-active"`, og ret
-   `<p class="tl__now">`.
-3. Modulkortet: ret `card__meta` til `"… · vi er her nu"`.
+- `[udfyldes]` tre steder i `.facts` — dato, tid og sted.
+- `[kontakt udfyldes]` i footeren.
 
-**Gitterets rytme** skal altid gå op i tolv kolonner. Den er 6+6 / 8+4 / 4+4+4
-som standard og 3+3+6 / 3+3+3+3 over 1700 px. Ændrer du antallet af moduler,
-skal begge rytmer regnes igennem igen.
+**Flytter Blackmagic rundt på deres downloadside**, skal begge screenshots i
+`assets/` tages om, og SVG-koordinaterne i `index.html` justeres. Ringene
+sidder i et `viewBox` der matcher billedets egne pixelmål, så nye screenshots
+kræver nye tal i både `viewBox` og `cx`/`cy`.
 
-## Mangler stadig
+**Sidens bredde** styres af `--shell` (`clamp(680px, 76vw, 1500px)`), som
+sættes på `body` over 720 px. Den holder hero, skillelinjer og footer-kant
+inde i samme spalte i stedet for at lade dem løbe ud i vinduskanten. `--wrap`
+er tekstspalten *inde* i skallen. På telefon fylder siden fortsat hele
+bredden.
 
-- Rigtige tal i statuslinjen (moduler, lektioner, Resolve-version).
-- Link til øvelsesmaterialet (står som "Link følger").
-- Undersiderne bag hvert modul. Kortene siger "Materiale kommer snart" og er
-  bevidst ikke links, så der ikke er noget dødt at klikke på.
+**Heroens topluft** er `clamp(--s5, 11vh, 10rem)` og altså større end
+bundpaddingen. Det er med vilje: kameraets stativ trækker kompositionens vægt
+nedad, så symmetrisk padding ser topmast ud. Resten af første skærm kører en
+fast 64 px-rytme.
+
+**Første skærmbillede** skal rumme heroen og den praktiske stribe og intet
+andet. Det styres af `#installer { padding-top: clamp(--s6, 34vh, 30rem) }`.
+Afstanden er sat i `vh`, fordi pointen afhænger af skærmens højde — et fast
+px-tal virkede kun på lave skærme. Loftet på 30rem holder til en synlig
+skærmhøjde på ca. 1700 px; derover begynder "Første opgave" at titte frem.
+Vokser den praktiske stribe med flere linjer, skal tallet regnes efter igen.
+
+**Hero-kompositionen** er målt i procent af cirklen, ikke af skærmen.
+Nosferatu ligger inde i `.hero__circle` netop derfor — flyttes den ud, går
+placeringen i stykker på andre skærmbredder.
 
 ## Verificeret
 
-- Alle tekst- og baggrundskombinationer er tjekket programmatisk mod WCAG AA,
-  inklusive sidepanelets farvekodede modulnumre. Laveste er 5,10:1.
-- Ingen vandret side-scroll ved 375, 900, 1440 eller 1920 px. Timeline-striben
-  scroller inde i sin egen container på mobil.
-- Panelets toggle er testet: `data-nav` og `aria-expanded` følges ad, og
-  tilstanden overlever genindlæsning.
-- Panelets skjulte tekst er `display: none` i sammenfoldet tilstand, så den
-  heller ikke læses op af skærmlæsere.
-- Siden står fuldt læsbar med reduceret bevægelse og uden support for
-  `animation-timeline`.
+- Alle tekst- og baggrundskombinationer målt mod WCAG AA. Laveste er 5,45:1.
+- Ingen vandret side-scroll ved 375, 500, 721, 768, 1024, 1280, 1440, 1680
+  eller 1920 px. Skallen måler 76 % på alle desktop-bredder.
+- Tab-rækkefølge: spring-link → Start her → Åbn downloadsiden → Se videoen →
+  videoafspilleren. Alle med synlig `:focus-visible`-ring.
+- Siden står læsbar uden billeder, uden `animation-timeline` og under
+  `prefers-reduced-motion: reduce`.
+- 48 KB over folden, 265 KB for hele siden. Videoen hentes først ved klik
+  (`preload="none"`) og hostes som GitHub Release-asset, ikke i repoet.
+
+## Mangler
+
+- Hosting: nyt GitHub-repo med Pages slået til.
+- Nosferatu og kameraet er PNG. Som SVG ville de fylde et par KB i stedet for
+  25 og kunne farves fra CSS-tokens.
