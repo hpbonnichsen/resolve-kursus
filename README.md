@@ -9,11 +9,16 @@ Ren HTML og CSS. Ingen build, ingen afhængigheder, intet JavaScript.
 Åbn `index.html` direkte i en browser.
 
 ```
-index.html       hele siden
+index.html       forberedelse inden kursusdagen
+program.html     dagens program, materialepakke og genveje
 css/style.css    alt design
 assets/          det siden udgiver
 design/          mockups og kildegrafik, udgives ikke
 ```
+
+Derudover ligger `kursusplan.md` (dagsplanen), `materialepakke.md` (byggevejledning
+til `.dra`-arkivet) og `research/` (transskripter og det gamle kursushæfte) i repoet.
+De udgives ikke: de er arbejdsmateriale.
 
 ## Hvorfor siden ser sådan ud
 
@@ -21,15 +26,22 @@ Siden er en onepager uden navigation. Det er et valg, ikke en mangel: der er
 tre opgaver, de skal udføres i rækkefølge, og man kan ikke fare vild på en
 side der kun har én vej igennem.
 
+**Navigationen kom til, da siden holdt op med at være én side.** Forsiden var
+oprindeligt en onepager uden navigation, og det var et bevidst valg: tre opgaver
+i rækkefølge, og ingen mulighed for at fare vild. Den begrundelse holdt så længe
+der kun fandtes én side. Med program- og lektionssider ville et fravær af
+navigation være en blindgyde frem for en forenkling.
+
 **Én knapform på hele siden.** Amber betyder handling og intet andet. Derfor
-er hero-billedet heller ikke selv en klikflade — kompositionen viser en
+er hero-billedet heller ikke selv en klikflade: kompositionen viser en
 pilleformet knap, og hvis hele fladen var klikbar, ville den knap lyve om sit
-eget mål.
+eget mål. Navigationslinks er derfor ikke amber: den aktive side markeres i
+rust, fordi "hvor du er" er struktur og ikke en handling.
 
 **Ingen tekst i billeder.** Hele hero-kompositionen er HTML og CSS.
 Petroleum-cirklen er et element med `border-radius: 50%`, ikke et billede, og
 overskriftens vægtskift er `font-weight` 300 mod 800. Det betyder at teksten
-kan markeres, zoomes, læses op og reflowe — hvilket er afgørende, når linket
+kan markeres, zoomes, læses op og reflowe, hvilket er afgørende, når linket
 kommer fra en mail og bliver åbnet på en telefon.
 
 **Screenshot-annotationerne er SVG oven på billedet**, ikke brændt ind i
@@ -44,25 +56,32 @@ Målt direkte ud af mockuppen i `design/Page_hero.PNG`.
 | `--bg` | `#171717` | baggrund |
 | `--surface` | `#1e1e1e` | praktisk-stribe |
 | `--petrol` | `#0E3D42` | hero-cirklen |
-| `--amber` | `#FF9E00` | **primær** — kun handling |
-| `--rust` | `#E9967A` | **sekundær** — kun struktur |
+| `--amber` | `#FF9E00` | **primær** – kun handling |
+| `--rust` | `#E9967A` | **sekundær** – kun struktur |
 | `--ink` | `#ece3d6` | brødtekst |
 | `--ink-dim` | `#9c9287` | sekundær tekst på `--bg` |
-| `--ink-soft` | `#b8aea2` | kickeren i hero, som står på cirklen |
+| `--ink-soft` | `#b8aea2` | tekst der kan komme til at stå på cirklen – kicker og navigation |
 
 Amber ejer alt der beder om et klik. Rust ejer det der ordner uden at kalde
 på et: trin-numre, skillelinjernes klipmarkering, annotationerne. Hold den
-fordeling — det er den, der gør at man kan se hvad man skal gøre uden at læse.
+fordeling. Det er den, der gør at man kan se hvad man skal gøre uden at læse.
 
-`--ink-soft` findes udelukkende fordi `--ink-dim` kun når 3,9:1 mod
-petroleum-cirklen og altså falder i WCAG AA. Brug den ikke andre steder.
+`--ink-soft` findes fordi `--ink-dim` kun når 3,9:1 mod petroleum-cirklen og
+altså falder i WCAG AA. Den bruges to steder: hero-kickeren, og
+navigationslinjen, som på forsiden ligger oven på heroen, hvor cirklens
+overkant kan nå op under den på lave skærme. Brug den ikke andre steder.
 
 ## Vedligehold
 
-**Før siden sendes ud** skal pladsholderne udfyldes i `index.html`:
+**Før siden sendes ud** skal pladsholderne udfyldes i `program.html`:
 
-- `[udfyldes]` tre steder i `.facts` — dato, tid og sted.
-- `[kontakt udfyldes]` i footeren.
+- Download-URL til `.dra`-arkivet (markeret med `TODO`).
+- `[udfyldes]` i `.download__meta` – filstørrelse og dato.
+
+**De tre genvejstabeller** bruger `table-layout: fixed` med faste
+procentbredder. Uden den beregner hver tabel sin egen kolonnebredde ud fra sit
+eget indhold, og Windows-kolonnen lander tre forskellige steder ned gennem
+siden. Tilføjes en fjerde tabel, skal den arve samme `.keys`-klasse.
 
 **Flytter Blackmagic rundt på deres downloadside**, skal begge screenshots i
 `assets/` tages om, og SVG-koordinaterne i `index.html` justeres. Ringene
@@ -82,13 +101,13 @@ fast 64 px-rytme.
 
 **Første skærmbillede** skal rumme heroen og den praktiske stribe og intet
 andet. Det styres af `#installer { padding-top: clamp(--s6, 34vh, 30rem) }`.
-Afstanden er sat i `vh`, fordi pointen afhænger af skærmens højde — et fast
+Afstanden er sat i `vh`, fordi pointen afhænger af skærmens højde: et fast
 px-tal virkede kun på lave skærme. Loftet på 30rem holder til en synlig
 skærmhøjde på ca. 1700 px; derover begynder "Første opgave" at titte frem.
 Vokser den praktiske stribe med flere linjer, skal tallet regnes efter igen.
 
 **Hero-kompositionen** er målt i procent af cirklen, ikke af skærmen.
-Nosferatu ligger inde i `.hero__circle` netop derfor — flyttes den ud, går
+Nosferatu ligger inde i `.hero__circle` netop derfor: flyttes den ud, går
 placeringen i stykker på andre skærmbredder.
 
 ## Verificeret

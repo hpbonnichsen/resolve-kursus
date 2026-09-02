@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2 · Siderne og dit materiale – kursus i DaVinci Resolve</title>
+<meta name="description" content="Anden lektion: en rundtur i programmets otte sider, og optagelserne på plads i mapper.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#del1">Spring til første del</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 2</p>
+    <h1 class="pagehead__title">Siderne og dit materiale</h1>
+    <p class="pagehead__intro">
+      Resolve er otte programmer i én fil. Her ser vi hvad de hver især er til, så I
+      ved hvor I skal gå hen resten af dagen. Bagefter får vi optagelserne på plads.
+    </p>
+    <span class="scaffold">Følg med skridt for skridt</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">09:45–10:15</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">30 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Kursusprojektet åbent</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="del1">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">De otte sider</h2>
+
+    <div class="lead-in">
+      <p>
+        Knapperne i bunden er ikke faneblade. Hver af dem skifter til et andet program
+        inde i Resolve, med sit eget vindue og sine egne værktøjer.
+      </p>
+      <p>
+        Rækkefølgen følger den vej en film bliver til: ind med materialet, klip det
+        sammen, gør det pænt, ordn lyden, og ud med det igen. I dag bruger vi fire af
+        dem. Resten skal I bare kunne kende igen.
+      </p>
+    </div>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/l1-1-bundlinjen.jpg"
+             alt="Nederste kant af DaVinci Resolve med rækken af sideknapper til venstre og husikon og tandhjul til højre."
+             width="1800" height="62" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">Den samme bundlinje som i lektion 1.</figcaption>
+    </figure>
+
+    <div class="pages">
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/media.png" alt="" width="40" height="40">
+          <p class="pages__name">Media</p>
+        </div>
+        <p class="pages__body">
+          Til at hente optagelser ind og sortere dem i mapper. Man kan gøre det samme
+          fra Edit, så vi bliver ikke her ret længe.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-media.jpg" alt="Media-siden i DaVinci Resolve." width="900" height="566" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon pages__icon--tom" src="assets/icons/media.png" alt="" width="40" height="40" aria-hidden="true">
+          <p class="pages__name">Photo</p>
+          <span class="tag">bruges ikke</span>
+        </div>
+        <p class="pages__body">
+          Ny i version 21, og beregnet til stillbilleder. Den har intet med video at
+          gøre, og vi rører den ikke i dag.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-photo.jpg" alt="Photo-siden i DaVinci Resolve." width="900" height="565" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/cut.png" alt="" width="40" height="40">
+          <p class="pages__name">Cut</p>
+          <span class="tag">bruges ikke</span>
+        </div>
+        <p class="pages__body">
+          En hurtigere måde at klippe på, med et helt andet interface. Den er god, når
+          man har travlt og skal lave mange korte film. Vi bruger den klassiske i stedet,
+          fordi den viser tydeligere hvad der foregår.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-cut.jpg" alt="Cut-siden i DaVinci Resolve." width="900" height="568" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/edit.png" alt="" width="40" height="40">
+          <p class="pages__name">Edit</p>
+        </div>
+        <p class="pages__body">
+          Klippebordet. Her sætter I klippene sammen til en historie, og her tilbringer
+          vi hele formiddagen. Det er den vigtigste side i programmet.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-edit.jpg" alt="Edit-siden i DaVinci Resolve." width="900" height="565" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/fusion.png" alt="" width="40" height="40">
+          <p class="pages__name">Fusion</p>
+        </div>
+        <p class="pages__body">
+          Effekter, titler og animation. Den bygger på nodes i stedet for lag, og det
+          er derfor den ser voldsom ud. Vi laver én ting færdig her efter frokost.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-fusion.jpg" alt="Fusion-siden i DaVinci Resolve." width="900" height="566" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/color.png" alt="" width="40" height="40">
+          <p class="pages__name">Color</p>
+        </div>
+        <p class="pages__body">
+          Lys og farve. Det er den side, programmet er berømt for, og den bruges på
+          rigtige spillefilm. Vi kigger på den lige efter frokost.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-color.jpg" alt="Color-siden i DaVinci Resolve." width="900" height="564" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/fairlight.png" alt="" width="40" height="40">
+          <p class="pages__name">Fairlight</p>
+          <span class="tag">bonus</span>
+        </div>
+        <p class="pages__body">
+          Et helt lydstudie. Vi når den ikke i dag, men der ligger en bonuslektion på
+          kursussiden, som I kan tage hjemmefra.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-fairlight.jpg" alt="Fairlight-siden i DaVinci Resolve." width="900" height="566" loading="lazy">
+        </details>
+      </div>
+
+      <div class="pages__item">
+        <div class="pages__head">
+          <img class="pages__icon" src="assets/icons/deliver.png" alt="" width="40" height="40">
+          <p class="pages__name">Deliver</p>
+        </div>
+        <p class="pages__body">
+          Udgangen. Her laver I filmen om til en fil, andre kan se. Sidste stop på dagen.
+        </p>
+        <details class="pages__shot">
+          <summary>Se hvordan siden ser ud</summary>
+          <img src="assets/l2-side-deliver.jpg" alt="Deliver-siden i DaVinci Resolve." width="900" height="565" loading="lazy">
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del2">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Materialet ind i projektet</h2>
+
+    <div class="lead-in">
+      <p>
+        Alt materialet ligger allerede i projektet, sorteret i mapper efter lektion.
+        De hedder bins i Resolve, men det er mapper.
+      </p>
+      <p>
+        I skal ikke bruge dem alle sammen i dag. Men I skal kunne finde rundt i dem,
+        og I skal vide hvordan man selv lægger noget ind, for det skal I i sidste time.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Find mapperne i venstre side</h3>
+          <p class="step__body">
+            Panelet hedder <strong>Media Pool</strong> og findes på både Media- og
+            Edit-siden. Mappen til hver lektion har sit nummer, så I kan se hvor vi er
+            henne på dagen.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l2-1-bins.jpg"
+                   alt="Media Pool med kursusprojektets mapper foldet ud: 00 Eget materiale, 01 Interface, 02 Pages, 03 Edit, 04 Color, 05 Fusion, 06 Deliver og en bonusmappe."
+                   width="484" height="978" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Mappen <strong>00 Eget materiale</strong> er tom med vilje. Den er til jeres
+              egne optagelser i sidste time.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Prøv at lave en mappe selv</h3>
+          <p class="step__body">
+            Højreklik i det tomme område under mapperne og vælg <strong>New Bin</strong>.
+            Giv den et navn. Den kan slettes igen med det samme, pointen er kun at I ved
+            hvor funktionen bor.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l2-2-hojreklik.jpg"
+                   alt="Højrekliksmenuen i Media Pool med punkterne New Bin og Import Media."
+                   width="487" height="804" loading="lazy">
+              <svg class="shot__marks" viewBox="0 0 487 804" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                <ellipse class="ring" cx="205" cy="302" rx="46" ry="16"/>
+                <ellipse class="ring" cx="224" cy="457" rx="62" ry="16"/>
+              </svg>
+            </div>
+            <figcaption class="shot__caption">
+              Samme menu rummer <strong>Import Media</strong>, som er vejen til at hente
+              nye optagelser ind. Den bruger I i sidste time.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <details class="hint">
+      <summary>Jeg kan ikke se Media Pool</summary>
+      <p>
+        Panelet kan slås fra. Kig efter en knap der hedder <strong>Media Pool</strong>
+        øverst til venstre, og klik på den. På Edit-siden ligger den i rækken over
+        vinduet med optagelserne.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del3">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+    <h2 class="section__title">Lær optagelserne at kende</h2>
+
+    <div class="lead-in">
+      <p>
+        Før man kan klippe, skal man vide hvad man har. Det lyder banalt, men det er
+        det trin, folk springer over, og så bruger de en time på at lede efter et klip,
+        de kun halvt kan huske.
+      </p>
+      <p>
+        Der er én vane, der er mere værd end alle genvejene tilsammen, og det er de tre
+        taster her.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn et klip i vinduet til venstre</h3>
+          <p class="step__body">
+            Dobbeltklik på en optagelse i Media Pool. Den lægger sig i
+            <strong>source viewer</strong>, altså vinduet til venstre. Det til højre
+            viser filmen, som den bliver.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l2-3-source-viewer.jpg"
+                   alt="Source viewer med afspilningsknapper langs bunden."
+                   width="715" height="492" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Brug J, K og L i stedet for musen</h3>
+          <p class="step__body">
+            <kbd>L</kbd> spiller fremad. <kbd>K</kbd> stopper.
+            <kbd>J</kbd> spiller baglæns. Tryk flere gange på <kbd>L</kbd> eller
+            <kbd>J</kbd>, og det går hurtigere. Hold <kbd>K</kbd> nede sammen med
+            <kbd>L</kbd>, og det går i slowmotion.
+          </p>
+          <p class="step__body">
+            De tre taster sidder ved siden af hinanden, og hånden bliver på tastaturet.
+            Det lyder som en lille ting. Det er den vane, der adskiller en, der klipper
+            hurtigt, fra en, der ikke gør.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Kig materialet igennem</h3>
+          <p class="step__body">
+            Brug fem minutter på at se, hvad der ligger i mappen til lektion 3. I
+            behøver ikke huske det hele. I skal bare have set det én gang, så I ved,
+            hvad der findes, når vi går i gang efter pausen.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="selvtjek">
+  <div class="wrap">
+    <p class="kicker">Til sidst</p>
+    <h2 class="section__title">Tjek dig selv</h2>
+    <p class="section__intro">
+      Prøv at svare i hovedet, før du folder ud.
+    </p>
+
+    <div class="check">
+
+      <details class="check__item">
+        <summary>Du skal gøre en optagelse lysere. Hvilken side går du til?</summary>
+        <p class="check__answer">
+          Color. Den håndterer lys og farve, og det er den side, programmet er kendt for.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Hvad er forskellen på vinduet til venstre og vinduet til højre?</summary>
+        <p class="check__answer">
+          Til venstre ser du en enkelt optagelse, som du er ved at kigge på. Til højre
+          ser du filmen, som den bliver. Venstre er råvarer, højre er retten.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Hvad gør J, K og L?</summary>
+        <p class="check__answer">
+          L spiller fremad, K stopper, J spiller baglæns. Flere tryk giver højere fart.
+          De tre taster sidder ved siden af hinanden, så hånden kan blive på tastaturet.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Hvorfor er mappen 00 Eget materiale tom?</summary>
+        <p class="check__answer">
+          Fordi den er til dine egne optagelser. Du fylder den i sidste time, hvor du
+          klipper noget, du selv har filmet.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-1-interface.html">Forrige: Interface og indstillinger</a>
+    <span class="lesson-nav__where">Lektion 2 af 6</span>
+    <a class="btn" href="program.html">
+      Tilbage til programmet
+      <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+    </a>
+  </nav>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

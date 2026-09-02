@@ -1,0 +1,3435 @@
+1
+00:00:00,000 --> 00:00:01,630
+
+Hey, everybody, and welcome to this
+
+2
+00:00:01,630 --> 00:00:01,640
+Hey, everybody, and welcome to this
+ 
+
+3
+00:00:01,640 --> 00:00:03,350
+Hey, everybody, and welcome to this
+tutorial on DaVinci Resolve, a
+
+4
+00:00:03,350 --> 00:00:03,360
+tutorial on DaVinci Resolve, a
+ 
+
+5
+00:00:03,360 --> 00:00:05,230
+tutorial on DaVinci Resolve, a
+professional video editing software for
+
+6
+00:00:05,230 --> 00:00:05,240
+professional video editing software for
+ 
+
+7
+00:00:05,240 --> 00:00:07,590
+professional video editing software for
+Windows, macOS, and Linux completely
+
+8
+00:00:07,590 --> 00:00:07,600
+Windows, macOS, and Linux completely
+ 
+
+9
+00:00:07,600 --> 00:00:09,790
+Windows, macOS, and Linux completely
+free to use. My name is Zachmann, and in
+
+10
+00:00:09,790 --> 00:00:09,800
+free to use. My name is Zachmann, and in
+ 
+
+11
+00:00:09,800 --> 00:00:11,270
+free to use. My name is Zachmann, and in
+the next few minutes, we'll cover all
+
+12
+00:00:11,270 --> 00:00:11,280
+the next few minutes, we'll cover all
+ 
+
+13
+00:00:11,280 --> 00:00:13,030
+the next few minutes, we'll cover all
+the basic tools you need to know to get
+
+14
+00:00:13,030 --> 00:00:13,040
+the basic tools you need to know to get
+ 
+
+15
+00:00:13,040 --> 00:00:22,910
+the basic tools you need to know to get
+started using the free version.
+
+16
+00:00:22,910 --> 00:00:22,920
+
+ 
+
+17
+00:00:22,920 --> 00:00:25,110
+
+Let's open DaVinci Resolve. This
+
+18
+00:00:25,110 --> 00:00:25,120
+Let's open DaVinci Resolve. This
+ 
+
+19
+00:00:25,120 --> 00:00:27,270
+Let's open DaVinci Resolve. This
+displays the project manager, where all
+
+20
+00:00:27,270 --> 00:00:27,280
+displays the project manager, where all
+ 
+
+21
+00:00:27,280 --> 00:00:29,270
+displays the project manager, where all
+your projects are listed, whether stored
+
+22
+00:00:29,270 --> 00:00:29,280
+your projects are listed, whether stored
+ 
+
+23
+00:00:29,280 --> 00:00:32,630
+your projects are listed, whether stored
+locally or in the cloud.
+
+24
+00:00:32,630 --> 00:00:32,640
+locally or in the cloud.
+ 
+
+25
+00:00:32,640 --> 00:00:34,950
+locally or in the cloud.
+Head to new project and then to create
+
+26
+00:00:34,950 --> 00:00:34,960
+Head to new project and then to create
+ 
+
+27
+00:00:34,960 --> 00:00:36,750
+Head to new project and then to create
+to start with a new project that will
+
+28
+00:00:36,750 --> 00:00:36,760
+to start with a new project that will
+ 
+
+29
+00:00:36,760 --> 00:00:38,990
+to start with a new project that will
+open in the main interface.
+
+30
+00:00:38,990 --> 00:00:39,000
+open in the main interface.
+ 
+
+31
+00:00:39,000 --> 00:00:41,030
+open in the main interface.
+You can return to the project manager at
+
+32
+00:00:41,030 --> 00:00:41,040
+You can return to the project manager at
+ 
+
+33
+00:00:41,040 --> 00:00:43,150
+You can return to the project manager at
+any time by using the home button in the
+
+34
+00:00:43,150 --> 00:00:43,160
+any time by using the home button in the
+ 
+
+35
+00:00:43,160 --> 00:00:44,870
+any time by using the home button in the
+bottom right corner.
+
+36
+00:00:44,870 --> 00:00:44,880
+bottom right corner.
+ 
+
+37
+00:00:44,880 --> 00:00:47,230
+bottom right corner.
+The interface is divided into several
+
+38
+00:00:47,230 --> 00:00:47,240
+The interface is divided into several
+ 
+
+39
+00:00:47,240 --> 00:00:49,630
+The interface is divided into several
+workspaces located at the bottom. We are
+
+40
+00:00:49,630 --> 00:00:49,640
+workspaces located at the bottom. We are
+ 
+
+41
+00:00:49,640 --> 00:00:51,550
+workspaces located at the bottom. We are
+not going to see all of them, but the
+
+42
+00:00:51,550 --> 00:00:51,560
+not going to see all of them, but the
+ 
+
+43
+00:00:51,560 --> 00:00:53,670
+not going to see all of them, but the
+most relevant ones you need to know as a
+
+44
+00:00:53,670 --> 00:00:53,680
+most relevant ones you need to know as a
+ 
+
+45
+00:00:53,680 --> 00:00:56,270
+most relevant ones you need to know as a
+beginner to get a complete final video.
+
+46
+00:00:56,270 --> 00:00:56,280
+beginner to get a complete final video.
+ 
+
+47
+00:00:56,280 --> 00:00:58,390
+beginner to get a complete final video.
+Let's start by importing media files
+
+48
+00:00:58,390 --> 00:00:58,400
+Let's start by importing media files
+ 
+
+49
+00:00:58,400 --> 00:01:00,670
+Let's start by importing media files
+with the edit workspace. This can also
+
+50
+00:01:00,670 --> 00:01:00,680
+with the edit workspace. This can also
+ 
+
+51
+00:01:00,680 --> 00:01:02,710
+with the edit workspace. This can also
+be done from the media workspace as
+
+52
+00:01:02,710 --> 00:01:02,720
+be done from the media workspace as
+ 
+
+53
+00:01:02,720 --> 00:01:03,990
+be done from the media workspace as
+well.
+
+54
+00:01:03,990 --> 00:01:04,000
+well.
+ 
+
+55
+00:01:04,000 --> 00:01:06,270
+well.
+Open the media pool panel and drag and
+
+56
+00:01:06,270 --> 00:01:06,280
+Open the media pool panel and drag and
+ 
+
+57
+00:01:06,280 --> 00:01:09,350
+Open the media pool panel and drag and
+drop videos, images, or audio files into
+
+58
+00:01:09,350 --> 00:01:09,360
+drop videos, images, or audio files into
+ 
+
+59
+00:01:09,360 --> 00:01:11,190
+drop videos, images, or audio files into
+it.
+
+60
+00:01:11,190 --> 00:01:11,200
+it.
+ 
+
+61
+00:01:11,200 --> 00:01:13,310
+it.
+Then, import these files into the
+
+62
+00:01:13,310 --> 00:01:13,320
+Then, import these files into the
+ 
+
+63
+00:01:13,320 --> 00:01:17,990
+Then, import these files into the
+timeline at the bottom.
+
+64
+00:01:17,990 --> 00:01:18,000
+
+ 
+
+65
+00:01:18,000 --> 00:01:20,390
+
+Close any unnecessary panels by clicking
+
+66
+00:01:20,390 --> 00:01:20,400
+Close any unnecessary panels by clicking
+ 
+
+67
+00:01:20,400 --> 00:01:22,710
+Close any unnecessary panels by clicking
+their names on the right and on the left
+
+68
+00:01:22,710 --> 00:01:22,720
+their names on the right and on the left
+ 
+
+69
+00:01:22,720 --> 00:01:26,750
+their names on the right and on the left
+to maximize the available workspace.
+
+70
+00:01:26,750 --> 00:01:26,760
+
+ 
+
+71
+00:01:26,760 --> 00:01:29,470
+
+Each media element appears as a clip.
+
+72
+00:01:29,470 --> 00:01:29,480
+Each media element appears as a clip.
+ 
+
+73
+00:01:29,480 --> 00:01:32,150
+Each media element appears as a clip.
+Video content is shown in blue color and
+
+74
+00:01:32,150 --> 00:01:32,160
+Video content is shown in blue color and
+ 
+
+75
+00:01:32,160 --> 00:01:35,110
+Video content is shown in blue color and
+collected on video tracks at the top.
+
+76
+00:01:35,110 --> 00:01:35,120
+collected on video tracks at the top.
+ 
+
+77
+00:01:35,120 --> 00:01:37,430
+collected on video tracks at the top.
+While audio content is shown in green
+
+78
+00:01:37,430 --> 00:01:37,440
+While audio content is shown in green
+ 
+
+79
+00:01:37,440 --> 00:01:40,110
+While audio content is shown in green
+color with audio waveforms and placed on
+
+80
+00:01:40,110 --> 00:01:40,120
+color with audio waveforms and placed on
+ 
+
+81
+00:01:40,120 --> 00:01:42,470
+color with audio waveforms and placed on
+audio tracks below.
+
+82
+00:01:42,470 --> 00:01:42,480
+audio tracks below.
+ 
+
+83
+00:01:42,480 --> 00:01:43,910
+audio tracks below.
+You can also record using your
+
+84
+00:01:43,910 --> 00:01:43,920
+You can also record using your
+ 
+
+85
+00:01:43,920 --> 00:01:45,710
+You can also record using your
+microphone. On the left side of the
+
+86
+00:01:45,710 --> 00:01:45,720
+microphone. On the left side of the
+ 
+
+87
+00:01:45,720 --> 00:01:48,430
+microphone. On the left side of the
+timeline, right click and select new
+
+88
+00:01:48,430 --> 00:01:48,440
+timeline, right click and select new
+ 
+
+89
+00:01:48,440 --> 00:01:50,750
+timeline, right click and select new
+track to create a new audio track, for
+
+90
+00:01:50,750 --> 00:01:50,760
+track to create a new audio track, for
+ 
+
+91
+00:01:50,760 --> 00:01:53,950
+track to create a new audio track, for
+example, stereo. At this point, click on
+
+92
+00:01:53,950 --> 00:01:53,960
+example, stereo. At this point, click on
+ 
+
+93
+00:01:53,960 --> 00:01:56,510
+example, stereo. At this point, click on
+voiceover above and enter a name for the
+
+94
+00:01:56,510 --> 00:01:56,520
+voiceover above and enter a name for the
+ 
+
+95
+00:01:56,520 --> 00:01:58,710
+voiceover above and enter a name for the
+clip that will collect your recording,
+
+96
+00:01:58,710 --> 00:01:58,720
+clip that will collect your recording,
+ 
+
+97
+00:01:58,720 --> 00:02:01,350
+clip that will collect your recording,
+then the input device to use
+
+98
+00:02:01,350 --> 00:02:01,360
+then the input device to use
+ 
+
+99
+00:02:01,360 --> 00:02:03,390
+then the input device to use
+and the target audio track, in this
+
+100
+00:02:03,390 --> 00:02:03,400
+and the target audio track, in this
+ 
+
+101
+00:02:03,400 --> 00:02:06,270
+and the target audio track, in this
+case, audio 2.
+
+102
+00:02:06,270 --> 00:02:06,280
+case, audio 2.
+ 
+
+103
+00:02:06,280 --> 00:02:08,350
+case, audio 2.
+Make sure that no other sound content
+
+104
+00:02:08,350 --> 00:02:08,360
+Make sure that no other sound content
+ 
+
+105
+00:02:08,360 --> 00:02:10,910
+Make sure that no other sound content
+playback. If this is the case, use the
+
+106
+00:02:10,910 --> 00:02:10,920
+playback. If this is the case, use the
+ 
+
+107
+00:02:10,920 --> 00:02:12,910
+playback. If this is the case, use the
+mute button to disable the other audio
+
+108
+00:02:12,910 --> 00:02:12,920
+mute button to disable the other audio
+ 
+
+109
+00:02:12,920 --> 00:02:14,270
+mute button to disable the other audio
+tracks.
+
+110
+00:02:14,270 --> 00:02:14,280
+tracks.
+ 
+
+111
+00:02:14,280 --> 00:02:18,550
+tracks.
+When you are ready, start the recording.
+
+112
+00:02:18,550 --> 00:02:18,560
+
+ 
+
+113
+00:02:18,560 --> 00:02:21,030
+
+To stop recording, click the same button
+
+114
+00:02:21,030 --> 00:02:21,040
+To stop recording, click the same button
+ 
+
+115
+00:02:21,040 --> 00:02:24,590
+To stop recording, click the same button
+or use the space bar key.
+
+116
+00:02:24,590 --> 00:02:24,600
+
+ 
+
+117
+00:02:24,600 --> 00:02:27,190
+
+Go to timeline view options on the left
+
+118
+00:02:27,190 --> 00:02:27,200
+Go to timeline view options on the left
+ 
+
+119
+00:02:27,200 --> 00:02:29,670
+Go to timeline view options on the left
+to adjust how the timeline is displayed,
+
+120
+00:02:29,670 --> 00:02:29,680
+to adjust how the timeline is displayed,
+ 
+
+121
+00:02:29,680 --> 00:02:32,030
+to adjust how the timeline is displayed,
+including the track height.
+
+122
+00:02:32,030 --> 00:02:32,040
+including the track height.
+ 
+
+123
+00:02:32,040 --> 00:02:34,230
+including the track height.
+You can zoom in along the timeline by
+
+124
+00:02:34,230 --> 00:02:34,240
+You can zoom in along the timeline by
+ 
+
+125
+00:02:34,240 --> 00:02:36,230
+You can zoom in along the timeline by
+holding the alt key and using the mouse
+
+126
+00:02:36,230 --> 00:02:36,240
+holding the alt key and using the mouse
+ 
+
+127
+00:02:36,240 --> 00:02:38,710
+holding the alt key and using the mouse
+wheel. This zoom is centered around the
+
+128
+00:02:38,710 --> 00:02:38,720
+wheel. This zoom is centered around the
+ 
+
+129
+00:02:38,720 --> 00:02:41,230
+wheel. This zoom is centered around the
+playhead, shown as a red marker.
+
+130
+00:02:41,230 --> 00:02:41,240
+playhead, shown as a red marker.
+ 
+
+131
+00:02:41,240 --> 00:02:43,190
+playhead, shown as a red marker.
+To scroll through the timeline, hold
+
+132
+00:02:43,190 --> 00:02:43,200
+To scroll through the timeline, hold
+ 
+
+133
+00:02:43,200 --> 00:02:45,590
+To scroll through the timeline, hold
+control or command and use the mouse
+
+134
+00:02:45,590 --> 00:02:45,600
+control or command and use the mouse
+ 
+
+135
+00:02:45,600 --> 00:02:48,390
+control or command and use the mouse
+wheel.
+
+136
+00:02:48,390 --> 00:02:48,400
+
+ 
+
+137
+00:02:48,400 --> 00:02:50,670
+
+You can preview your content using the
+
+138
+00:02:50,670 --> 00:02:50,680
+You can preview your content using the
+ 
+
+139
+00:02:50,680 --> 00:02:53,270
+You can preview your content using the
+viewer on the right side.
+
+140
+00:02:53,270 --> 00:02:53,280
+viewer on the right side.
+ 
+
+141
+00:02:53,280 --> 00:02:54,990
+viewer on the right side.
+The viewer on the left shows the source
+
+142
+00:02:54,990 --> 00:02:55,000
+The viewer on the left shows the source
+ 
+
+143
+00:02:55,000 --> 00:02:58,470
+The viewer on the left shows the source
+media if you double-click on any clip.
+
+144
+00:02:58,470 --> 00:02:58,480
+media if you double-click on any clip.
+ 
+
+145
+00:02:58,480 --> 00:03:00,310
+media if you double-click on any clip.
+Click on the timeline to position the
+
+146
+00:03:00,310 --> 00:03:00,320
+Click on the timeline to position the
+ 
+
+147
+00:03:00,320 --> 00:03:02,990
+Click on the timeline to position the
+playhead, then use the playback controls
+
+148
+00:03:02,990 --> 00:03:03,000
+playhead, then use the playback controls
+ 
+
+149
+00:03:03,000 --> 00:03:05,310
+playhead, then use the playback controls
+below the viewer or press the space bar
+
+150
+00:03:05,310 --> 00:03:05,320
+below the viewer or press the space bar
+ 
+
+151
+00:03:05,320 --> 00:03:07,430
+below the viewer or press the space bar
+to start playback.
+
+152
+00:03:07,430 --> 00:03:07,440
+to start playback.
+ 
+
+153
+00:03:07,440 --> 00:03:10,190
+to start playback.
+Press the space bar again to stop.
+
+154
+00:03:10,190 --> 00:03:10,200
+Press the space bar again to stop.
+ 
+
+155
+00:03:10,200 --> 00:03:12,270
+Press the space bar again to stop.
+You can also click and drag along the
+
+156
+00:03:12,270 --> 00:03:12,280
+You can also click and drag along the
+ 
+
+157
+00:03:12,280 --> 00:03:14,470
+You can also click and drag along the
+timeline to move the playhead frame by
+
+158
+00:03:14,470 --> 00:03:14,480
+timeline to move the playhead frame by
+ 
+
+159
+00:03:14,480 --> 00:03:17,470
+timeline to move the playhead frame by
+frame forward or backward.
+
+160
+00:03:17,470 --> 00:03:17,480
+frame forward or backward.
+ 
+
+161
+00:03:17,480 --> 00:03:19,550
+frame forward or backward.
+To zoom within the preview, place the
+
+162
+00:03:19,550 --> 00:03:19,560
+To zoom within the preview, place the
+ 
+
+163
+00:03:19,560 --> 00:03:23,430
+To zoom within the preview, place the
+cursor over it and use the mouse wheel.
+
+164
+00:03:23,430 --> 00:03:23,440
+cursor over it and use the mouse wheel.
+ 
+
+165
+00:03:23,440 --> 00:03:25,030
+cursor over it and use the mouse wheel.
+In the bottom right corner, head to
+
+166
+00:03:25,030 --> 00:03:25,040
+In the bottom right corner, head to
+ 
+
+167
+00:03:25,040 --> 00:03:27,270
+In the bottom right corner, head to
+project settings, then to timeline
+
+168
+00:03:27,270 --> 00:03:27,280
+project settings, then to timeline
+ 
+
+169
+00:03:27,280 --> 00:03:30,950
+project settings, then to timeline
+format to adjust the preview resolution
+
+170
+00:03:30,950 --> 00:03:30,960
+format to adjust the preview resolution
+ 
+
+171
+00:03:30,960 --> 00:03:32,950
+format to adjust the preview resolution
+and playback frame rate, such as the
+
+172
+00:03:32,950 --> 00:03:32,960
+and playback frame rate, such as the
+ 
+
+173
+00:03:32,960 --> 00:03:35,030
+and playback frame rate, such as the
+number of frames per second. These
+
+174
+00:03:35,030 --> 00:03:35,040
+number of frames per second. These
+ 
+
+175
+00:03:35,040 --> 00:03:37,310
+number of frames per second. These
+settings affect only the preview and not
+
+176
+00:03:37,310 --> 00:03:37,320
+settings affect only the preview and not
+ 
+
+177
+00:03:37,320 --> 00:03:40,270
+settings affect only the preview and not
+the final exported video.
+
+178
+00:03:40,270 --> 00:03:40,280
+the final exported video.
+ 
+
+179
+00:03:40,280 --> 00:03:42,990
+the final exported video.
+Use control or command and S to save
+
+180
+00:03:42,990 --> 00:03:43,000
+Use control or command and S to save
+ 
+
+181
+00:03:43,000 --> 00:03:45,510
+Use control or command and S to save
+your project, especially when a red
+
+182
+00:03:45,510 --> 00:03:45,520
+your project, especially when a red
+ 
+
+183
+00:03:45,520 --> 00:03:47,710
+your project, especially when a red
+edited word appears next to the project
+
+184
+00:03:47,710 --> 00:03:47,720
+edited word appears next to the project
+ 
+
+185
+00:03:47,720 --> 00:03:49,190
+edited word appears next to the project
+name.
+
+186
+00:03:49,190 --> 00:03:49,200
+name.
+ 
+
+187
+00:03:49,200 --> 00:03:51,190
+name.
+Now, let's see how to edit clips with
+
+188
+00:03:51,190 --> 00:03:51,200
+Now, let's see how to edit clips with
+ 
+
+189
+00:03:51,200 --> 00:03:53,230
+Now, let's see how to edit clips with
+selection mode enabled.
+
+190
+00:03:53,230 --> 00:03:53,240
+selection mode enabled.
+ 
+
+191
+00:03:53,240 --> 00:03:55,790
+selection mode enabled.
+Click on a clip to select it, then drag
+
+192
+00:03:55,790 --> 00:03:55,800
+Click on a clip to select it, then drag
+ 
+
+193
+00:03:55,800 --> 00:03:57,630
+Click on a clip to select it, then drag
+it to move it along the timeline within
+
+194
+00:03:57,630 --> 00:03:57,640
+it to move it along the timeline within
+ 
+
+195
+00:03:57,640 --> 00:04:00,750
+it to move it along the timeline within
+the same track or in another one. New
+
+196
+00:04:00,750 --> 00:04:00,760
+the same track or in another one. New
+ 
+
+197
+00:04:00,760 --> 00:04:02,750
+the same track or in another one. New
+tracks are created if you place clips
+
+198
+00:04:02,750 --> 00:04:02,760
+tracks are created if you place clips
+ 
+
+199
+00:04:02,760 --> 00:04:04,830
+tracks are created if you place clips
+inside.
+
+200
+00:04:04,830 --> 00:04:04,840
+inside.
+ 
+
+201
+00:04:04,840 --> 00:04:07,430
+inside.
+If a video clip includes audio, both
+
+202
+00:04:07,430 --> 00:04:07,440
+If a video clip includes audio, both
+ 
+
+203
+00:04:07,440 --> 00:04:09,950
+If a video clip includes audio, both
+parts move together by default. To
+
+204
+00:04:09,950 --> 00:04:09,960
+parts move together by default. To
+ 
+
+205
+00:04:09,960 --> 00:04:12,190
+parts move together by default. To
+separate them, right click the clip and
+
+206
+00:04:12,190 --> 00:04:12,200
+separate them, right click the clip and
+ 
+
+207
+00:04:12,200 --> 00:04:14,990
+separate them, right click the clip and
+disable link clips. This allows
+
+208
+00:04:14,990 --> 00:04:15,000
+disable link clips. This allows
+ 
+
+209
+00:04:15,000 --> 00:04:20,509
+disable link clips. This allows
+independent editing of video and audio.
+
+210
+00:04:20,509 --> 00:04:20,519
+
+ 
+
+211
+00:04:20,519 --> 00:04:23,070
+
+When clips overlap on different tracks,
+
+212
+00:04:23,070 --> 00:04:23,080
+When clips overlap on different tracks,
+ 
+
+213
+00:04:23,080 --> 00:04:24,550
+When clips overlap on different tracks,
+the clip on the higher track is
+
+214
+00:04:24,550 --> 00:04:24,560
+the clip on the higher track is
+ 
+
+215
+00:04:24,560 --> 00:04:27,030
+the clip on the higher track is
+displayed above the others.
+
+216
+00:04:27,030 --> 00:04:27,040
+displayed above the others.
+ 
+
+217
+00:04:27,040 --> 00:04:29,590
+displayed above the others.
+If clips overlap on the same track, the
+
+218
+00:04:29,590 --> 00:04:29,600
+If clips overlap on the same track, the
+ 
+
+219
+00:04:29,600 --> 00:04:32,390
+If clips overlap on the same track, the
+overlapping portion is trimmed.
+
+220
+00:04:32,390 --> 00:04:32,400
+overlapping portion is trimmed.
+ 
+
+221
+00:04:32,400 --> 00:04:36,950
+overlapping portion is trimmed.
+Use control or command and Z to undo.
+
+222
+00:04:36,950 --> 00:04:36,960
+Use control or command and Z to undo.
+ 
+
+223
+00:04:36,960 --> 00:04:39,150
+Use control or command and Z to undo.
+To adjust the duration of the clip, drag
+
+224
+00:04:39,150 --> 00:04:39,160
+To adjust the duration of the clip, drag
+ 
+
+225
+00:04:39,160 --> 00:04:40,830
+To adjust the duration of the clip, drag
+from its edges and trim part of its
+
+226
+00:04:40,830 --> 00:04:40,840
+from its edges and trim part of its
+ 
+
+227
+00:04:40,840 --> 00:04:42,870
+from its edges and trim part of its
+content.
+
+228
+00:04:42,870 --> 00:04:42,880
+content.
+ 
+
+229
+00:04:42,880 --> 00:04:45,150
+content.
+To change the duration without trimming,
+
+230
+00:04:45,150 --> 00:04:45,160
+To change the duration without trimming,
+ 
+
+231
+00:04:45,160 --> 00:04:47,190
+To change the duration without trimming,
+you have to adjust the playback speed.
+
+232
+00:04:47,190 --> 00:04:47,200
+you have to adjust the playback speed.
+ 
+
+233
+00:04:47,200 --> 00:04:49,470
+you have to adjust the playback speed.
+Right click the clip and select change
+
+234
+00:04:49,470 --> 00:04:49,480
+Right click the clip and select change
+ 
+
+235
+00:04:49,480 --> 00:04:52,750
+Right click the clip and select change
+clip speed. Set a value below 100% to
+
+236
+00:04:52,750 --> 00:04:52,760
+clip speed. Set a value below 100% to
+ 
+
+237
+00:04:52,760 --> 00:04:55,550
+clip speed. Set a value below 100% to
+slow it down and extend its duration or
+
+238
+00:04:55,550 --> 00:04:55,560
+slow it down and extend its duration or
+ 
+
+239
+00:04:55,560 --> 00:04:58,350
+slow it down and extend its duration or
+above 100% to speed it up and shorten
+
+240
+00:04:58,350 --> 00:04:58,360
+above 100% to speed it up and shorten
+ 
+
+241
+00:04:58,360 --> 00:05:04,110
+above 100% to speed it up and shorten
+it.
+
+242
+00:05:04,110 --> 00:05:04,120
+
+ 
+
+243
+00:05:04,120 --> 00:05:06,350
+
+You can also reverse speed and use pitch
+
+244
+00:05:06,350 --> 00:05:06,360
+You can also reverse speed and use pitch
+ 
+
+245
+00:05:06,360 --> 00:05:08,350
+You can also reverse speed and use pitch
+correction to maintain a consistent
+
+246
+00:05:08,350 --> 00:05:08,360
+correction to maintain a consistent
+ 
+
+247
+00:05:08,360 --> 00:05:10,630
+correction to maintain a consistent
+audio pitch.
+
+248
+00:05:10,630 --> 00:05:10,640
+audio pitch.
+ 
+
+249
+00:05:10,640 --> 00:05:12,790
+audio pitch.
+You can create quick copies by selecting
+
+250
+00:05:12,790 --> 00:05:12,800
+You can create quick copies by selecting
+ 
+
+251
+00:05:12,800 --> 00:05:15,110
+You can create quick copies by selecting
+a clip, holding the alt key, and then
+
+252
+00:05:15,110 --> 00:05:15,120
+a clip, holding the alt key, and then
+ 
+
+253
+00:05:15,120 --> 00:05:17,310
+a clip, holding the alt key, and then
+clicking and dragging it.
+
+254
+00:05:17,310 --> 00:05:17,320
+clicking and dragging it.
+ 
+
+255
+00:05:17,320 --> 00:05:19,670
+clicking and dragging it.
+To delete a clip, select it and press
+
+256
+00:05:19,670 --> 00:05:19,680
+To delete a clip, select it and press
+ 
+
+257
+00:05:19,680 --> 00:05:22,630
+To delete a clip, select it and press
+the backspace key.
+
+258
+00:05:22,630 --> 00:05:22,640
+the backspace key.
+ 
+
+259
+00:05:22,640 --> 00:05:25,150
+the backspace key.
+To split a clip, enable the blade edit
+
+260
+00:05:25,150 --> 00:05:25,160
+To split a clip, enable the blade edit
+ 
+
+261
+00:05:25,160 --> 00:05:27,070
+To split a clip, enable the blade edit
+mode and click on the clip at the
+
+262
+00:05:27,070 --> 00:05:27,080
+mode and click on the clip at the
+ 
+
+263
+00:05:27,080 --> 00:05:31,110
+mode and click on the clip at the
+desired point.
+
+264
+00:05:31,110 --> 00:05:31,120
+
+ 
+
+265
+00:05:31,120 --> 00:05:33,030
+
+On the left side of the timeline, you
+
+266
+00:05:33,030 --> 00:05:33,040
+On the left side of the timeline, you
+ 
+
+267
+00:05:33,040 --> 00:05:34,910
+On the left side of the timeline, you
+can find several controls for your
+
+268
+00:05:34,910 --> 00:05:34,920
+can find several controls for your
+ 
+
+269
+00:05:34,920 --> 00:05:36,150
+can find several controls for your
+tracks.
+
+270
+00:05:36,150 --> 00:05:36,160
+tracks.
+ 
+
+271
+00:05:36,160 --> 00:05:37,790
+tracks.
+Use the lock button to prevent any
+
+272
+00:05:37,790 --> 00:05:37,800
+Use the lock button to prevent any
+ 
+
+273
+00:05:37,800 --> 00:05:40,110
+Use the lock button to prevent any
+modifications on a track until it is
+
+274
+00:05:40,110 --> 00:05:40,120
+modifications on a track until it is
+ 
+
+275
+00:05:40,120 --> 00:05:42,070
+modifications on a track until it is
+unlocked.
+
+276
+00:05:42,070 --> 00:05:42,080
+unlocked.
+ 
+
+277
+00:05:42,080 --> 00:05:44,270
+unlocked.
+The frame button allows you to hide or
+
+278
+00:05:44,270 --> 00:05:44,280
+The frame button allows you to hide or
+ 
+
+279
+00:05:44,280 --> 00:05:46,270
+The frame button allows you to hide or
+show the visual content of a video
+
+280
+00:05:46,270 --> 00:05:46,280
+show the visual content of a video
+ 
+
+281
+00:05:46,280 --> 00:05:48,110
+show the visual content of a video
+track.
+
+282
+00:05:48,110 --> 00:05:48,120
+track.
+ 
+
+283
+00:05:48,120 --> 00:05:50,390
+track.
+For audio tracks, you can use the mute
+
+284
+00:05:50,390 --> 00:05:50,400
+For audio tracks, you can use the mute
+ 
+
+285
+00:05:50,400 --> 00:05:52,790
+For audio tracks, you can use the mute
+or M button to disable the audio output
+
+286
+00:05:52,790 --> 00:05:52,800
+or M button to disable the audio output
+ 
+
+287
+00:05:52,800 --> 00:05:54,110
+or M button to disable the audio output
+of the track
+
+288
+00:05:54,110 --> 00:05:54,120
+of the track
+ 
+
+289
+00:05:54,120 --> 00:05:56,590
+of the track
+and the solo or S to mute all other
+
+290
+00:05:56,590 --> 00:05:56,600
+and the solo or S to mute all other
+ 
+
+291
+00:05:56,600 --> 00:05:59,870
+and the solo or S to mute all other
+tracks [music] except the current one.
+
+292
+00:05:59,870 --> 00:05:59,880
+tracks [music] except the current one.
+ 
+
+293
+00:05:59,880 --> 00:06:02,030
+tracks [music] except the current one.
+To remove an entire track, right click
+
+294
+00:06:02,030 --> 00:06:02,040
+To remove an entire track, right click
+ 
+
+295
+00:06:02,040 --> 00:06:04,950
+To remove an entire track, right click
+on it and select delete track. This also
+
+296
+00:06:04,950 --> 00:06:04,960
+on it and select delete track. This also
+ 
+
+297
+00:06:04,960 --> 00:06:08,150
+on it and select delete track. This also
+removes all clips contained within it.
+
+298
+00:06:08,150 --> 00:06:08,160
+removes all clips contained within it.
+ 
+
+299
+00:06:08,160 --> 00:06:10,230
+removes all clips contained within it.
+In the top right corner, open the
+
+300
+00:06:10,230 --> 00:06:10,240
+In the top right corner, open the
+ 
+
+301
+00:06:10,240 --> 00:06:12,470
+In the top right corner, open the
+inspector panel to adjust the properties
+
+302
+00:06:12,470 --> 00:06:12,480
+inspector panel to adjust the properties
+ 
+
+303
+00:06:12,480 --> 00:06:14,590
+inspector panel to adjust the properties
+for the selected clip according to its
+
+304
+00:06:14,590 --> 00:06:14,600
+for the selected clip according to its
+ 
+
+305
+00:06:14,600 --> 00:06:18,030
+for the selected clip according to its
+type.
+
+306
+00:06:18,030 --> 00:06:18,040
+
+ 
+
+307
+00:06:18,040 --> 00:06:20,190
+
+For visual content like videos and
+
+308
+00:06:20,190 --> 00:06:20,200
+For visual content like videos and
+ 
+
+309
+00:06:20,200 --> 00:06:22,430
+For visual content like videos and
+images, the video section collects the
+
+310
+00:06:22,430 --> 00:06:22,440
+images, the video section collects the
+ 
+
+311
+00:06:22,440 --> 00:06:24,630
+images, the video section collects the
+transform section, where you can adjust
+
+312
+00:06:24,630 --> 00:06:24,640
+transform section, where you can adjust
+ 
+
+313
+00:06:24,640 --> 00:06:29,830
+transform section, where you can adjust
+position, scale, and rotation.
+
+314
+00:06:29,830 --> 00:06:29,840
+
+ 
+
+315
+00:06:29,840 --> 00:06:32,110
+
+You can use the sliders or double-click
+
+316
+00:06:32,110 --> 00:06:32,120
+You can use the sliders or double-click
+ 
+
+317
+00:06:32,120 --> 00:06:34,510
+You can use the sliders or double-click
+on any value to type directly using
+
+318
+00:06:34,510 --> 00:06:34,520
+on any value to type directly using
+ 
+
+319
+00:06:34,520 --> 00:06:37,390
+on any value to type directly using
+enter to apply.
+
+320
+00:06:37,390 --> 00:06:37,400
+enter to apply.
+ 
+
+321
+00:06:37,400 --> 00:06:39,750
+enter to apply.
+Toggle the orange button above to enable
+
+322
+00:06:39,750 --> 00:06:39,760
+Toggle the orange button above to enable
+ 
+
+323
+00:06:39,760 --> 00:06:41,710
+Toggle the orange button above to enable
+or disable a section
+
+324
+00:06:41,710 --> 00:06:41,720
+or disable a section
+ 
+
+325
+00:06:41,720 --> 00:06:43,630
+or disable a section
+and the reset button on the right to
+
+326
+00:06:43,630 --> 00:06:43,640
+and the reset button on the right to
+ 
+
+327
+00:06:43,640 --> 00:06:46,190
+and the reset button on the right to
+revert your changes. Ensure the playhead
+
+328
+00:06:46,190 --> 00:06:46,200
+revert your changes. Ensure the playhead
+ 
+
+329
+00:06:46,200 --> 00:06:48,190
+revert your changes. Ensure the playhead
+is positioned over the selected clip to
+
+330
+00:06:48,190 --> 00:06:48,200
+is positioned over the selected clip to
+ 
+
+331
+00:06:48,200 --> 00:06:50,230
+is positioned over the selected clip to
+preview its adjustments.
+
+332
+00:06:50,230 --> 00:06:50,240
+preview its adjustments.
+ 
+
+333
+00:06:50,240 --> 00:06:52,150
+preview its adjustments.
+Otherwise, you do not see anything
+
+334
+00:06:52,150 --> 00:06:52,160
+Otherwise, you do not see anything
+ 
+
+335
+00:06:52,160 --> 00:06:54,390
+Otherwise, you do not see anything
+applied.
+
+336
+00:06:54,390 --> 00:06:54,400
+applied.
+ 
+
+337
+00:06:54,400 --> 00:06:56,550
+applied.
+Additional controls such as pitch and
+
+338
+00:06:56,550 --> 00:06:56,560
+Additional controls such as pitch and
+ 
+
+339
+00:06:56,560 --> 00:06:59,790
+Additional controls such as pitch and
+yaw allow 3D rotation, while flip lets
+
+340
+00:06:59,790 --> 00:06:59,800
+yaw allow 3D rotation, while flip lets
+ 
+
+341
+00:06:59,800 --> 00:07:01,710
+yaw allow 3D rotation, while flip lets
+you mirror the clip horizontally or
+
+342
+00:07:01,710 --> 00:07:01,720
+you mirror the clip horizontally or
+ 
+
+343
+00:07:01,720 --> 00:07:03,190
+you mirror the clip horizontally or
+vertically.
+
+344
+00:07:03,190 --> 00:07:03,200
+vertically.
+ 
+
+345
+00:07:03,200 --> 00:07:05,030
+vertically.
+Open the cropping section to trim the
+
+346
+00:07:05,030 --> 00:07:05,040
+Open the cropping section to trim the
+ 
+
+347
+00:07:05,040 --> 00:07:06,910
+Open the cropping section to trim the
+visible area of the image from any
+
+348
+00:07:06,910 --> 00:07:06,920
+visible area of the image from any
+ 
+
+349
+00:07:06,920 --> 00:07:08,710
+visible area of the image from any
+direction.
+
+350
+00:07:08,710 --> 00:07:08,720
+direction.
+ 
+
+351
+00:07:08,720 --> 00:07:10,390
+direction.
+We will see the dynamic zoom in a
+
+352
+00:07:10,390 --> 00:07:10,400
+We will see the dynamic zoom in a
+ 
+
+353
+00:07:10,400 --> 00:07:13,150
+We will see the dynamic zoom in a
+moment. And under composite, you can
+
+354
+00:07:13,150 --> 00:07:13,160
+moment. And under composite, you can
+ 
+
+355
+00:07:13,160 --> 00:07:15,470
+moment. And under composite, you can
+adjust the opacity, especially when
+
+356
+00:07:15,470 --> 00:07:15,480
+adjust the opacity, especially when
+ 
+
+357
+00:07:15,480 --> 00:07:20,630
+adjust the opacity, especially when
+clips overlap on different tracks.
+
+358
+00:07:20,630 --> 00:07:20,640
+
+ 
+
+359
+00:07:20,640 --> 00:07:23,510
+
+The transform, cropping, and dynamic
+
+360
+00:07:23,510 --> 00:07:23,520
+The transform, cropping, and dynamic
+ 
+
+361
+00:07:23,520 --> 00:07:25,590
+The transform, cropping, and dynamic
+zoom can be applied directly in the
+
+362
+00:07:25,590 --> 00:07:25,600
+zoom can be applied directly in the
+ 
+
+363
+00:07:25,600 --> 00:07:27,350
+zoom can be applied directly in the
+video preview
+
+364
+00:07:27,350 --> 00:07:27,360
+video preview
+ 
+
+365
+00:07:27,360 --> 00:07:29,030
+video preview
+with the tools listed in the bottom left
+
+366
+00:07:29,030 --> 00:07:29,040
+with the tools listed in the bottom left
+ 
+
+367
+00:07:29,040 --> 00:07:30,350
+with the tools listed in the bottom left
+corner.
+
+368
+00:07:30,350 --> 00:07:30,360
+corner.
+ 
+
+369
+00:07:30,360 --> 00:07:32,470
+corner.
+Select the right one, make sure it is
+
+370
+00:07:32,470 --> 00:07:32,480
+Select the right one, make sure it is
+ 
+
+371
+00:07:32,480 --> 00:07:35,470
+Select the right one, make sure it is
+enabled, and interact with the preview.
+
+372
+00:07:35,470 --> 00:07:35,480
+enabled, and interact with the preview.
+ 
+
+373
+00:07:35,480 --> 00:07:37,870
+enabled, and interact with the preview.
+With a transform tool, you can drag the
+
+374
+00:07:37,870 --> 00:07:37,880
+With a transform tool, you can drag the
+ 
+
+375
+00:07:37,880 --> 00:07:40,030
+With a transform tool, you can drag the
+clip to reposition it, use corner
+
+376
+00:07:40,030 --> 00:07:40,040
+clip to reposition it, use corner
+ 
+
+377
+00:07:40,040 --> 00:07:42,950
+clip to reposition it, use corner
+handles to scale, and rotate using the
+
+378
+00:07:42,950 --> 00:07:42,960
+handles to scale, and rotate using the
+ 
+
+379
+00:07:42,960 --> 00:07:45,910
+handles to scale, and rotate using the
+central nodes.
+
+380
+00:07:45,910 --> 00:07:45,920
+
+ 
+
+381
+00:07:45,920 --> 00:07:47,870
+
+The crop tool allows you to adjust the
+
+382
+00:07:47,870 --> 00:07:47,880
+The crop tool allows you to adjust the
+ 
+
+383
+00:07:47,880 --> 00:07:50,870
+The crop tool allows you to adjust the
+visible area using its handles.
+
+384
+00:07:50,870 --> 00:07:50,880
+visible area using its handles.
+ 
+
+385
+00:07:50,880 --> 00:07:53,230
+visible area using its handles.
+With dynamic zoom, adjust the green and
+
+386
+00:07:53,230 --> 00:07:53,240
+With dynamic zoom, adjust the green and
+ 
+
+387
+00:07:53,240 --> 00:07:55,310
+With dynamic zoom, adjust the green and
+the red rectangles to create a smooth
+
+388
+00:07:55,310 --> 00:07:55,320
+the red rectangles to create a smooth
+ 
+
+389
+00:07:55,320 --> 00:07:57,870
+the red rectangles to create a smooth
+zoom motion animation between the green
+
+390
+00:07:57,870 --> 00:07:57,880
+zoom motion animation between the green
+ 
+
+391
+00:07:57,880 --> 00:08:06,550
+zoom motion animation between the green
+and the red zoom.
+
+392
+00:08:06,550 --> 00:08:06,560
+
+ 
+
+393
+00:08:06,560 --> 00:08:08,870
+
+When working with audio clips, open the
+
+394
+00:08:08,870 --> 00:08:08,880
+When working with audio clips, open the
+ 
+
+395
+00:08:08,880 --> 00:08:11,190
+When working with audio clips, open the
+audio section in the inspector to adjust
+
+396
+00:08:11,190 --> 00:08:11,200
+audio section in the inspector to adjust
+ 
+
+397
+00:08:11,200 --> 00:08:15,390
+audio section in the inspector to adjust
+the volume
+
+398
+00:08:15,390 --> 00:08:15,400
+
+ 
+
+399
+00:08:15,400 --> 00:08:17,470
+
+and use pan to [music] balance the sound
+
+400
+00:08:17,470 --> 00:08:17,480
+and use pan to [music] balance the sound
+ 
+
+401
+00:08:17,480 --> 00:08:20,830
+and use pan to [music] balance the sound
+between the left and right channels.
+
+402
+00:08:20,830 --> 00:08:20,840
+between the left and right channels.
+ 
+
+403
+00:08:20,840 --> 00:08:24,390
+between the left and right channels.
+You can also modify the pitch
+
+404
+00:08:24,390 --> 00:08:24,400
+You can also modify the pitch
+ 
+
+405
+00:08:24,400 --> 00:08:26,910
+You can also modify the pitch
+and open the equalizer to apply filters
+
+406
+00:08:26,910 --> 00:08:26,920
+and open the equalizer to apply filters
+ 
+
+407
+00:08:26,920 --> 00:08:29,990
+and open the equalizer to apply filters
+and refine the audio output.
+
+408
+00:08:29,990 --> 00:08:30,000
+and refine the audio output.
+ 
+
+409
+00:08:30,000 --> 00:08:32,430
+and refine the audio output.
+Now, let's take a look at the keyframes,
+
+410
+00:08:32,430 --> 00:08:32,440
+Now, let's take a look at the keyframes,
+ 
+
+411
+00:08:32,440 --> 00:08:34,430
+Now, let's take a look at the keyframes,
+very useful to edit clip properties in
+
+412
+00:08:34,430 --> 00:08:34,440
+very useful to edit clip properties in
+ 
+
+413
+00:08:34,440 --> 00:08:35,550
+very useful to edit clip properties in
+time.
+
+414
+00:08:35,550 --> 00:08:35,560
+time.
+ 
+
+415
+00:08:35,560 --> 00:08:37,750
+time.
+Select a clip, for example, this one,
+
+416
+00:08:37,750 --> 00:08:37,760
+Select a clip, for example, this one,
+ 
+
+417
+00:08:37,760 --> 00:08:39,469
+Select a clip, for example, this one,
+and disable any tool acting on the
+
+418
+00:08:39,469 --> 00:08:39,479
+and disable any tool acting on the
+ 
+
+419
+00:08:39,479 --> 00:08:42,430
+and disable any tool acting on the
+preview. Then, open the keyframes panel
+
+420
+00:08:42,430 --> 00:08:42,440
+preview. Then, open the keyframes panel
+ 
+
+421
+00:08:42,440 --> 00:08:44,750
+preview. Then, open the keyframes panel
+on the left. This panel groups several
+
+422
+00:08:44,750 --> 00:08:44,760
+on the left. This panel groups several
+ 
+
+423
+00:08:44,760 --> 00:08:47,670
+on the left. This panel groups several
+properties seen in the inspector panel.
+
+424
+00:08:47,670 --> 00:08:47,680
+properties seen in the inspector panel.
+ 
+
+425
+00:08:47,680 --> 00:08:50,030
+properties seen in the inspector panel.
+Switch to keyframe curves to display the
+
+426
+00:08:50,030 --> 00:08:50,040
+Switch to keyframe curves to display the
+ 
+
+427
+00:08:50,040 --> 00:08:52,430
+Switch to keyframe curves to display the
+graph view.
+
+428
+00:08:52,430 --> 00:08:52,440
+graph view.
+ 
+
+429
+00:08:52,440 --> 00:08:54,790
+graph view.
+On the left side, enable or disable the
+
+430
+00:08:54,790 --> 00:08:54,800
+On the left side, enable or disable the
+ 
+
+431
+00:08:54,800 --> 00:08:57,430
+On the left side, enable or disable the
+curves you want to edit over time. For
+
+432
+00:08:57,430 --> 00:08:57,440
+curves you want to edit over time. For
+ 
+
+433
+00:08:57,440 --> 00:08:59,670
+curves you want to edit over time. For
+example, to animate the transparency of
+
+434
+00:08:59,670 --> 00:08:59,680
+example, to animate the transparency of
+ 
+
+435
+00:08:59,680 --> 00:09:02,430
+example, to animate the transparency of
+a clip, enable the opacity curve. Its
+
+436
+00:09:02,430 --> 00:09:02,440
+a clip, enable the opacity curve. Its
+ 
+
+437
+00:09:02,440 --> 00:09:04,630
+a clip, enable the opacity curve. Its
+envelope will appear on the graph with
+
+438
+00:09:04,630 --> 00:09:04,640
+envelope will appear on the graph with
+ 
+
+439
+00:09:04,640 --> 00:09:06,630
+envelope will appear on the graph with
+the same white color of the circle next
+
+440
+00:09:06,630 --> 00:09:06,640
+the same white color of the circle next
+ 
+
+441
+00:09:06,640 --> 00:09:08,870
+the same white color of the circle next
+to opacity.
+
+442
+00:09:08,870 --> 00:09:08,880
+to opacity.
+ 
+
+443
+00:09:08,880 --> 00:09:10,470
+to opacity.
+Move the playhead to the beginning of
+
+444
+00:09:10,470 --> 00:09:10,480
+Move the playhead to the beginning of
+ 
+
+445
+00:09:10,480 --> 00:09:12,990
+Move the playhead to the beginning of
+the clip and save an initial value of
+
+446
+00:09:12,990 --> 00:09:13,000
+the clip and save an initial value of
+ 
+
+447
+00:09:13,000 --> 00:09:16,270
+the clip and save an initial value of
+100% opacity by adding a keyframe. You
+
+448
+00:09:16,270 --> 00:09:16,280
+100% opacity by adding a keyframe. You
+ 
+
+449
+00:09:16,280 --> 00:09:18,550
+100% opacity by adding a keyframe. You
+can do this by holding the alt key and
+
+450
+00:09:18,550 --> 00:09:18,560
+can do this by holding the alt key and
+ 
+
+451
+00:09:18,560 --> 00:09:20,310
+can do this by holding the alt key and
+clicking on the curve.
+
+452
+00:09:20,310 --> 00:09:20,320
+clicking on the curve.
+ 
+
+453
+00:09:20,320 --> 00:09:22,350
+clicking on the curve.
+Move forward in time to the point where
+
+454
+00:09:22,350 --> 00:09:22,360
+Move forward in time to the point where
+ 
+
+455
+00:09:22,360 --> 00:09:24,190
+Move forward in time to the point where
+you want to save the next value, for
+
+456
+00:09:24,190 --> 00:09:24,200
+you want to save the next value, for
+ 
+
+457
+00:09:24,200 --> 00:09:30,110
+you want to save the next value, for
+example, 50%, and add another keyframe.
+
+458
+00:09:30,110 --> 00:09:30,120
+
+ 
+
+459
+00:09:30,120 --> 00:09:32,910
+
+Move further in time and set the opacity
+
+460
+00:09:32,910 --> 00:09:32,920
+Move further in time and set the opacity
+ 
+
+461
+00:09:32,920 --> 00:09:36,630
+Move further in time and set the opacity
+back to 100%.
+
+462
+00:09:36,630 --> 00:09:36,640
+
+ 
+
+463
+00:09:36,640 --> 00:09:38,630
+
+The several keyframes saved create an
+
+464
+00:09:38,630 --> 00:09:38,640
+The several keyframes saved create an
+ 
+
+465
+00:09:38,640 --> 00:09:40,750
+The several keyframes saved create an
+animation, where the opacity changes
+
+466
+00:09:40,750 --> 00:09:40,760
+animation, where the opacity changes
+ 
+
+467
+00:09:40,760 --> 00:09:42,670
+animation, where the opacity changes
+smoothly over time following the
+
+468
+00:09:42,670 --> 00:09:42,680
+smoothly over time following the
+ 
+
+469
+00:09:42,680 --> 00:09:45,670
+smoothly over time following the
+envelope curve.
+
+470
+00:09:45,670 --> 00:09:45,680
+envelope curve.
+ 
+
+471
+00:09:45,680 --> 00:09:47,670
+envelope curve.
+You can also select any keyframe and
+
+472
+00:09:47,670 --> 00:09:47,680
+You can also select any keyframe and
+ 
+
+473
+00:09:47,680 --> 00:09:49,390
+You can also select any keyframe and
+change its curve type for smoother
+
+474
+00:09:49,390 --> 00:09:49,400
+change its curve type for smoother
+ 
+
+475
+00:09:49,400 --> 00:09:54,230
+change its curve type for smoother
+transitions.
+
+476
+00:09:54,230 --> 00:09:54,240
+
+ 
+
+477
+00:09:54,240 --> 00:09:56,670
+
+To remove a keyframe, select it and
+
+478
+00:09:56,670 --> 00:09:56,680
+To remove a keyframe, select it and
+ 
+
+479
+00:09:56,680 --> 00:10:00,030
+To remove a keyframe, select it and
+press control or command and X.
+
+480
+00:10:00,030 --> 00:10:00,040
+press control or command and X.
+ 
+
+481
+00:10:00,040 --> 00:10:02,550
+press control or command and X.
+To remove all keyframes for a parameter,
+
+482
+00:10:02,550 --> 00:10:02,560
+To remove all keyframes for a parameter,
+ 
+
+483
+00:10:02,560 --> 00:10:05,950
+To remove all keyframes for a parameter,
+use the reset option for that property.
+
+484
+00:10:05,950 --> 00:10:05,960
+use the reset option for that property.
+ 
+
+485
+00:10:05,960 --> 00:10:08,150
+use the reset option for that property.
+To add effects, titles, or other
+
+486
+00:10:08,150 --> 00:10:08,160
+To add effects, titles, or other
+ 
+
+487
+00:10:08,160 --> 00:10:10,310
+To add effects, titles, or other
+elements, open the effects panel on the
+
+488
+00:10:10,310 --> 00:10:10,320
+elements, open the effects panel on the
+ 
+
+489
+00:10:10,320 --> 00:10:12,030
+elements, open the effects panel on the
+left.
+
+490
+00:10:12,030 --> 00:10:12,040
+left.
+ 
+
+491
+00:10:12,040 --> 00:10:14,550
+left.
+Under toolbox, effects, you can find
+
+492
+00:10:14,550 --> 00:10:14,560
+Under toolbox, effects, you can find
+ 
+
+493
+00:10:14,560 --> 00:10:16,430
+Under toolbox, effects, you can find
+several visual effects powered by the
+
+494
+00:10:16,430 --> 00:10:16,440
+several visual effects powered by the
+ 
+
+495
+00:10:16,440 --> 00:10:19,030
+several visual effects powered by the
+Fusion workspace.
+
+496
+00:10:19,030 --> 00:10:19,040
+Fusion workspace.
+ 
+
+497
+00:10:19,040 --> 00:10:20,430
+Fusion workspace.
+Other effects are collected under
+
+498
+00:10:20,430 --> 00:10:20,440
+Other effects are collected under
+ 
+
+499
+00:10:20,440 --> 00:10:22,590
+Other effects are collected under
+Resolve effects, though some of these
+
+500
+00:10:22,590 --> 00:10:22,600
+Resolve effects, though some of these
+ 
+
+501
+00:10:22,600 --> 00:10:25,470
+Resolve effects, though some of these
+are exclusive to the studio version.
+
+502
+00:10:25,470 --> 00:10:25,480
+are exclusive to the studio version.
+ 
+
+503
+00:10:25,480 --> 00:10:27,590
+are exclusive to the studio version.
+You can also get effects for audio clips
+
+504
+00:10:27,590 --> 00:10:27,600
+You can also get effects for audio clips
+ 
+
+505
+00:10:27,600 --> 00:10:30,150
+You can also get effects for audio clips
+from audio effects.
+
+506
+00:10:30,150 --> 00:10:30,160
+from audio effects.
+ 
+
+507
+00:10:30,160 --> 00:10:32,830
+from audio effects.
+Hover over to any effect to preview it
+
+508
+00:10:32,830 --> 00:10:32,840
+Hover over to any effect to preview it
+ 
+
+509
+00:10:32,840 --> 00:10:34,710
+Hover over to any effect to preview it
+and drag and drop it onto a clip to
+
+510
+00:10:34,710 --> 00:10:34,720
+and drag and drop it onto a clip to
+ 
+
+511
+00:10:34,720 --> 00:10:35,910
+and drag and drop it onto a clip to
+apply it.
+
+512
+00:10:35,910 --> 00:10:35,920
+apply it.
+ 
+
+513
+00:10:35,920 --> 00:10:38,310
+apply it.
+The clip will display an FX icon on the
+
+514
+00:10:38,310 --> 00:10:38,320
+The clip will display an FX icon on the
+ 
+
+515
+00:10:38,320 --> 00:10:40,510
+The clip will display an FX icon on the
+left corner
+
+516
+00:10:40,510 --> 00:10:40,520
+left corner
+ 
+
+517
+00:10:40,520 --> 00:10:41,950
+left corner
+and a new effect section in the
+
+518
+00:10:41,950 --> 00:10:41,960
+and a new effect section in the
+ 
+
+519
+00:10:41,960 --> 00:10:43,830
+and a new effect section in the
+inspector, where you can adjust the
+
+520
+00:10:43,830 --> 00:10:43,840
+inspector, where you can adjust the
+ 
+
+521
+00:10:43,840 --> 00:10:46,030
+inspector, where you can adjust the
+properties of the effect.
+
+522
+00:10:46,030 --> 00:10:46,040
+properties of the effect.
+ 
+
+523
+00:10:46,040 --> 00:10:47,950
+properties of the effect.
+If multiple effects are applied, they
+
+524
+00:10:47,950 --> 00:10:47,960
+If multiple effects are applied, they
+ 
+
+525
+00:10:47,960 --> 00:10:49,950
+If multiple effects are applied, they
+are listed in order.
+
+526
+00:10:49,950 --> 00:10:49,960
+are listed in order.
+ 
+
+527
+00:10:49,960 --> 00:10:51,830
+are listed in order.
+You can change their order using the up
+
+528
+00:10:51,830 --> 00:10:51,840
+You can change their order using the up
+ 
+
+529
+00:10:51,840 --> 00:10:53,230
+You can change their order using the up
+and down arrows
+
+530
+00:10:53,230 --> 00:10:53,240
+and down arrows
+ 
+
+531
+00:10:53,240 --> 00:10:56,590
+and down arrows
+or remove any effect using the bin icon.
+
+532
+00:10:56,590 --> 00:10:56,600
+or remove any effect using the bin icon.
+ 
+
+533
+00:10:56,600 --> 00:10:58,910
+or remove any effect using the bin icon.
+Under toolbox, you can find transitions
+
+534
+00:10:58,910 --> 00:10:58,920
+Under toolbox, you can find transitions
+ 
+
+535
+00:10:58,920 --> 00:11:01,750
+Under toolbox, you can find transitions
+for both video and audio clips.
+
+536
+00:11:01,750 --> 00:11:01,760
+for both video and audio clips.
+ 
+
+537
+00:11:01,760 --> 00:11:03,550
+for both video and audio clips.
+Drag and drop a transition at the
+
+538
+00:11:03,550 --> 00:11:03,560
+Drag and drop a transition at the
+ 
+
+539
+00:11:03,560 --> 00:11:07,710
+Drag and drop a transition at the
+beginning or end of a clip.
+
+540
+00:11:07,710 --> 00:11:07,720
+
+ 
+
+541
+00:11:07,720 --> 00:11:09,350
+
+You can also apply it between two
+
+542
+00:11:09,350 --> 00:11:09,360
+You can also apply it between two
+ 
+
+543
+00:11:09,360 --> 00:11:11,150
+You can also apply it between two
+adjacent clips if there is no gap
+
+544
+00:11:11,150 --> 00:11:11,160
+adjacent clips if there is no gap
+ 
+
+545
+00:11:11,160 --> 00:11:15,670
+adjacent clips if there is no gap
+between them.
+
+546
+00:11:15,670 --> 00:11:15,680
+
+ 
+
+547
+00:11:15,680 --> 00:11:17,829
+
+Select the transition to edit it using
+
+548
+00:11:17,829 --> 00:11:17,839
+Select the transition to edit it using
+ 
+
+549
+00:11:17,839 --> 00:11:20,710
+Select the transition to edit it using
+the inspector, such as its duration or
+
+550
+00:11:20,710 --> 00:11:20,720
+the inspector, such as its duration or
+ 
+
+551
+00:11:20,720 --> 00:11:22,910
+the inspector, such as its duration or
+appearance.
+
+552
+00:11:22,910 --> 00:11:22,920
+appearance.
+ 
+
+553
+00:11:22,920 --> 00:11:25,270
+appearance.
+To remove a transition, select it and
+
+554
+00:11:25,270 --> 00:11:25,280
+To remove a transition, select it and
+ 
+
+555
+00:11:25,280 --> 00:11:27,950
+To remove a transition, select it and
+press the backspace key.
+
+556
+00:11:27,950 --> 00:11:27,960
+press the backspace key.
+ 
+
+557
+00:11:27,960 --> 00:11:30,670
+press the backspace key.
+Under toolbox, titles, you can browse
+
+558
+00:11:30,670 --> 00:11:30,680
+Under toolbox, titles, you can browse
+ 
+
+559
+00:11:30,680 --> 00:11:32,710
+Under toolbox, titles, you can browse
+different types of text elements. For
+
+560
+00:11:32,710 --> 00:11:32,720
+different types of text elements. For
+ 
+
+561
+00:11:32,720 --> 00:11:34,950
+different types of text elements. For
+example, you can add a lower third by
+
+562
+00:11:34,950 --> 00:11:34,960
+example, you can add a lower third by
+ 
+
+563
+00:11:34,960 --> 00:11:37,110
+example, you can add a lower third by
+dragging it onto the timeline. This
+
+564
+00:11:37,110 --> 00:11:37,120
+dragging it onto the timeline. This
+ 
+
+565
+00:11:37,120 --> 00:11:39,550
+dragging it onto the timeline. This
+appears as an independent gray clip and
+
+566
+00:11:39,550 --> 00:11:39,560
+appears as an independent gray clip and
+ 
+
+567
+00:11:39,560 --> 00:11:41,470
+appears as an independent gray clip and
+should be placed above other visual
+
+568
+00:11:41,470 --> 00:11:41,480
+should be placed above other visual
+ 
+
+569
+00:11:41,480 --> 00:11:43,790
+should be placed above other visual
+clips to remain visible.
+
+570
+00:11:43,790 --> 00:11:43,800
+clips to remain visible.
+ 
+
+571
+00:11:43,800 --> 00:11:45,710
+clips to remain visible.
+Like other clips, text clips can be
+
+572
+00:11:45,710 --> 00:11:45,720
+Like other clips, text clips can be
+ 
+
+573
+00:11:45,720 --> 00:11:48,790
+Like other clips, text clips can be
+moved and trimmed on the timeline.
+
+574
+00:11:48,790 --> 00:11:48,800
+moved and trimmed on the timeline.
+ 
+
+575
+00:11:48,800 --> 00:11:51,270
+moved and trimmed on the timeline.
+You can also use the inspector to modify
+
+576
+00:11:51,270 --> 00:11:51,280
+You can also use the inspector to modify
+ 
+
+577
+00:11:51,280 --> 00:11:55,590
+You can also use the inspector to modify
+text content, color, size, font,
+
+578
+00:11:55,590 --> 00:11:55,600
+text content, color, size, font,
+ 
+
+579
+00:11:55,600 --> 00:11:59,670
+text content, color, size, font,
+and other text properties.
+
+580
+00:11:59,670 --> 00:11:59,680
+
+ 
+
+581
+00:11:59,680 --> 00:12:01,590
+
+Switch to settings above to adjust the
+
+582
+00:12:01,590 --> 00:12:01,600
+Switch to settings above to adjust the
+ 
+
+583
+00:12:01,600 --> 00:12:03,790
+Switch to settings above to adjust the
+general clip properties, similar to what
+
+584
+00:12:03,790 --> 00:12:03,800
+general clip properties, similar to what
+ 
+
+585
+00:12:03,800 --> 00:12:07,270
+general clip properties, similar to what
+we have seen for other visual content.
+
+586
+00:12:07,270 --> 00:12:07,280
+we have seen for other visual content.
+ 
+
+587
+00:12:07,280 --> 00:12:09,190
+we have seen for other visual content.
+Once your video is complete, go to the
+
+588
+00:12:09,190 --> 00:12:09,200
+Once your video is complete, go to the
+ 
+
+589
+00:12:09,200 --> 00:12:11,670
+Once your video is complete, go to the
+deliver workspace to export it.
+
+590
+00:12:11,670 --> 00:12:11,680
+deliver workspace to export it.
+ 
+
+591
+00:12:11,680 --> 00:12:14,070
+deliver workspace to export it.
+First, define the portion to render by
+
+592
+00:12:14,070 --> 00:12:14,080
+First, define the portion to render by
+ 
+
+593
+00:12:14,080 --> 00:12:16,430
+First, define the portion to render by
+setting the in and out gray markers on
+
+594
+00:12:16,430 --> 00:12:16,440
+setting the in and out gray markers on
+ 
+
+595
+00:12:16,440 --> 00:12:18,430
+setting the in and out gray markers on
+the timeline.
+
+596
+00:12:18,430 --> 00:12:18,440
+the timeline.
+ 
+
+597
+00:12:18,440 --> 00:12:20,350
+the timeline.
+On the left, open the render settings
+
+598
+00:12:20,350 --> 00:12:20,360
+On the left, open the render settings
+ 
+
+599
+00:12:20,360 --> 00:12:23,270
+On the left, open the render settings
+panel and choose from several presets.
+
+600
+00:12:23,270 --> 00:12:23,280
+panel and choose from several presets.
+ 
+
+601
+00:12:23,280 --> 00:12:25,510
+panel and choose from several presets.
+Select custom export to set all video
+
+602
+00:12:25,510 --> 00:12:25,520
+Select custom export to set all video
+ 
+
+603
+00:12:25,520 --> 00:12:27,670
+Select custom export to set all video
+and audio settings. In the video
+
+604
+00:12:27,670 --> 00:12:27,680
+and audio settings. In the video
+ 
+
+605
+00:12:27,680 --> 00:12:29,870
+and audio settings. In the video
+section, choose the file format, the
+
+606
+00:12:29,870 --> 00:12:29,880
+section, choose the file format, the
+ 
+
+607
+00:12:29,880 --> 00:12:31,190
+section, choose the file format, the
+codec,
+
+608
+00:12:31,190 --> 00:12:31,200
+codec,
+ 
+
+609
+00:12:31,200 --> 00:12:33,710
+codec,
+and the video size as resolution. To
+
+610
+00:12:33,710 --> 00:12:33,720
+and the video size as resolution. To
+ 
+
+611
+00:12:33,720 --> 00:12:35,910
+and the video size as resolution. To
+match the same preview settings, select
+
+612
+00:12:35,910 --> 00:12:35,920
+match the same preview settings, select
+ 
+
+613
+00:12:35,920 --> 00:12:38,310
+match the same preview settings, select
+timeline resolution or select a bigger
+
+614
+00:12:38,310 --> 00:12:38,320
+timeline resolution or select a bigger
+ 
+
+615
+00:12:38,320 --> 00:12:41,110
+timeline resolution or select a bigger
+resolution up to 4K.
+
+616
+00:12:41,110 --> 00:12:41,120
+resolution up to 4K.
+ 
+
+617
+00:12:41,120 --> 00:12:43,030
+resolution up to 4K.
+Set the frame rate as needed, such as
+
+618
+00:12:43,030 --> 00:12:43,040
+Set the frame rate as needed, such as
+ 
+
+619
+00:12:43,040 --> 00:12:45,630
+Set the frame rate as needed, such as
+the number of video frames per second,
+
+620
+00:12:45,630 --> 00:12:45,640
+the number of video frames per second,
+ 
+
+621
+00:12:45,640 --> 00:12:47,470
+the number of video frames per second,
+and adjust the quality options as
+
+622
+00:12:47,470 --> 00:12:47,480
+and adjust the quality options as
+ 
+
+623
+00:12:47,480 --> 00:12:49,230
+and adjust the quality options as
+bitrate.
+
+624
+00:12:49,230 --> 00:12:49,240
+bitrate.
+ 
+
+625
+00:12:49,240 --> 00:12:51,430
+bitrate.
+In the audio section, select the codec
+
+626
+00:12:51,430 --> 00:12:51,440
+In the audio section, select the codec
+ 
+
+627
+00:12:51,440 --> 00:12:54,310
+In the audio section, select the codec
+and configure the data rate.
+
+628
+00:12:54,310 --> 00:12:54,320
+and configure the data rate.
+ 
+
+629
+00:12:54,320 --> 00:12:56,470
+and configure the data rate.
+If these options sound complex, you can
+
+630
+00:12:56,470 --> 00:12:56,480
+If these options sound complex, you can
+ 
+
+631
+00:12:56,480 --> 00:12:58,190
+If these options sound complex, you can
+also choose one of the predefined
+
+632
+00:12:58,190 --> 00:12:58,200
+also choose one of the predefined
+ 
+
+633
+00:12:58,200 --> 00:13:00,750
+also choose one of the predefined
+presets or platforms, such as YouTube,
+
+634
+00:13:00,750 --> 00:13:00,760
+presets or platforms, such as YouTube,
+ 
+
+635
+00:13:00,760 --> 00:13:03,550
+presets or platforms, such as YouTube,
+Vimeo, or TikTok.
+
+636
+00:13:03,550 --> 00:13:03,560
+Vimeo, or TikTok.
+ 
+
+637
+00:13:03,560 --> 00:13:06,270
+Vimeo, or TikTok.
+If needed, you can select audio only to
+
+638
+00:13:06,270 --> 00:13:06,280
+If needed, you can select audio only to
+ 
+
+639
+00:13:06,280 --> 00:13:08,390
+If needed, you can select audio only to
+export just the audio content from your
+
+640
+00:13:08,390 --> 00:13:08,400
+export just the audio content from your
+ 
+
+641
+00:13:08,400 --> 00:13:09,790
+export just the audio content from your
+project.
+
+642
+00:13:09,790 --> 00:13:09,800
+project.
+ 
+
+643
+00:13:09,800 --> 00:13:11,750
+project.
+At the top, enter the file name and
+
+644
+00:13:11,750 --> 00:13:11,760
+At the top, enter the file name and
+ 
+
+645
+00:13:11,760 --> 00:13:13,510
+At the top, enter the file name and
+choose the destination folder using
+
+646
+00:13:13,510 --> 00:13:13,520
+choose the destination folder using
+ 
+
+647
+00:13:13,520 --> 00:13:16,350
+choose the destination folder using
+browse. Make sure the single clip render
+
+648
+00:13:16,350 --> 00:13:16,360
+browse. Make sure the single clip render
+ 
+
+649
+00:13:16,360 --> 00:13:18,190
+browse. Make sure the single clip render
+option is selected to export your
+
+650
+00:13:18,190 --> 00:13:18,200
+option is selected to export your
+ 
+
+651
+00:13:18,200 --> 00:13:20,630
+option is selected to export your
+project within the in and out range you
+
+652
+00:13:20,630 --> 00:13:20,640
+project within the in and out range you
+ 
+
+653
+00:13:20,640 --> 00:13:22,670
+project within the in and out range you
+have defined.
+
+654
+00:13:22,670 --> 00:13:22,680
+have defined.
+ 
+
+655
+00:13:22,680 --> 00:13:25,110
+have defined.
+At this point, click add to render queue
+
+656
+00:13:25,110 --> 00:13:25,120
+At this point, click add to render queue
+ 
+
+657
+00:13:25,120 --> 00:13:26,870
+At this point, click add to render queue
+to add the project to the queue on the
+
+658
+00:13:26,870 --> 00:13:26,880
+to add the project to the queue on the
+ 
+
+659
+00:13:26,880 --> 00:13:29,270
+to add the project to the queue on the
+right. You can add multiple jobs if
+
+660
+00:13:29,270 --> 00:13:29,280
+right. You can add multiple jobs if
+ 
+
+661
+00:13:29,280 --> 00:13:31,270
+right. You can add multiple jobs if
+needed and head to render to start
+
+662
+00:13:31,270 --> 00:13:31,280
+needed and head to render to start
+ 
+
+663
+00:13:31,280 --> 00:13:32,590
+needed and head to render to start
+exporting.
+
+664
+00:13:32,590 --> 00:13:32,600
+exporting.
+ 
+
+665
+00:13:32,600 --> 00:13:34,829
+exporting.
+DaVinci Resolve does not add watermarks
+
+666
+00:13:34,829 --> 00:13:34,839
+DaVinci Resolve does not add watermarks
+ 
+
+667
+00:13:34,839 --> 00:13:37,350
+DaVinci Resolve does not add watermarks
+to your exported videos.
+
+668
+00:13:37,350 --> 00:13:37,360
+to your exported videos.
+ 
+
+669
+00:13:37,360 --> 00:13:38,950
+to your exported videos.
+Thank you guys so much for watching this
+
+670
+00:13:38,950 --> 00:13:38,960
+Thank you guys so much for watching this
+ 
+
+671
+00:13:38,960 --> 00:13:40,390
+Thank you guys so much for watching this
+video. Make sure to check out our
+
+672
+00:13:40,390 --> 00:13:40,400
+video. Make sure to check out our
+ 
+
+673
+00:13:40,400 --> 00:13:42,150
+video. Make sure to check out our
+YouTube channel and website to learn
+
+674
+00:13:42,150 --> 00:13:42,160
+YouTube channel and website to learn
+ 
+
+675
+00:13:42,160 --> 00:13:43,630
+YouTube channel and website to learn
+more tips and techniques on video
+
+676
+00:13:43,630 --> 00:13:43,640
+more tips and techniques on video
+ 
+
+677
+00:13:43,640 --> 00:13:45,710
+more tips and techniques on video
+production completely for free. Also,
+
+678
+00:13:45,710 --> 00:13:45,720
+production completely for free. Also,
+ 
+
+679
+00:13:45,720 --> 00:13:46,910
+production completely for free. Also,
+don't forget to subscribe to the
+
+680
+00:13:46,910 --> 00:13:46,920
+don't forget to subscribe to the
+ 
+
+681
+00:13:46,920 --> 00:13:49,030
+don't forget to subscribe to the
+channel. My name is Zach and until next
+
+682
+00:13:49,030 --> 00:13:49,040
+channel. My name is Zach and until next
+ 
+
+683
+00:13:49,040 --> 00:13:53,159
+channel. My name is Zach and until next
+time, we'll see you later.
+
+684
+00:13:53,159 --> 00:13:53,169
+
+ 
+
+685
+00:13:53,169 --> 00:14:04,949
+
+>> [music]
+
+686
+00:14:04,949 --> 00:14:04,959
+
+ 
+
+687
+00:14:04,959 --> 00:14:06,979
+
+[music]
+

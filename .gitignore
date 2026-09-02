@@ -1,3 +1,10 @@
 node_modules/
 .DS_Store
 *.log
+
+# Kildemateriale til research, ikke sidens indhold — se README.
+# .wav er for stor til GitHub (grænsen er 100 MB); PDF'erne i research/ er
+# ikke vores at distribuere (Blackmagics bog har uafklarede vilkår for sit
+# eget materiale, se materialepakke.md "Note om rettigheder").
+*.wav
+research/*.pdf

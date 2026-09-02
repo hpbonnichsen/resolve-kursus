@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1 · Interface og indstillinger – kursus i DaVinci Resolve</title>
+<meta name="description" content="Første lektion: hvordan Resolve er skruet sammen, og de fire indstillinger du skal have på plads før du begynder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#del1">Spring til første del</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 1</p>
+    <h1 class="pagehead__title">Interface og indstillinger</h1>
+    <p class="pagehead__intro">
+      Vi begynder med det kedelige. Til gengæld betaler det sig resten af dagen:
+      de fleste af de problemer, der ellers dukker op ved frokosttid, bliver
+      afgjort her.
+    </p>
+    <span class="scaffold">Følg med skridt for skridt</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">09:15–09:45</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">30 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Kursusprojektet åbent</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="del1">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">Hvor er vi henne</h2>
+
+    <div class="lead-in">
+      <p>
+        Nederst i programmet står en række knapper. Hver af dem skifter ikke bare
+        panelerne rundt. Den skifter reelt til et andet program inde i Resolve.
+        Man klipper ét sted, farvelægger et andet, laver lyd et tredje.
+      </p>
+      <p>
+        Rækkefølgen er ikke tilfældig. Den følger den vej, en film bliver til.
+        I dag bruger vi tre af dem plus den sidste. Resten kigger vi på efter pausen.
+      </p>
+    </div>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/l1-1-bundlinjen.jpg"
+             alt="Nederste kant af DaVinci Resolve. Til venstre en række med otte sideknapper, hvor Edit er fremhævet med en rød streg under. Tre prikker markerer et stykke tom bjælke, der er skåret ud. Til højre et husikon og et tandhjul."
+             width="1800" height="62" loading="lazy">
+        <svg class="shot__marks" viewBox="0 0 1800 62" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+          <rect class="box" x="38" y="4" width="1468" height="54" rx="7"/>
+          <ellipse class="ring" cx="1661" cy="31" rx="30" ry="26"/>
+          <ellipse class="ring" cx="1756" cy="31" rx="30" ry="26"/>
+        </svg>
+      </div>
+      <figcaption class="shot__caption">
+        Rammen er siderne. De to ringe er husikonet, der fører til Project Manager,
+        og tandhjulet, der åbner projektets indstillinger. De tre ting skal I kunne
+        finde igen resten af dagen. De tre prikker i midten er et stykke tom bjælke,
+        der er klippet ud, så resten kan vises større.
+      </figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Klik på husikonet</h3>
+          <p class="step__body">
+            Det sidder i nederste højre hjørne. Nu er I i <strong>Project Manager</strong>.
+            Det er her alle projekter bor, og det er her, I altid kan komme tilbage til.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-2-project-manager.jpg"
+                   alt="Project Manager med kursusprojektet vist som et enkelt felt."
+                   width="1800" height="1263" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Dobbeltklik på kursusprojektet</h3>
+          <p class="step__body">
+            Så er I tilbage, hvor I kom fra. Pointen med at gå ud og ind er, at I skal
+            vide, at der <em>er</em> en vej tilbage. Det er den hyppigste panik hos folk,
+            der er nye i programmet: troen på at noget er væk.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del2">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Opløsning og billedhastighed</h2>
+
+    <div class="lead-in">
+      <p>
+        Et projekt har en opløsning og en billedhastighed. De to tal beskriver den film,
+        I laver. Ikke de klip, I lægger ind.
+      </p>
+      <p>
+        Billedhastigheden er den vigtige af de to, for
+        <strong>den kan ikke ændres, når der først ligger noget på timelinen.</strong>
+        Opløsningen kan man rette bagefter. Det kan billedhastigheden ikke.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn projektets indstillinger</h3>
+          <p class="step__body">
+            Klik på tandhjulet i nederste højre hjørne. Vinduet åbner på
+            <strong>Master Settings</strong>, og det er den side, vi skal bruge.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tjek de to øverste felter</h3>
+          <p class="step__body">
+            <strong>Timeline resolution</strong> skal stå på <code>1920 x 1080 HD</code>.
+            <strong>Timeline frame rate</strong> skal stå på <code>23,976</code>.
+            Er de sat rigtigt i forvejen, skal I ikke gøre noget. Kig efter, og gå videre.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-3-project-settings.jpg"
+                   alt="Project Settings på siden Master Settings. Øverst står Timeline resolution sat til 1920 x 1080 HD, og længere nede Timeline frame rate sat til 24 (skærmbilledet mangler at blive taget om efter skiftet til 23,976)."
+                   width="1800" height="1715" loading="lazy">
+              <!-- ROUGH CUT: billedet viser stadig 24. Tag det om, når Master
+                   Settings er sat til 23,976 i det rigtige projekt, så det matcher
+                   teksten og beslutningen om at følge Efterårs egen 23,976 fps. -->
+              <svg class="shot__marks" viewBox="0 0 1800 1715" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                <ellipse class="ring" cx="962" cy="157" rx="180" ry="26"/>
+                <ellipse class="ring" cx="857" cy="521" rx="80" ry="26"/>
+              </svg>
+            </div>
+            <figcaption class="shot__caption">De to tal, der beskriver filmen.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Klik Save</h3>
+          <p class="step__body">
+            Nede i højre hjørne af vinduet. Det lukker ikke af sig selv.
+          </p>
+        </div>
+      </li>
+    </ol>
+
+    <details class="hint">
+      <summary>Timeline frame rate er grå og kan ikke klikkes</summary>
+      <p>
+        Så ligger der allerede noget på en timeline i projektet, og så er
+        billedhastigheden låst. Det er ikke et problem i dag: værdien er sat rigtigt
+        i pakken på forhånd.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del3">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+    <h2 class="section__title">Lager, autosave og backup</h2>
+
+    <div class="lead-in">
+      <p>
+        Resolve gemmer løbende af sig selv. Der er ingen "Gem som", man skal huske hver
+        halve time, sådan som man kender det fra Word.
+      </p>
+      <p>
+        Til gengæld er der et par ting, man selv skal tage stilling til. De ligger i
+        Preferences, som er delt i to faner: <strong>System</strong> handler om maskinen,
+        <strong>User</strong> om dig. Halvdelen af alle leder i den forkerte.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn Preferences</h3>
+          <p class="step__body">
+            Genvejen er <kbd>Ctrl</kbd> + <kbd>,</kbd> på Windows og
+            <kbd>Cmd</kbd> + <kbd>,</kbd> på Mac. Den virker begge steder, også når
+            menupunktet ligger forskelligt.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Under System: se hvor arbejdsfilerne ligger</h3>
+          <p class="step__body">
+            Vælg fanen <strong>System</strong> øverst og
+            <strong>Media Storage</strong> i venstre side. Den øverste disk i listen er
+            den, Resolve bruger til stillbilleder og midlertidige filer. Den skal være en
+            disk, der altid er tilsluttet. Ikke en ekstern, I tager med jer.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-4-media-storage.jpg"
+                   alt="Preferences på fanen System med Media Storage valgt. En liste viser to diske, hvor den øverste er markeret."
+                   width="1800" height="1530" loading="lazy">
+              <svg class="shot__marks" viewBox="0 0 1800 1530" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                <ellipse class="ring" cx="799" cy="97" rx="105" ry="26"/>
+                <rect class="box" x="478" y="220" width="1270" height="372" rx="8"/>
+              </svg>
+            </div>
+            <figcaption class="shot__caption">
+              Ringen er fanen, folk overser. Rammen er disklisten: den øverste vinder.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Under User: slå backup til</h3>
+          <p class="step__body">
+            Skift til fanen <strong>User</strong> og vælg
+            <strong>Project Save and Load</strong>. Der skal være flueben ved alle tre:
+            <strong>Live save</strong> gemmer løbende, mens
+            <strong>Project backups</strong> og <strong>Timeline backups</strong> gemmer
+            versioner tilbage i tiden. Det er dem, der redder en, når noget går galt.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-5-live-save.jpg"
+                   alt="Preferences på fanen User med Project Save and Load valgt. Tre afkrydsningsfelter er slået til: Live save, Project backups og Timeline backups."
+                   width="1800" height="1521" loading="lazy">
+              <svg class="shot__marks" viewBox="0 0 1800 1521" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+                <ellipse class="ring" cx="998" cy="100" rx="105" ry="26"/>
+                <rect class="box" x="876" y="370" width="266" height="142" rx="8"/>
+              </svg>
+            </div>
+            <figcaption class="shot__caption">Samme fanerække, den anden fane. Tre flueben.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Klik Save</h3>
+          <p class="step__body">Igen nede i højre hjørne.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del4">
+  <div class="wrap">
+    <p class="kicker">Fjerde del</p>
+    <h2 class="section__title">Hvorfor billedet ser fladt ud</h2>
+
+    <div class="lead-in">
+      <p>
+        Nogle kameraer optager med vilje et billede, der ser gråt og fladt ud. Det hedder
+        <em>log</em>, og det gemmer flere detaljer til senere. Ulempen er, at det er
+        kedeligt at klippe i.
+      </p>
+      <p>
+        Vi retter det nu og ikke senere. Ellers sidder I en time og vænner jer til, at
+        det ser forkert ud. I skal ikke forstå det. I skal sætte to menupunkter.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Slå farvestyring til</h3>
+          <p class="step__body">
+            Åbn projektets indstillinger igen med tandhjulet, og vælg
+            <strong>Color Management</strong> i venstre side. Sæt
+            <strong>Color science</strong> til <code>DaVinci YRGB Color Managed</code>,
+            og klik Save.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-6-color-management.jpg"
+                   alt="Color Management i projektets indstillinger med Color science sat til DaVinci YRGB Color Managed."
+                   width="1042" height="812" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Fortæl programmet, hvilket kamera der har optaget</h3>
+          <p class="step__body">
+            Marker alle klip i Media Pool, højreklik på et af dem, og vælg
+            <strong>Input Color Space</strong>. Billedet skifter foran øjnene på jer.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l1-7-input-color-space.jpg"
+                   alt="Højrekliksmenuen i Media Pool med menupunktet Input Color Space."
+                   width="535" height="931" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <details class="hint">
+      <summary>Input Color Space står ikke i menuen</summary>
+      <p>
+        Så er første trin ikke gemt endnu. Menupunktet findes kun, når projektet står i
+        en farvestyret tilstand. Gå tilbage til Color Management, tjek at der står
+        <code>DaVinci YRGB Color Managed</code>, og klik Save. Husk også, at højrekliket
+        skal lande oven på et markeret klip og ikke i det tomme felt ved siden af.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="selvtjek">
+  <div class="wrap">
+    <p class="kicker">Til sidst</p>
+    <h2 class="section__title">Tjek dig selv</h2>
+    <p class="section__intro">
+      Det er ikke en prøve, og der er ingen der ser svarene. Men prøv at svare i
+      hovedet, før du folder ud. Det er forsøget på at huske, der får det til at
+      sidde fast, ikke det at læse det igen.
+    </p>
+
+    <div class="check">
+
+      <details class="check__item">
+        <summary>Hvorfor haster det mere at få billedhastigheden rigtig end opløsningen?</summary>
+        <p class="check__answer">
+          Fordi billedhastigheden låser sig, så snart der ligger noget på timelinen.
+          Opløsningen kan du rette bagefter, hvis du opdager at den er forkert. Det
+          kan billedhastigheden ikke.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Du leder efter Media Storage og kan ikke finde det. Hvilken fane står du sandsynligvis i?</summary>
+        <p class="check__answer">
+          User. Media Storage ligger under System, fordi det handler om maskinen og
+          ikke om dig. De to faner ligner hinanden, og det er den hyppigste omvej.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Projektet er væk fra skærmen, og du aner ikke hvor det blev af. Hvad gør du?</summary>
+        <p class="check__answer">
+          Klikker på husikonet i nederste højre hjørne. Det fører til Project Manager,
+          hvor alle projekter bor, og dit ligger der stadig.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Hvorfor retter vi det grå, flade billede med det samme i stedet for til sidst?</summary>
+        <p class="check__answer">
+          Fordi man ellers klipper en hel formiddag i et billede, der ser forkert ud,
+          og vænner sig til det. Beslutninger om hvad der er lyst og mørkt bliver
+          truffet undervejs, og de bliver forkerte.
+        </p>
+      </details>
+
+      <details class="check__item">
+        <summary>Input Color Space står ikke i højrekliksmenuen. Hvad mangler du?</summary>
+        <p class="check__answer">
+          At slå farvestyringen til og gemme. Menupunktet findes kun, når projektet
+          står i en farvestyret tilstand. Tjek også at højrekliket lander oven på et
+          markeret klip og ikke i det tomme felt ved siden af.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <span class="lesson-nav__spacer">Første lektion</span>
+    <span class="lesson-nav__where">Lektion 1 af 6</span>
+    <a class="btn" href="program.html">
+      Tilbage til programmet
+      <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+    </a>
+  </nav>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

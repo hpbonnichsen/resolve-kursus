@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dagens program – kursus i DaVinci Resolve</title>
+<meta name="description" content="Programmet for kursusdagen, materialepakken til download og de genveje du får brug for undervejs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#program">Spring til programmet</a>
+
+  <nav class="nav" aria-label="Kursets sider">
+    <div class="wrap">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+        <li><a class="nav__link" href="program.html" aria-current="page">Program</a></li>
+        <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <h1 class="pagehead__title">Dagens program</h1>
+    <p class="pagehead__intro">
+      Her ligger forløbet, materialepakken og genvejene. Siden er til at slå op i
+      undervejs. Du behøver ikke læse den forfra.
+    </p>
+  </header>
+
+  <section class="facts" aria-label="Praktisk information om kursusdagen">
+    <div>
+      <p class="facts__key">Dato</p>
+      <p class="facts__val">7/9 2026</p>
+    </div>
+    <div>
+      <p class="facts__key">Tid</p>
+      <p class="facts__val">9-15</p>
+    </div>
+    <div>
+      <p class="facts__key">Sted</p>
+      <p class="facts__val">Virum Gymnasium</p>
+    </div>
+    <div>
+      <p class="facts__key">Medbring</p>
+      <p class="facts__val">Bærbar med Resolve installeret, hovedtelefoner, mus og gerne dine egne optagelser</p>
+    </div>
+  </section>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="materiale">
+  <div class="wrap">
+    <p class="kicker">Inden vi mødes</p>
+    <h2 class="section__title">Hent materialepakken</h2>
+    <p class="section__intro">
+      Alt vi skal bruge på dagen ligger i én fil. Hent den hjemmefra. Den er for
+      stor til at tolv mennesker kan hente den på samme netværk kl. 9.
+    </p>
+
+    <div class="download reveal">
+      <h3 class="download__title">Resolve-kursus-2026.dra</h3>
+      <p class="download__body">
+        Filen indeholder både projektet og alle optagelserne. Du åbner den ikke ved
+        at dobbeltklikke. I stedet: åbn Resolve, gå til <strong>Project Manager</strong>,
+        højreklik i det store vindue og vælg <strong>Restore Project Archive</strong>.
+        Peg på filen, og vent til den er hentet ind.
+      </p>
+      <p class="download__action">
+        <!-- TODO: URL indsættes når arkivet er lagt op som GitHub Release-asset -->
+        <a class="btn" href="#" aria-disabled="true">
+          Hent materialepakken
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16l-6-6h4V3h4v7h4l-6 6zm-8 2h16v3H4v-3z"/></svg>
+        </a>
+      </p>
+      <p class="download__meta">Filstørrelse: [udfyldes] · Sidst opdateret: [udfyldes]</p>
+    </div>
+
+    <details class="hint">
+      <summary>Restore Project Archive står i grå tekst og kan ikke klikkes</summary>
+      <p>
+        Så står du inde i et åbent projekt. Gå tilbage til Project Manager først
+        (husikonet i nederste højre hjørne), og højreklik i det tomme område mellem
+        projekterne, ikke oven på et projekt.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="program">
+  <div class="wrap">
+    <p class="kicker">Kl. 9 til 15</p>
+    <h2 class="section__title">Sådan ser dagen ud</h2>
+    <p class="section__intro">
+      Vi bruger formiddagen på at klippe og eftermiddagen på at få det til at se
+      ud af noget. Til sidst arbejder du i dit eget materiale.
+    </p>
+
+    <ol class="sked reveal">
+
+      <li class="sked__row">
+        <span class="sked__time">09:00</span>
+        <div>
+          <p class="sked__name">Velkomst</p>
+          <p class="sked__note">Vi tjekker at programmet kører, og at alle har materialepakken.</p>
+        </div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">09:15</span>
+        <div>
+          <p class="sked__name">1 · Interface og indstillinger</p>
+          <p class="sked__note">
+            Hvordan programmet er skruet sammen, og de få indstillinger man skal have
+            styr på, før man begynder.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">09:45</span>
+        <div>
+          <p class="sked__name">2 · Siderne og dit materiale</p>
+          <p class="sked__note">
+            En kort rundtur i programmets syv sider, og optagelserne på plads i mapper.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row sked__row--break">
+        <span class="sked__time">10:15</span>
+        <div><p class="sked__name">Pause</p></div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">10:30</span>
+        <div>
+          <p class="sked__name">3 · Edit Page</p>
+          <p class="sked__note">
+            Dagens længste blok. Du bygger en film færdig af klip, der ligger klar,
+            og har et råklip inden frokost.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row sked__row--break">
+        <span class="sked__time">11:50</span>
+        <div><p class="sked__name">Frokost</p></div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">12:30</span>
+        <div>
+          <p class="sked__name">4 · Color Page</p>
+          <p class="sked__note">
+            Lys og farve, og hvordan man får flere klip til at ligne hinanden.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">13:15</span>
+        <div>
+          <p class="sked__name">5 · Fusion</p>
+          <p class="sked__note">
+            Programmets mest omtalte side. Vi laver én ting færdig, ikke en rundtur.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row sked__row--break">
+        <span class="sked__time">13:55</span>
+        <div><p class="sked__name">Pause</p></div>
+      </li>
+
+      <li class="sked__row">
+        <span class="sked__time">14:05</span>
+        <div>
+          <p class="sked__name">6 · Dit eget materiale</p>
+          <p class="sked__note">
+            Du klipper dine egne optagelser sammen og eksporterer dem. Du går hjem med
+            en film, du selv har lavet.
+          </p>
+        </div>
+      </li>
+
+      <li class="sked__row sked__row--break">
+        <span class="sked__time">14:45</span>
+        <div><p class="sked__name">Afrunding</p></div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="lektioner">
+  <div class="wrap">
+    <p class="kicker">Undervejs</p>
+    <h2 class="section__title">Lektionerne</h2>
+    <p class="section__intro">
+      Hver lektion har sin egen side med trin, opgaver og billeder. De åbner
+      efterhånden som vi når dertil.
+    </p>
+
+    <ol class="lessons reveal">
+      <li class="lessons__item">
+        <p class="lessons__name"><a href="lektion-1-interface.html">1 · Interface og indstillinger</a></p>
+        <p class="lessons__note">Hvordan programmet er skruet sammen, og de fire indstillinger du skal have på plads.</p>
+      </li>
+      <li class="lessons__item">
+        <p class="lessons__name"><a href="lektion-2-siderne.html">2 · Siderne og dit materiale</a></p>
+        <p class="lessons__note">Rundtur i programmets otte sider, og optagelserne på plads i mapper.</p>
+      </li>
+      <li class="lessons__item lessons__item--todo">
+        <p class="lessons__name">3 · Edit Page</p>
+        <p class="lessons__note">Kommer snart.</p>
+      </li>
+      <li class="lessons__item lessons__item--todo">
+        <p class="lessons__name">4 · Color Page</p>
+        <p class="lessons__note">Kommer snart.</p>
+      </li>
+      <li class="lessons__item lessons__item--todo">
+        <p class="lessons__name">5 · Fusion</p>
+        <p class="lessons__note">Kommer snart.</p>
+      </li>
+      <li class="lessons__item lessons__item--todo">
+        <p class="lessons__name">6 · Dit eget materiale</p>
+        <p class="lessons__note">Kommer snart.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="genveje">
+  <div class="wrap">
+    <p class="kicker">Til opslag</p>
+    <h2 class="section__title">Genveje</h2>
+    <p class="section__intro">
+      Du skal ikke lære dem udenad. Men de fem-seks du kommer til at bruge hele
+      dagen, er hurtigere end musen, og de sidder efter et par timer.
+    </p>
+
+    <div class="keys-scroll">
+      <table class="keys">
+        <caption>Afspilning og markering</caption>
+        <thead>
+          <tr><th scope="col">Handling</th><th scope="col">Windows</th><th scope="col">Mac</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Afspil og stop</td><td><kbd>mellemrum</kbd></td><td><kbd>mellemrum</kbd></td></tr>
+          <tr><td>Spol frem, pause, spol tilbage</td><td><kbd>L</kbd> <kbd>K</kbd> <kbd>J</kbd></td><td><kbd>L</kbd> <kbd>K</kbd> <kbd>J</kbd></td></tr>
+          <tr><td>Sæt startpunkt</td><td><kbd>I</kbd></td><td><kbd>I</kbd></td></tr>
+          <tr><td>Sæt slutpunkt</td><td><kbd>O</kbd></td><td><kbd>O</kbd></td></tr>
+          <tr><td>En frame frem eller tilbage</td><td><kbd>.</kbd> <kbd>,</kbd></td><td><kbd>.</kbd> <kbd>,</kbd></td></tr>
+          <tr><td>Se hele timelinen</td><td><kbd>Shift</kbd>+<kbd>Z</kbd></td><td><kbd>Shift</kbd>+<kbd>Z</kbd></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="keys-scroll">
+      <table class="keys">
+        <caption>Klipning</caption>
+        <thead>
+          <tr><th scope="col">Handling</th><th scope="col">Windows</th><th scope="col">Mac</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Markeringsværktøj</td><td><kbd>A</kbd></td><td><kbd>A</kbd></td></tr>
+          <tr><td>Barberblad</td><td><kbd>B</kbd></td><td><kbd>B</kbd></td></tr>
+          <tr><td>Trimværktøj</td><td><kbd>T</kbd></td><td><kbd>T</kbd></td></tr>
+          <tr><td>Klip ved playhead</td><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td><kbd>Cmd</kbd>+<kbd>B</kbd></td></tr>
+          <tr><td>Slet det markerede</td><td><kbd>Backspace</kbd></td><td><kbd>Backspace</kbd></td></tr>
+          <tr><td>Snapping til og fra</td><td><kbd>N</kbd></td><td><kbd>N</kbd></td></tr>
+          <tr><td>Lås lyd og billede sammen</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td></tr>
+          <tr><td>Tilføj overgang</td><td><kbd>Ctrl</kbd>+<kbd>T</kbd></td><td><kbd>Cmd</kbd>+<kbd>T</kbd></td></tr>
+          <tr><td>Ændr hastighed</td><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td><kbd>Cmd</kbd>+<kbd>R</kbd></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="keys-scroll">
+      <table class="keys">
+        <caption>Projekt og filer</caption>
+        <thead>
+          <tr><th scope="col">Handling</th><th scope="col">Windows</th><th scope="col">Mac</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gem</td><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td><kbd>Cmd</kbd>+<kbd>S</kbd></td></tr>
+          <tr><td>Fortryd</td><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td><kbd>Cmd</kbd>+<kbd>Z</kbd></td></tr>
+          <tr><td>Ny timeline</td><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td><kbd>Cmd</kbd>+<kbd>N</kbd></td></tr>
+          <tr><td>Ny mappe (bin)</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td></tr>
+          <tr><td>Project Manager</td><td><kbd>Shift</kbd>+<kbd>1</kbd></td><td><kbd>Shift</kbd>+<kbd>1</kbd></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================================================================== -->
+<footer class="footer">
+  <div class="wrap">
+    <p>
+      Går der noget galt inden er i velkomne til at skrive til mig på mail.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

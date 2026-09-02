@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Fra redigering til færdig film — onboarding før kursusdagen.
+   Fra redigering til færdig film – onboarding før kursusdagen.
 
    Én side, fem sektioner, ingen navigation. Kursisten skal kunne installere
    programmet og lave sine lektier uden at træffe et eneste valg om hvor på
@@ -14,12 +14,12 @@
   --surface:  #1e1e1e;
   --petrol:   #0E3D42;
 
-  --amber:    #FF9E00;   /* 8,66:1 mod --bg — primær accent, kun handling */
-  --rust:     #E9967A;   /* 7,78:1 mod --bg — sekundær, kun struktur */
+  --amber:    #FF9E00;   /* 8,66:1 mod --bg · primær accent, kun handling */
+  --rust:     #E9967A;   /* 7,78:1 mod --bg · sekundær, kun struktur */
 
   --ink:      #ece3d6;   /* 14,11:1 mod --bg */
   --ink-dim:  #9c9287;   /*  5,87:1 mod --bg */
-  --ink-soft: #b8aea2;   /*  5,45:1 mod --petrol — kickeren i hero står på
+  --ink-soft: #b8aea2;   /*  5,45:1 mod --petrol · kickeren i hero står på
                             cirklen, hvor --ink-dim kun når 3,9:1 */
 
   --line:     rgba(236, 227, 214, 0.12);
@@ -38,7 +38,7 @@
   --measure: 62ch;    /* maks linjelængde på brødtekst */
   --wrap: 1100px;     /* tekstspaltens bredde inde i skallen */
 
-  /* Skallen er hele sidens bredde — hero, skillelinjer og footer-kant med.
+  /* Skallen er hele sidens bredde: hero, skillelinjer og footer-kant med.
      Cirka 3/4 af skærmen. Bunden på 680px undgår et spring lige over
      mobil-brydepunktet, loftet holder den fra at løbe løbsk på brede skærme. */
   --shell: clamp(680px, 76vw, 1500px);
@@ -141,7 +141,7 @@ a:hover { color: var(--ink); }
 }
 
 /* --------------------------------------------------------------------------
-   Knap — sidens eneste handlingsform
+   Knap – sidens eneste handlingsform
    -------------------------------------------------------------------------- */
 
 .btn {
@@ -167,6 +167,53 @@ a:hover { color: var(--ink); }
 .btn:active { transform: translateY(0); }
 
 .btn__icon { width: 1.1em; height: 1.1em; fill: currentColor; }
+
+/* --------------------------------------------------------------------------
+   Navigation
+
+   Siden var oprindeligt en onepager uden navigation. Den begrundelse holdt så
+   længe der kun var én side; med program- og lektionssider ville fraværet af
+   navigation være en blindgyde, ikke en forenkling.
+
+   Farven er --ink-soft og ikke --ink-dim. På forsiden ligger linjen oven på
+   heroen, og på lave skærme kan petroleum-cirklens overkant nå op under den.
+   --ink-soft er det ene token der klarer AA mod både --bg og --petrol.
+
+   Aktiv side markeres i rust, ikke amber: "hvor du er" er struktur, ikke en
+   handling. Amber ejer fortsat kun det, der beder om et klik.
+   -------------------------------------------------------------------------- */
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  list-style: none;
+  margin: 0;
+  padding-block: var(--s3);
+}
+
+.nav__link {
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.nav__link:hover { color: var(--ink); text-decoration: underline; }
+
+.nav__link[aria-current="page"] {
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 2px;
+}
+
+/* På forsiden lægger linjen sig oven på heroen i stedet for at skubbe den ned.
+   Ellers skrider beregningen af første skærmbillede længere nede. */
+.hero .nav {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+}
 
 /* --------------------------------------------------------------------------
    Hero
@@ -210,7 +257,7 @@ a:hover { color: var(--ink); }
   z-index: 2;
   text-align: center;
   /* Tekstblokken sidder lavere end cirklens midte, så figuren får plads
-     foroven — det er kompositionen fra mockuppen. */
+     foroven: det er kompositionen fra mockuppen. */
   transform: translate(-8%, 13%);
 }
 
@@ -255,7 +302,7 @@ a:hover { color: var(--ink); }
 }
 
 /* --------------------------------------------------------------------------
-   Skillelinje — et ekko af en timeline. Ren dekoration, aldrig klikbar.
+   Skillelinje – et ekko af en timeline. Ren dekoration, aldrig klikbar.
    -------------------------------------------------------------------------- */
 
 .rule {
@@ -314,7 +361,7 @@ a:hover { color: var(--ink); }
 .facts__val { margin: 0; font-weight: 500; }
 
 /* --------------------------------------------------------------------------
-   Trin — bruges til både installation og lektier
+   Trin – bruges til både installation og lektier
    -------------------------------------------------------------------------- */
 
 .steps {
@@ -377,6 +424,11 @@ a:hover { color: var(--ink); }
   margin: var(--s4) 0 0;
   max-width: 760px;
 }
+
+/* Til billeder der er meget bredere end de er høje. 760 px er rigtigt for de
+   nogenlunde kvadratiske dialogbilleder, men gør en 1800x62 bundlinje til en
+   streg. Denne variant giver hele tekstspalten. */
+.shot--wide { max-width: none; }
 
 .shot__frame {
   position: relative;
@@ -507,3 +559,368 @@ a:hover { color: var(--ink); }
   .facts { padding: var(--s3); }
   .step { grid-template-columns: 2.25rem 1fr; gap: var(--s2); }
 }
+
+/* ==========================================================================
+   INDERSIDER – program og lektioner
+   Alt herunder bruges ikke på forsiden. Forsiden er fortsat en onepager uden
+   navigation; indersiderne er opslagsværk man vender tilbage til på dagen.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Sidehoved. Ingen hero: man er kommet hertil med et ærinde.
+   -------------------------------------------------------------------------- */
+
+.pagehead { padding-block: var(--s5) var(--s3); }
+
+.pagehead__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.pagehead__back::before { content: "\2190"; }
+.pagehead__back:hover { text-decoration: underline; }
+
+.pagehead__title {
+  margin: var(--s3) 0 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.pagehead__intro {
+  margin: var(--s3) 0 0;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: 1.0625rem;
+}
+
+/* --------------------------------------------------------------------------
+   Dagens program. Ikke en tabel: rækkerne skal kunne reflowe på en telefon,
+   og tid + navn hører sammen som ét udsagn, ikke som to celler.
+   -------------------------------------------------------------------------- */
+
+.sked { list-style: none; margin: var(--s4) 0 0; padding: 0; }
+
+.sked__row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: var(--s3);
+  padding-block: var(--s3);
+  border-top: 1px solid var(--line);
+}
+.sked__row:last-child { border-bottom: 1px solid var(--line); }
+
+.sked__time {
+  color: var(--rust);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.sked__name { margin: 0; font-size: 1.0625rem; font-weight: 600; }
+.sked__name a { text-decoration: none; }
+.sked__name a:hover { text-decoration: underline; }
+
+.sked__note {
+  margin: var(--s1) 0 0;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+  font-size: 0.9375rem;
+}
+
+/* Pauser skal kunne springes over med øjet. */
+.sked__row--break .sked__name { font-weight: 400; color: var(--ink-dim); }
+.sked__row--break .sked__time { color: var(--ink-dim); }
+
+/* --------------------------------------------------------------------------
+   Materialepakken
+   -------------------------------------------------------------------------- */
+
+.download {
+  margin-block: var(--s4);
+  padding: var(--s4);
+  background: var(--surface);
+  border-radius: 16px;
+}
+.download__title { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.download__body {
+  margin: var(--s2) 0 0;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+}
+.download__action { margin: var(--s3) 0 0; }
+.download__meta {
+  margin: var(--s2) 0 0;
+  font-size: 0.875rem;
+  color: var(--ink-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   Genvejstabeller. Her er tabel det rigtige: tre parallelle kolonner der
+   skal kunne sammenlignes vandret. Derfor scroller den i stedet for at reflowe.
+   -------------------------------------------------------------------------- */
+
+.keys-scroll { overflow-x: auto; margin-top: var(--s4); }
+
+/* table-layout: fixed er det der får de tre tabeller til at flugte. Uden den
+   beregner hver tabel sin egen kolonnebredde ud fra sit eget indhold, og
+   Windows-kolonnen lander tre forskellige steder ned gennem siden.
+   min-width udløser vandret scroll i .keys-scroll på smalle skærme frem for at
+   presse tastekombinationerne sammen. */
+.keys {
+  width: 100%;
+  min-width: 620px;
+  max-width: 820px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+.keys th:nth-child(1) { width: 46%; }
+.keys th:nth-child(2),
+.keys th:nth-child(3) { width: 27%; }
+.keys caption {
+  text-align: left;
+  padding-bottom: var(--s2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.keys th, .keys td {
+  text-align: left;
+  padding: 0.6rem var(--s2) 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.keys th { font-weight: 600; color: var(--ink); }
+.keys td:first-child { color: var(--ink-dim); white-space: normal; }
+
+kbd {
+  display: inline-block;
+  padding: 0.15em 0.45em;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--surface);
+  font: inherit;
+  font-size: 0.9em;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   Lektionsoversigt
+   -------------------------------------------------------------------------- */
+
+.lessons { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s2); }
+
+.lessons__item {
+  padding: var(--s3);
+  background: var(--surface);
+  border-radius: 12px;
+}
+.lessons__item--todo { opacity: 0.55; }
+
+.lessons__name { margin: 0; font-size: 1.0625rem; font-weight: 600; }
+.lessons__name a { text-decoration: none; }
+.lessons__name a:hover { text-decoration: underline; }
+.lessons__note { margin: var(--s1) 0 0; color: var(--ink-dim); font-size: 0.9375rem; }
+
+/* --------------------------------------------------------------------------
+   Frihedsgrad – viser hvor meget hånden holdes i den enkelte lektion
+   -------------------------------------------------------------------------- */
+
+.scaffold {
+  display: inline-block;
+  margin-top: var(--s2);
+  padding: 0.2em 0.7em;
+  border: 1px solid var(--rust);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+/* --------------------------------------------------------------------------
+   Sidder du fast? Foldes med <details>, så det virker uden JavaScript.
+   -------------------------------------------------------------------------- */
+
+.hint { margin-top: var(--s3); border-left: 2px solid var(--rust); padding-left: var(--s3); }
+.hint > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+  list-style-position: outside;
+}
+.hint > summary:hover { color: var(--amber); }
+.hint > p { margin: var(--s2) 0 0; max-width: var(--measure); color: var(--ink-dim); }
+
+@media (max-width: 720px) {
+  .sked__row { grid-template-columns: 1fr; gap: var(--s1); }
+  .download { padding: var(--s3); }
+}
+
+/* --------------------------------------------------------------------------
+   Lektionsnavigation – forrige og næste, i bunden af hver lektionsside.
+   Placeret efter indholdet og ikke før: man skal igennem lektionen, ikke
+   vælge sig rundt i den.
+   -------------------------------------------------------------------------- */
+
+.lesson-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--s5);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--line);
+}
+
+.lesson-nav__where {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Deaktiveret pil er et span uden href, ikke et link der ikke gør noget. */
+.lesson-nav__spacer { color: var(--ink-dim); opacity: 0.4; font-size: 0.9375rem; }
+
+/* --------------------------------------------------------------------------
+   Lektionens hovedtal – kort stribe under overskriften
+   -------------------------------------------------------------------------- */
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  margin-top: var(--s4);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+.meta__key {
+  margin: 0 0 0.2em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+.meta__val { margin: 0; font-weight: 500; }
+
+/* --------------------------------------------------------------------------
+   Det siges / det de gør – adskiller oplæg fra håndens arbejde
+   -------------------------------------------------------------------------- */
+
+.lead-in {
+  margin: var(--s4) 0 0;
+  padding-left: var(--s3);
+  border-left: 2px solid var(--line);
+  max-width: var(--measure);
+  color: var(--ink);
+}
+.lead-in p { margin: 0 0 var(--s2); }
+.lead-in p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Selvtjek
+
+   Genkaldelse er det virksomme element: at forsøge at huske svaret virker
+   bedre end at læse det igen. Derfor er spørgsmålet synligt og svaret foldet
+   væk, og ikke omvendt.
+
+   Bygget på <details>, så det virker uden JavaScript, på touch og med
+   tastatur. <summary> er allerede en knap i browserens øjne.
+   -------------------------------------------------------------------------- */
+
+.check { display: grid; gap: var(--s2); margin-top: var(--s4); }
+
+.check__item {
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+.check__item > summary {
+  display: flex;
+  gap: var(--s2);
+  align-items: baseline;
+  padding: var(--s3);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+  list-style: none;              /* Firefox og Chrome */
+}
+.check__item > summary::-webkit-details-marker { display: none; }  /* Safari */
+
+/* Spørgsmålstegnet bliver til et udråbstegn, når svaret foldes ud. */
+.check__item > summary::before {
+  content: "?";
+  flex: none;
+  width: 1em;
+  color: var(--rust);
+  font-weight: 700;
+}
+.check__item[open] > summary::before { content: "!"; }
+
+.check__item > summary:hover { color: var(--amber); }
+
+.check__answer {
+  margin: 0;
+  padding: 0 var(--s3) var(--s3) calc(var(--s3) + 1em + var(--s2));
+  max-width: var(--measure);
+  color: var(--ink-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Sideoversigt
+
+   Ikonet er hovedsagen: det er dét, de skal genkende i bundlinjen, og det er
+   skarpt i alle størrelser. Helskærmsbilledet ligger foldet væk under, fordi
+   otte næsten ens grå flader efter hinanden er svære at skelne og gør listen
+   umulig at skimme.
+   -------------------------------------------------------------------------- */
+
+.pages { display: grid; gap: var(--s2); margin-top: var(--s4); }
+
+.pages__item {
+  padding: var(--s3);
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+.pages__head { display: flex; align-items: center; gap: var(--s3); }
+
+.pages__icon { width: 40px; height: 40px; flex: none; }
+
+/* Photo-siden har intet ikon i sættet. Feltet holdes tomt, så navnene flugter. */
+.pages__icon--tom { visibility: hidden; }
+
+.pages__name { margin: 0; font-size: 1.0625rem; font-weight: 600; }
+
+.pages__body {
+  margin: var(--s2) 0 0;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+}
+
+.pages__shot { margin-top: var(--s3); }
+.pages__shot > summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--ink-dim);
+  list-style: none;
+}
+.pages__shot > summary::-webkit-details-marker { display: none; }
+.pages__shot > summary::before { content: "+ "; color: var(--rust); font-weight: 700; }
+.pages__shot[open] > summary::before { content: "\2212 "; }
+.pages__shot > summary:hover { color: var(--amber); }
+.pages__shot img { margin-top: var(--s2); border-radius: 8px; }
+
+/* Markerer om siden bruges på dagen. Arver .tag fra forsiden. */
+.pages__item .tag { margin-left: auto; flex: none; }
