@@ -622,6 +622,18 @@ a:hover { color: var(--ink); }
 .sked__name a { text-decoration: none; }
 .sked__name a:hover { text-decoration: underline; }
 
+/* Underordnet linje, til Edit L1/L2/L3 under selve Edit-blokken. Mindre luft,
+   ingen øverste streg, og navnet er ikke fremhævet, så de læses som en del af
+   blokken ovenfor og ikke som selvstændige punkter på linje med resten. */
+.sked__row--sub {
+  padding-block: var(--s2);
+  border-top: none;
+  grid-template-columns: 5.5rem 1fr;
+}
+.sked__row--sub .sked__name { font-size: 0.9375rem; font-weight: 500; color: var(--ink-dim); }
+.sked__row--sub .sked__name a { color: var(--ink); }
+.sked__row--sub .sked__time { font-weight: 500; color: var(--ink-dim); }
+
 .sked__note {
   margin: var(--s1) 0 0;
   max-width: var(--measure);

@@ -46,31 +46,32 @@ Lektionsopdelt, så mappen de kender fra siden også findes i programmet.
 dr_kursus_virum
 ├── 00 Eget materiale       tom, klar til deres egne filer
 │   └── Reserve             fallback for dem der intet har med
-├── 01 Interface
-├── 02 Pages
-├── 03 Edit
-│   ├── Del 1 – Øvelsesklip 3-4 klip, lav stakes, ikke en del af facit
-│   └── Del 2 – Byg scenen
-│       ├── Råklip          kun det denne scene skal bruge, trimmet til subclips
-│       └── Timelines
-│           ├── FACIT       den færdige scene, låst/ikke redigerbar
-│           └── PUZZLE      tom. Deltagerne opretter selv timelinen i trin 1
-├── 04 Color
-├── 05 Fusion
+├── 01 INTERFACE
+├── 02 PAGES
+├── 03 EDIT
+│   ├── L1                  basics + genskab introen (facit + reduceret puzzle)
+│   ├── L2                  udvidet: inspector, transitions, keyframing m.m.
+│   └── L3                  composite, bro til Color
+├── 04 COLOR PAGE
+├── 05 FUSION
 ├── 06 Deliver
 └── 99 BONUS - Fairlight
 ```
 
-`03 Edit` følger den variant af puzzle-designet, der er blank i stedet for
-omrokeret: se `lektioner/l3-assets.md` for den fulde begrundelse. Kort sagt bygges
-her ikke en `PUZZLE`-timeline med klip i forkert rækkefølge, kun en `FACIT` og et
-scoped `Råklip`-bin. Selve byggeprocessen er derfor kortere for denne lektion:
+Navngivningen matcher det, HP faktisk har bygget (bekræftet ved screenshot
+2026-09-05), ikke det oprindelige forslag. `L1/L2/L3` under `03 EDIT` er HP's egen
+inddeling af Edit-lektionen i tre dele, se `kursusplan.md` og `lektioner/l3-assets.md`.
+
+`03 EDIT / L1` følger en tredje variant af puzzle-designet: hverken blank eller
+omrokeret, men **reduceret**.
 
 1. Klip facit færdigt på en timeline og navngiv den `FACIT`
-2. Læg kun de klip, scenen bruger, i `Råklip` som subclips
-3. Lad `PUZZLE`-timelinen være ikke-eksisterende. Deltagerne opretter den selv
+2. Dupliker den, omdøb til `PUZZLE`
+3. Fjern de fleste klip fra puzzle-timelinen, men ikke alle. De tilbageværende
+   fungerer som landemærker, så ingen står helt uden holdepunkt
+4. Læg de fjernede klip i en bin ved siden af, klar til at blive genindsat
 
-`04 Color` og `05 Fusion` bruger derimod den oprindelige, omrokerede variant, når de
+`04 COLOR PAGE` og `05 FUSION` bruger den oprindelige, omrokerede variant, når de
 skal bygges, se opskriften nedenfor.
 
 ## 3. Sådan bygges en omrokeret puzzle-lektion (L4, L5)

@@ -7,7 +7,8 @@ anden computer uden at genopdage beslutningerne, vi allerede har taget.
 
 Et endagskursus i DaVinci Resolve for voksne begyndere, **7/9 2026, kl. 9-15, Virum
 Gymnasium**. Siden er både onboarding før dagen og selve undervisningsmaterialet på
-dagen. Seks lektionssider, ét materialearkiv deltagerne henter på forhånd.
+dagen. Edit er delt i tre selvstændige dele (Edit L1/L2/L3), så der er otte
+undervisningsblokke i alt, ét materialearkiv deltagerne henter på forhånd.
 
 Kanoniske dokumenter, læs dem, ikke kun denne fil:
 
@@ -22,29 +23,52 @@ Kanoniske dokumenter, læs dem, ikke kun denne fil:
 |---|---|
 | L1 · Interface og indstillinger | Bygget, `lektion-1-interface.html`. Ét skærmbillede mangler retagning (viser stadig 24 fps, skal være 23,976, markeret med `ROUGH CUT`-kommentar i HTML'en) |
 | L2 · Siderne og dit materiale | Bygget, `lektion-2-siderne.html`. To billeder er placeholders: source viewer er tomt (skal vise et åbnet klip), Photo-siden mangler ikon (findes ikke i ikonsættet) |
-| L3 · Edit Page | Ramme og struktur besluttet, se `lektioner/l3-assets.md`. **Venter på HP:** klippenavne i rækkefølge, FACIT-timelinens længde, evt. markers. Først derefter skrives trinlisten |
-| L4 · Color, L5 · Fusion, L6 · Eget materiale | Ikke påbegyndt |
+| L3 · Edit L1 | **Færdig**, `lektion-3-edit.html`. Rigtige skærmbilleder fra HP's "Hund på efterårstur"-projekt. Linket fra `program.html` begge steder (programmet og lektionsoversigten) |
+| L3 · Edit L2 | Ikke bygget. Indholdsudkast (Inspector, Transform, Crop, titler/effekter) gemt i `lektioner/udkast/edit-l2-inspector-titler.html` til genbrug, inkl. to brugbare billeder (`assets/l3-6-inspector.jpg`, `assets/l3-7-titel-effekt.jpg`) |
+| L3 · Edit L3 | Ikke bygget. Indhold ifølge `kursusplan.md`: simpel composite-øvelse, bro til Color |
+| L4 · Color, L5 · Fusion, L6 · Eget materiale | Ikke påbegyndt. Indhold og fokus er besluttet (se `kursusplan.md`), sider ikke bygget |
+
+**Edit L1 er færdig og består af to dele i samme fil**, adskilt af `<hr>` men uden
+separate sider: "De rå håndgreb" (drag/JKL/I-O, swap, Append, trim-værktøjer,
+link/snap, zoom) og "Genskab filmens åbning" (FACIT + PUZZLE-timeline hvor 15 klip
+er fjernet, deltagerne genindsætter dem fra en råklip-bin). 40 minutter i alt.
+
+**Edit L2 og L3 har ikke egne HTML-sider endnu.** `program.html`s undernavigation
+viser dem som "(kommer snart)", uden links, indtil de er bygget. Byg dem efter samme
+mønster som Edit L1 (egen fil eller nyt afsnit, ramme → trinliste → assets → HTML),
+ikke som en fjerde sektion i `lektion-3-edit.html`. Den fejl (Inspector-indhold
+liggende som "Del 3" i Edit L1's fil) er allerede rettet én gang, 2026-09-05.
 
 ## Nøglebeslutninger, med begrundelse, så de ikke skal tages om
 
 - **Dato/tid: 7/9 2026, 9-15.** Ikke 9-16, som en tidligere version af planen antog.
 - **Framerate: 23,976 fps**, ikke 24. Matcher Efterårs egen optagelseshastighed.
-- **L3 bygger på Efterår, ikke Blackmagics "Beginner's Guide"-bog.** Bogen (i
-  `research/`, ikke committet, se `.gitignore`) blev brugt som research for at finde
-  den rigtige rækkefølge at undervise i (JKL/I/O før Append, ikke omvendt, bekræftet
-  af både bogen og HP's eget hæfte fra 2022), men selve OMO-materialet bruges ikke.
-  Det løste også et uafklaret rettighedsspørgsmål, se `materialepakke.md`.
-- **L3 Del 2 er en blank timeline, ikke en delvist bygget en.** Deltagerne skal
-  gennemføre hele byggeprocessen selv. Se `lektioner/l3-assets.md` for den fulde
-  begrundelse.
+- **Edit bygger på HP's eget "Hund på efterårstur", ikke Blackmagics "Beginner's
+  Guide"-bog.** Bogen (i `research/`, ikke committet, se `.gitignore`) blev brugt
+  som research for at finde den rigtige rækkefølge at undervise i (JKL/I-O før
+  Append, ikke omvendt, bekræftet af både bogen og HP's eget hæfte fra 2022), men
+  selve OMO-materialet fra bogen bruges ikke. Det løste også et rettighedsspørgsmål
+  om at distribuere fremmed footage, se `materialepakke.md`.
+- **Edit L1's puzzle er reduceret, ikke blank.** FACIT-timelinen viser filmens
+  rigtige åbning; PUZZLE-timelinen har 15 af klippene fjernet (ikke alle), og
+  deltagerne genindsætter dem fra en scoped råklip-bin. Ændret fra den oprindelige
+  "helt blank timeline"-anbefaling, fordi HP i praksis byggede noget bedre egnet
+  til total-begyndere: de tilbageværende klip er landemærker.
+- **Edit er tre selvstændige dele (L1/L2/L3), ikke tre afsnit i én fil.** Navnene
+  matcher bin-strukturen i `.dra`-pakken (`03 EDIT / L1, L2, L3`), som er HP's egen
+  organisering, ikke en fejl. Alle tre dele deler ikke længere ét fast tidsrum:
+  Edit L1 er 40 minutter og har sin egen side; L2 (~25 min) og L3 (~15 min) er
+  separate opgaver, der bygges senere.
 - **Arbejdsformen er stepwise, én lektion ad gangen:** ramme til godkendelse → trinliste
   i ren tekst → HP tager skærmbilleder/bygger i Resolve → HTML bygges → HP bygger
   timelines/bins i Resolve. Ingen lektion skrives i ét hug.
 - **Ingen JavaScript på siden.** Foldning løses med `<details>`, ikke script.
-- **Ingen 'em-dash' noget sted** (det lange bindestreg-tegn amerikansk typografi bruger),
-  hverken på siden eller i planlægningsdokumenterne.
-  Dansk tegnsætning i stedet: kolon, komma, punktum, eller almindelig tankestreg (–)
-  kun i overskrifter/etiketter.
+- **Ingen 'em-dash' noget sted** (det lange bindestreg-tegn amerikansk typografi
+  bruger), hverken på siden eller i planlægningsdokumenterne. Dansk tegnsætning i
+  stedet: kolon, komma, punktum, eller almindelig tankestreg (–) kun i
+  overskrifter/etiketter.
+- **Genveje viser altid både Windows og Mac.** `Ctrl` har et `Cmd`-modstykke, `Alt`
+  et `Option`-modstykke, overalt hvor en genvej nævnes.
 
 ## Filkort
 
@@ -53,17 +77,20 @@ index.html                  onboarding før dagen
 program.html                dagens program, download, genveje
 lektion-1-interface.html    L1, færdig
 lektion-2-siderne.html      L2, færdig
-lektion-3-edit.html         L3, ikke bygget endnu
+lektion-3-edit.html         Edit L1, færdig (kun L1, se status ovenfor)
 css/style.css               hele designsystemet, se README for tokens
 assets/                     billeder, ikoner (assets/icons/, baggrund fjernet)
 kursusplan.md               dagsplan
 materialepakke.md           byggevejledning til .dra-arkivet
 lektioner/                  asset-specs pr. lektion, arbejdsdokumenter
+lektioner/udkast/           indhold flyttet ud af en side, til senere genbrug
 research/                   kildemateriale, IKKE committet (se .gitignore)
 ```
 
 ## Umiddelbart næste skridt
 
-Vent på svar fra HP på de tre spørgsmål i bunden af `lektioner/l3-assets.md`. Når de
-kommer, skriv L3's trinliste i ren tekst (matcher formatet i `lektioner/l1-interface.md`
-og `lektioner/l2-assets.md`), til godkendelse, før HTML bygges.
+Byg Edit L2 (Inspector, transitions, freeze frame, keyframing, handles, slow
+motion, clip attributes, title basics) som sin egen side. Start med udkastet i
+`lektioner/udkast/edit-l2-inspector-titler.html`, som allerede har Inspector- og
+titel-indhold med rigtige billeder, men mangler resten af listen fra
+`kursusplan.md`. Følg samme proces som hidtil: ramme til godkendelse først.

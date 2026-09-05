@@ -36,7 +36,9 @@ og facit ligger i projektet. Der går ikke ét minut med opsætning på dagen.
 | 14:05–14:45 | **L6 · Eget materiale + eksport** | 40 |
 | 14:45–15:00 | Afrunding | 15 |
 
-Undervisningstid: 4 timer 25 minutter. Edit Page er med 80 minutter dagens længste blok.
+Undervisningstid: 4 timer 25 minutter. Edit Page er med 80 minutter dagens længste
+blok, nu delt i tre navngivne dele (Edit L1/L2/L3), der matcher bin-strukturen i
+`.dra`-pakken.
 
 ---
 
@@ -74,66 +76,101 @@ Derefter hands-on i Media Pool: bins, scrubbing og JKL som afspilningsstyring.
 
 ## 10:30–11:50 · L3 · Edit Page – dagens hovedblok
 
-Målet er konkret: **et færdigt råklip før frokost.** Deltagerne skal have set noget
-spille igennem fra ende til anden, mens de stadig har overskud. Det er dagens vendepunkt.
+Bygget på Efterår, ikke OMO. Bin-strukturen i `.dra`-pakken hedder `03 EDIT` med tre
+undermapper, **L1, L2, L3**. Det navnesammenfald med kursets egne overordnede
+lektionsnumre er med vilje HP's egen organisering i Resolve, ikke en fejl. På
+kursussiden kaldes de **Edit L1/L2/L3** for at holde dem adskilt fra kursets L1-L6.
 
-*Første halvdel, Parsons låst:* alle klip ligger allerede på timelinen i forkert
-rækkefølge. Opgaven er udelukkende at flytte rundt, så historien fungerer.
+Alle tre dele deler ét fast tidsrum på 80 minutter. Bekræftet med HP 2026-09-05:
+tiden udvides ikke, og intet flyttes til Color eller Fusion. Edit L2 og L3 holdes
+derfor bevidst på **overbliksniveau**, samme greb som virkede for trim-værktøjer og
+zoom sidst: vist og navngivet, ikke øvet i dybden.
 
-- Interfacet: media pool, source viewer, timeline viewer, timeline
-- Spor: øverste videospor vinder, al lyd lægges sammen
-- Trimning fra kanterne, blade, ripple trim
-- Lydniveauer og et enkelt fade
+Rækkefølgen inde i Edit L1 er grundet i research: både Blackmagics "Beginner's Guide"
+og HP's eget hæfte fra 2022 underviser i drag/JKL/I-O, før de introducerer
+Insert/Append som begreb, ikke omvendt. Se `lektioner/l3-assets.md` for den fulde
+begrundelse.
 
-*Anden halvdel, Parsons åben:* brikkerne ligger i en bin, timelinen er tom. De vælger
-selv hvordan klippene kommer ned.
+**Edit L1 – de rå håndgreb og en genskabt intro (ca. 40 min), fuldt styret.**
 
-- In- og out-punkter i source viewer; markers
-- Insert, overwrite, place on top, append
-- Link og unlink; J- og L-cut
-- Overgange og hvornår man **ikke** skal bruge dem
-- Inspector: transform, crop, dynamic zoom
-- Én keyframe-animation
+- Ny timeline; hover for preview i binnen; åbn i source viewer
+- JKL til at finde stedet; Mark In / Mark Out
+- Træk klippet ned på timelinen; gentag med 2-3 klip mere
+- Reorder via swap-genvejen (Shift+Ctrl+, / Shift+Ctrl+.)
+- Append og Overwrite, nu hvor der er noget at føje til
+- Overblik over knapper og trim-værktøjer: **Selection, Trim, Blade** (ikke Dynamic
+  Trim: den involverer JKL-tasterne på en anden måde end det, de lige har lært, og
+  forvirrer mere end den hjælper her, samme vurdering som i 2022-hæftet)
+- Link/unlink af lyd og billede; snap til/fra; zoom ind/ud af timeline
 
-Keyframes introduceres her, fordi princippet går igen i både Color og Fusion. Lærer man
-diamant-ikonet én gang, genkender man det to gange mere på dagen.
+**Ændret puzzle-design:** ikke længere en blank timeline. De ser en FACIT-timeline
+med filmens færdige intro, og en PUZZLE-timeline hvor **de fleste klip er fjernet**.
+Opgaven er at genskabe introen ved at genindsætte det manglende med det, de lige har
+lært. Det er HP's egen implementering, bygget i praksis. Se `lektioner/l3-assets.md`,
+som skal opdateres til at matche (den beskriver stadig en helt blank timeline).
 
-*De sidste fem minutter: "prøv det på dit eget" for dem der er hurtigt færdige.*
+**Edit L2 – udvidet, overblik (ca. 25 min).**
+
+- Inspector, transitions, freeze frame
+- Simpel keyframing, handles
+- Slow motion, clip attributes-effekten
+- Title basics
+
+**Edit L3 – composite, bro til Color (ca. 15 min).**
+
+- Simpel composite-øvelse
+- Glidende overgang ind i Color-sidens tankegang, så L4 ikke starter fra nul
+
+*De sidste minutter, hvis nogen er hurtigt færdige: "prøv det på dit eget."*
 
 ## 12:30–13:15 · L4 · Color Page
 
-- Interfacet skåret ned: skjul de paneler vi ikke bruger
+Bin: `04 COLOR PAGE`. Fokus er **nodes**, samme princip som Fusion bygger videre på
+efter frokost, nu i sin enkleste form. Interfacet skåret ned først: skjul de paneler
+vi ikke bruger.
+
 - Primary color wheels: lift, gamma, gain og offset
 - Kontrast, pivot og mætning: de tre greb der gør mest
+- Nodes: hvad de er, og hvorfor man lægger justeringer i serie i stedet for at
+  proppe alt ind i én
 - Shift+D: se før og efter hele tiden
 - **Shot matching:** vælg et referenceshot, grab still, split screen, ret de øvrige ind
 
-Sidste punkt er blokkens egentlige indhold. En enkelt smuk indstilling er let; at fem
-klip ligner hinanden er det, der afgør om filmen ser professionel ud.
+Derefter fri leg: deltagerne farvegraderer selv, med det de lige har lært, uden en
+facit at ramme.
 
 *Stilladsering: Parsons med distraktorer, der ligger klip i binnen som ikke skal bruges.*
 
 ## 13:15–13:55 · L5 · Fusion
 
-Dagens mest abstrakte emne. Blokken er hårdt afgrænset til **ét produkt.**
+Bin: `05 FUSION`, opdelt som Edit i navngivne dele (`L1` set i mappestrukturen, flere
+formentlig på vej). Tre byggetrin i stigende sværhedsgrad, samme rækkefølge som
+Blackmagic-bogens eget Fusion-kapitel bruger:
+
+1. **Titel**: det letteste at komme i gang med, og det der bekræfter node-modellen
+   fra Color
+2. **Custom transition**: en overgang bygget i Fusion i stedet for valgt fra en liste
+3. **En mere avanceret comp**: en simpel VFX-effekt, det dagens mest abstrakte emne
+   ender med at vise er muligt
 
 - Node graph som flowdiagram: råmateriale ind, resultat ud
 - De fire nodetyper: image, effect, merge, mask. Der findes over 300 nodes; de opfører
   sig som fire
-- Ét konkret greb bygget færdigt
-- Tilbage til Edit Page og se det ligge i timelinen
+- Tilbage til Edit Page og se resultatet ligge i timelinen
 
-Ingen rundtur i værktøjskassen. Deltagerne skal forlade blokken med én ting der virker
-og en model der forklarer resten.
+40 minutter til tre trin er stramt. Løber det over, skæres der i trin 3, ikke i
+titel eller transition. De to første er dem, der cementerer node-forståelsen.
 
 *Stilladsering: Parsons med distraktorer.*
 
 ## 14:05–14:45 · L6 · Eget materiale + eksport
 
-Dagens payoff. Deltagerne lægger deres egne optagelser i binnen `00 Eget materiale` i
-samme projekt, klipper noget kort sammen og eksporterer det.
+Dagens payoff, bygget om HP's kaffevideo. Deltagerne blev i onboardingen bedt om
+selv at filme noget i samme stil (`index.html`, "Optag noget selv"), så "eget
+materiale" er reelt deres egen version af den samme øvelse, ikke vilkårligt medbragt
+footage.
 
-- Import af eget materiale
+- Import af eget materiale (eller kaffevideoen som reserve)
 - Klip det sammen på blank timeline, ingen facit
 - Deliver-siden: presets, filnavn, destination
 - Add to Render Queue og Render All
@@ -143,7 +180,8 @@ at have brugt det.
 
 *Stilladsering: blank. Ingen brikker, ingen facit.*
 
-For dem der ikke har eget materiale med, ligger der en reservebin de kan bruge i stedet.
+For dem der ikke har eget materiale med, ligger der en reservebin med kaffevideo-
+klippene, de kan bruge i stedet.
 
 ### Regn med at billedhastigheden kolliderer her
 
