@@ -938,7 +938,7 @@ kbd {
 .pages__item .tag { margin-left: auto; flex: none; }
 
 /* --------------------------------------------------------------------------
-   Unfold — en stor, tydelig foldning til hele afsnit, ikke kun et FAQ-svar.
+   Unfold: en stor, tydelig foldning til hele afsnit, ikke kun et FAQ-svar.
    Bruges hvor pointen er at skjule facit for en øvelse, indtil man beder om
    det: pilen er amber, fordi klikket er en handling, ikke bare struktur.
    -------------------------------------------------------------------------- */
@@ -984,7 +984,7 @@ kbd {
 .unfold__body { padding: 0 var(--s4) var(--s4); }
 
 /* --------------------------------------------------------------------------
-   Ideas — valgfrie forslag i en fri-leg-øvelse. Ikke en trinliste (der er
+   Ideas: valgfrie forslag i en fri-leg-øvelse. Ikke en trinliste (der er
    ingen rækkefølge eller facit), bare inspiration hvis nogen mangler retning.
    -------------------------------------------------------------------------- */
 
@@ -1007,4 +1007,73 @@ kbd {
   display: inline-block;
   vertical-align: -5px;
   margin-right: 0.3em;
+}
+
+/* --------------------------------------------------------------------------
+   Site-navigation, udvidet til at dække alle lektioner
+
+   "03 Edit" er tre sider, ikke én, så den bliver en dropdown i stedet for et
+   almindeligt link: <details>/<summary>, samme foldnings-mekanik som resten
+   af siden, ingen JavaScript. Det virker med både mus og touch, i modsætning
+   til en ren CSS-hover-løsning, som ikke virker på telefon.
+   -------------------------------------------------------------------------- */
+
+.nav__fold > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.nav__fold > summary::-webkit-details-marker { display: none; }
+
+/* Lille pil, tegnet i CSS, ikke et ikon-billede. Vender når folden åbnes. */
+.nav__fold > summary::after {
+  content: "";
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.15s var(--ease);
+}
+.nav__fold[open] > summary::after { transform: rotate(-135deg) translateY(2px); }
+
+.nav__fold > summary:hover { color: var(--ink); }
+
+/* Aktiv tilstand: rust, ikke amber. At vise hvor man er, er struktur, ikke
+   en handling, samme regel som resten af navigationen. */
+.nav__fold[open] > summary,
+.nav__fold--active > summary { color: var(--rust); }
+
+/* Normalt flow, ikke position: absolute. Grunden er "åben som standard" på
+   Edit-siderne (se nav__fold--active): en absolut positioneret boks ville
+   flyde oven på sidens eget indhold i stedet for at skubbe det ned, når den
+   står åben permanent. Samme opførsel som alt andet foldbart på siden. */
+.nav__sub {
+  margin: var(--s2) 0 0;
+  padding: var(--s2);
+  max-width: 20rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  list-style: none;
+}
+.nav__sub li + li { margin-top: 2px; }
+.nav__sub a {
+  display: block;
+  padding: 0.45em 0.6em;
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+.nav__sub a:hover { color: var(--ink-soft); text-decoration: underline; }
+.nav__sub a[aria-current="page"] { color: var(--rust); font-weight: 600; }
+
+@media (max-width: 720px) {
+  .nav__sub { margin-top: var(--s1); border: none; padding: 0 0 0 var(--s3); }
 }

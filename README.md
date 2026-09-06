@@ -32,6 +32,21 @@ i rækkefølge, og ingen mulighed for at fare vild. Den begrundelse holdt så l�
 der kun fandtes én side. Med program- og lektionssider ville et fravær af
 navigation være en blindgyde frem for en forenkling.
 
+**Navigationen dækker alle otte lektioner, 2026-09-07.** Rækkefølgen matcher
+dagen: Inden dagen, Program, 01 Interface, 02 Pages, 03 Edit, 04 Color, 05 Fusion,
+06 Deliver og fri leg. Edit er tre sider, ikke én, så den er en fold i stedet for
+et almindeligt link: `<details>`/`<summary>`, samme mekanik som alt andet foldbart
+på siden, ingen JavaScript. Det virker med touch, hvilket en ren CSS-hover-løsning
+ikke ville have gjort.
+
+Folden opfører sig forskelligt to steder. På Edit-siderne selv (`lektion-3-edit.html`
+og de to andre) står den åben som standard, med `open`-attributten og klassen
+`nav__fold--active`, så man kan se og skifte mellem Edit L1/L2/L3 uden at klikke
+noget først. På alle andre sider er den lukket, og et klik folder den ud.
+`.nav__sub` er bevidst ikke `position: absolute`: en flydende boks ville ligge
+oven på sidens eget indhold, når folden står åben permanent på Edit-siderne. Den
+skubber i stedet resten af siden ned, som alt andet foldbart her.
+
 **Én knapform på hele siden.** Amber betyder handling og intet andet. Derfor
 er hero-billedet heller ikke selv en klikflade: kompositionen viser en
 pilleformet knap, og hvis hele fladen var klikbar, ville den knap lyve om sit
@@ -115,8 +130,11 @@ placeringen i stykker på andre skærmbredder.
 - Alle tekst- og baggrundskombinationer målt mod WCAG AA. Laveste er 5,45:1.
 - Ingen vandret side-scroll ved 375, 500, 721, 768, 1024, 1280, 1440, 1680
   eller 1920 px. Skallen måler 76 % på alle desktop-bredder.
-- Tab-rækkefølge: spring-link → Start her → Åbn downloadsiden → Se videoen →
-  videoafspilleren. Alle med synlig `:focus-visible`-ring.
+- Tab-rækkefølge på forsiden: spring-link → Start her → Åbn downloadsiden →
+  Se videoen → videoafspilleren, alle med synlig `:focus-visible`-ring.
+  **Ikke genverificeret** siden navigationen voksede til otte punkter plus en
+  fold 2026-09-07: spring-linket springer nu forbi flere led end før, tjek det
+  i en rigtig browser, før dette igen kaldes verificeret.
 - Siden står læsbar uden billeder, uden `animation-timeline` og under
   `prefers-reduced-motion: reduce`.
 - 48 KB over folden, 265 KB for hele siden. Videoen hentes først ved klik

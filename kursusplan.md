@@ -170,7 +170,7 @@ navngivne node-grupper. Formålet er at vise, hvor langt værktøjet kan gå, ik
 
 **Green screen (valgfri, ikke en del af de 40 minutter):** Delta Keyer, oprydning
 af kanten, og en ny baggrund lagt ind med Merge. Ligger på siden som ekstra
-materiale, samme rolle som Fairlight-bonussen.
+materiale.
 
 *Stilladsering: to dele hands-on, én ren demo, én valgfri bonus. Ikke Parsons med
 distraktorer, som den oprindelige plan beskrev.*
@@ -216,15 +216,14 @@ Det er ikke en fejl, og det er ikke noget vi retter i dag.
 
 ## 14:45–15:00 · Afrunding
 
-Hvor man går hen herfra, og hvad der ligger på kursussiden bagefter, herunder
-bonuslektionen om Fairlight.
+Hvor man går hen herfra, og hvad der ligger på kursussiden bagefter.
 
 ---
 
 ## Noter til afvikling
 
-**Fairlight er ikke med.** Der er ikke plads på seks timer. Lydniveauer og fades ligger
-i L3, og resten er en bonuslektion på siden, som deltagerne kan tage derhjemme.
+**Fairlight er ikke med.** Der er ikke plads på seks timer, og den bruges ikke på
+denne kursusdag. Lydniveauer og fades ligger i L3.
 
 **Cut Page er nedgraderet** fra 90 minutters hands-on i 2022 til en demo. Det koster den
 tidlige sejr, som den gamle plan fik ud af en færdig film kl. 11:30. Sejren er flyttet

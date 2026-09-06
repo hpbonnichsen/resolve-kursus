@@ -54,8 +54,7 @@ dr_kursus_virum
 │   └── L3                  composite, bro til Color
 ├── 04 COLOR PAGE
 ├── 05 FUSION
-├── 06 Deliver
-└── 99 BONUS - Fairlight
+└── 06 Deliver
 ```
 
 Navngivningen matcher det, HP faktisk har bygget (bekræftet ved screenshot

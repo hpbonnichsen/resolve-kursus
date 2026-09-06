@@ -28,6 +28,21 @@
     <ul class="nav__list">
       <li><a class="nav__link" href="index.html">Inden dagen</a></li>
       <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="lektion-1-interface.html">01 Interface</a></li>
+      <li><a class="nav__link" href="lektion-2-siderne.html">02 Pages</a></li>
+      <li>
+        <details class="nav__fold nav__fold--active" open>
+          <summary>03 Edit</summary>
+          <ul class="nav__sub">
+            <li><a href="lektion-3-edit.html" aria-current="page">Edit L1 · De rå håndgreb</a></li>
+            <li><a href="lektion-3-edit-l2.html">Edit L2 · Udvidet</a></li>
+            <li><a href="lektion-3-edit-l3.html">Edit L3 · Composite</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a class="nav__link" href="lektion-4-color.html">04 Color</a></li>
+      <li><a class="nav__link" href="lektion-5-fusion.html">05 Fusion</a></li>
+      <li><a class="nav__link" href="lektion-6-eget-materiale.html">06 Deliver og fri leg</a></li>
       <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
     </ul>
   </div>
@@ -78,7 +93,7 @@
         hånden ind i det, før vi bygger noget rigtigt om lidt.
       </p>
       <p>
-        Vi lærer det i en bestemt rækkefølge: først at få ét klip ned og markere det
+        Vi lærer det i en bestemt rækkefølge: først at få et klip ned og markere det
         rigtigt, så at flytte rundt på flere klip, og til sidst en hurtigere måde at
         tilføje endnu et klip på. Den sidste del giver først mening, når der allerede
         er noget på timelinen, og derfor kommer den sidst.
@@ -89,7 +104,7 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Opret en ny timeline</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/new-timeline.png" alt="" width="26" height="26">Opret en ny timeline</h3>
           <p class="step__body">
             Åbn binnen <strong>Del 1 – Øvelsesklip</strong> i Media Pool. Tryk
             <kbd>Ctrl</kbd> + <kbd>N</kbd> (Windows) eller <kbd>Cmd</kbd> + <kbd>N</kbd>
@@ -112,7 +127,7 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Åbn klippet ordentligt</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/play-forward.png" alt="" width="26" height="26">Åbn klippet ordentligt</h3>
           <p class="step__body">
             Dobbeltklik på klippet. Nu ligger det fast i source viewer, og I kan
             bruge <kbd>J</kbd>, <kbd>K</kbd> og <kbd>L</kbd> til at spille det:
@@ -135,7 +150,7 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Marker det rigtige stykke</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/mark-in.png" alt="" width="26" height="26">Marker det rigtige stykke</h3>
           <p class="step__body">
             Find stedet, hvor klippet skal starte, og tryk <kbd>I</kbd> for at sætte
             et startpunkt. Spil videre til det skal slutte, og tryk <kbd>O</kbd> for
@@ -211,7 +226,7 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Tilføj ét mere med Append</h3>
+          <h3 class="step__title">Tilføj et mere med Append</h3>
           <p class="step__body">
             Nu hvor der allerede ligger noget, kan I bruge en hurtigere vej: åbn et
             nyt klip i source viewer, marker I og O, og tryk <kbd>F12</kbd>, eller
@@ -229,18 +244,18 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Værktøjerne over timelinen</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/blade-edit-mode.png" alt="" width="26" height="26">Værktøjerne over timelinen</h3>
           <p class="step__body">
             Over timelinen sidder en lille værktøjslinje. I skal kende tre af dem:
             <strong>Selection</strong> (<kbd>A</kbd>) er den, I har brugt hele tiden,
             til at vælge og flytte klip. <strong>Trim</strong> (<kbd>T</kbd>)
             bruges til at trimme et klips kant uden at flytte selve klippet.
-            <strong>Blade</strong> (<kbd>B</kbd>) skærer et klip over dér, hvor I
+            <strong>Blade</strong> (<kbd>B</kbd>) skærer et klip over der, hvor I
             klikker.
           </p>
           <p class="step__body">
             Der findes også et fjerde værktøj, Dynamic Trim. Det er I ikke med i dag,
-            det er lidt for meget på én gang, når JKL allerede fylder.
+            det er lidt for meget på en gang, når JKL allerede fylder.
           </p>
 
           <figure class="shot">
@@ -259,7 +274,7 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Link, unlink og snap</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/link-clips.png" alt="" width="26" height="26">Link, unlink og snap</h3>
           <p class="step__body">
             Klip med både lyd og billede er som udgangspunkt <strong>linket</strong>:
             flytter I det ene, følger det andet med. Vil I flytte kun lyden eller
@@ -279,13 +294,13 @@
 
       <li class="step reveal">
         <div>
-          <h3 class="step__title">Zoom ind og ud af timelinen</h3>
+          <h3 class="step__title"><img class="heading-icon" src="assets/icons/zoom-viewer-to-fit.png" alt="" width="26" height="26">Zoom ind og ud af timelinen</h3>
           <p class="step__body">
             Hold <kbd>Alt</kbd> (Windows) eller <kbd>Option</kbd> (Mac) nede og
             brug musehjulet til at zoome ind og ud, centreret om playheadet. Er I
             zoomet for langt ind eller ud til at finde rundt, trykker
             <kbd>Shift</kbd> + <kbd>Z</kbd> jer tilbage til at se hele timelinen på
-            én gang.
+            en gang.
           </p>
 
           <figure class="shot">
@@ -380,7 +395,7 @@
           <h3 class="step__title">Åbn PUZZLE-timelinen</h3>
           <p class="step__body">
             Find den i binnen <strong>L1 → Timelines</strong>. Spil FACIT-timelinen
-            igennem én gang først, så I ved hvad I bygger hen imod.
+            igennem en gang først, så I ved hvad I bygger hen imod.
           </p>
         </div>
       </li>

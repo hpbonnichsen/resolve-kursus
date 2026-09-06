@@ -70,6 +70,29 @@ den fremover i stedet for at gentage inline CSS.
 **`.ideas`** er en ny, let komponent til valgfrie forslag i en fri-leg-øvelse,
 adskilt fra `.steps` fordi der hverken er rækkefølge eller facit.
 
+**Site-navigation bygget 2026-09-07.** Alle ti sider har nu samme fulde
+navigation: Inden dagen, Program, 01 Interface, 02 Pages, 03 Edit, 04 Color,
+05 Fusion, 06 Deliver og fri leg, Genveje. Genveje blev først fjernet, så
+genindsat sidst i rækken efter ønske fra HP.
+
+"03 Edit" er tre sider, så den er en fold, ikke et link: `<details class="nav__fold">`
+med et `<ul class="nav__sub">` af de tre Edit-sider indeni. Ren HTML, ingen
+JavaScript. På Edit-siderne selv står folden åben som standard (`open`-attributten
+plus klassen `nav__fold--active`), så man ser og kan skifte mellem Edit L1/L2/L3
+uden at klikke først. På alle andre sider er den lukket.
+
+**Vigtig detalje, hvis nav'en redigeres igen:** `.nav__sub` må ikke være
+`position: absolute`. Det blev prøvet først, men går galt, fordi folden står
+åben permanent på Edit-siderne: en absolut positioneret boks ville flyde oven på
+sidens eget indhold i stedet for at skubbe det ned. Den er nu normalt flow, som
+alt andet foldbart på siden. Se README.md's navigations-afsnit for den fulde
+begrundelse.
+
+Nav'en genereres ens i alle 10 filer af et Python-script
+(`build_nav.py`, kørt fra scratchpad, ikke gemt i repoet). Skal nav'en ændres
+igen (ny lektion, ny rækkefølge), er det hurtigere at skrive scriptet om og
+køre det på ny end at redigere 10 filer i hånden.
+
 ## Nøglebeslutninger, med begrundelse, så de ikke skal tages om
 
 - **Dato/tid: 7/9 2026, 9-15.** Ikke 9-16, som en tidligere version af planen antog.
@@ -127,8 +150,8 @@ research/                   kildemateriale, IKKE committet (se .gitignore)
 distraktor-klip). Det faktiske indhold, bekræftet af HP 2026-09-06: to dele
 hands-on (titel, custom transition), én ren demo uden byggeøvelse (avanceret
 HUD-effekt med Tracker-node), og en fjerde, valgfri del (green screen), der ligger
-på siden men ikke er en del af de 40 minutter på dagen, samme rolle som
-Fairlight-bonussen. `kursusplan.md` er opdateret til at matche.
+på siden men ikke er en del af de 40 minutter på dagen. `kursusplan.md` er
+opdateret til at matche.
 
 **L6 afviger fra den oprindelige plan** (som antog en reservebin med kaffevideo-
 klip, der aldrig blev bygget). Det faktiske indhold, bekræftet af HP 2026-09-06:
@@ -140,11 +163,45 @@ også rettet.
 
 L1 til L6 findes alle som sider, linket fra `program.html` alle steder. Tilbage
 står kun det, der er noteret som ikke gjort undervejs: Edit L2/L3 dækker ikke hele
-den oprindelige liste 1:1 (se deres egne statuslinjer ovenfor), og bonuslektionen
-om Fairlight er aldrig bygget (nævnt i `kursusplan.md`, ingen side findes).
+den oprindelige liste 1:1 (se deres egne statuslinjer ovenfor).
+
+**Fairlight er droppet, ikke udskudt.** Besluttet 2026-09-06: der er ikke tid til
+den på kursusdagen, og der bliver ikke bygget en bonusside om den heller. Rettet i
+`lektion-2-siderne.html` (tag ændret fra "bonus" til "bruges ikke", teksten om en
+bonuslektion fjernet), `kursusplan.md` (tre steder) og `materialepakke.md` (bin
+`99 BONUS - Fairlight` fjernet fra bin-strukturen).
+
+## Navigation: gennemgående forrige/næste-knap
+
+Alle ti sider (`index.html`, `program.html`, de otte lektionssider) har nu samme
+`.lesson-nav`-komponent i bunden, med et sammenhængende kæde-flow:
+`index → program → L1 → L2 → Edit L1 → Edit L2 → Edit L3 → L4 → L5 → L6`.
+Komponenten fandtes allerede på L3 til L6 (Edit-kæden, Color, Fusion), men L1 og
+L2 brugte i stedet en "Tilbage til programmet"-knap uden fremad-link, og
+`index.html`/`program.html` havde slet ingen. Rettet 2026-09-06 så hele kæden er
+ensartet. CSS er genbrugt uændret (`.lesson-nav`, `.lesson-nav__where`,
+`.lesson-nav__spacer`, `.nav__link`), ingen nye klasser tilføjet.
+
+## Icon-integration, sikkert-match-runde
+
+2026-09-06: gennemgik alle 70 ikoner i `assets/icons/` (kun 11 var i brug) og
+tilføjede `.heading-icon` hvor der var et sikkert match: `play-forward.png`
+(L2's JKL-trin, Edit L1's "Åbn klippet ordentligt"), `mark-in.png` (Edit L1's I/O-
+trin), `blade-edit-mode.png` (Edit L1's værktøjslinje-trin, dækker Blade-værktøjet
+i teksten), `link-clips.png` (Edit L1's link/unlink/snap-trin), `new-timeline.png`
+(Edit L1's "Opret en ny timeline"), `zoom-viewer-to-fit.png` (Edit L1's zoom-trin),
+`viewer-overlay-on-off.png` (Edit L2's "Åbn Inspector", dækker fif'et om
+transform-overlay), `add-keyframe.png` (Edit L2's keyframe-trin, Edit L3's
+opacity-keyframe-trin), `deliver.png` (L6's Eksport-overskrift, genbrug af samme
+ikon som L2's Deliver-tour). `background.png` blev omdøbt til `add-keyframe.png`
+undervejs, fordi filens faktiske motiv er "Add Keyframe"-diamanten, ikke en
+baggrund. Bevidst fravalgt: L1 (dialogtungt, intet toolbar-match), programmets
+genvejstabel (ville rode), "Append"-trinnet i Edit L1 (intet ikon adskiller
+Append fra Insert/Overwrite).
 
 ## Umiddelbart næste skridt
 
-Ingen ny lektion venter. Muligt næste arbejde: Fairlight-bonussen, en gennemgang
-af om alle "kommer snart"-rester er væk fra `program.html`, eller push til git
-(se tidligere `.gitignore`-arbejde og commit-mønster i denne fils historik).
+Ingen ny lektion venter, og Fairlight kommer ikke. Muligt næste arbejde: en
+gennemgang af om alle "kommer snart"-rester er væk fra `program.html`, eller push
+til git (se tidligere `.gitignore`-arbejde og commit-mønster i denne fils
+historik).

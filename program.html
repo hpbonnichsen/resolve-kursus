@@ -19,6 +19,21 @@
       <ul class="nav__list">
         <li><a class="nav__link" href="index.html">Inden dagen</a></li>
         <li><a class="nav__link" href="program.html" aria-current="page">Program</a></li>
+        <li><a class="nav__link" href="lektion-1-interface.html">01 Interface</a></li>
+        <li><a class="nav__link" href="lektion-2-siderne.html">02 Pages</a></li>
+        <li>
+          <details class="nav__fold">
+            <summary>03 Edit</summary>
+            <ul class="nav__sub">
+              <li><a href="lektion-3-edit.html">Edit L1 · De rå håndgreb</a></li>
+              <li><a href="lektion-3-edit-l2.html">Edit L2 · Udvidet</a></li>
+              <li><a href="lektion-3-edit-l3.html">Edit L3 · Composite</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a class="nav__link" href="lektion-4-color.html">04 Color</a></li>
+        <li><a class="nav__link" href="lektion-5-fusion.html">05 Fusion</a></li>
+        <li><a class="nav__link" href="lektion-6-eget-materiale.html">06 Deliver og fri leg</a></li>
         <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
       </ul>
     </div>
@@ -276,8 +291,8 @@
     <p class="kicker">Til opslag</p>
     <h2 class="section__title">Genveje</h2>
     <p class="section__intro">
-      Du skal ikke lære dem udenad. Men de fem-seks du kommer til at bruge hele
-      dagen, er hurtigere end musen, og de sidder efter et par timer.
+      Du skal ikke lære dem udenad. Men de du kommer til at bruge hele dagen, er
+      hurtigere end musen, og de sidder efter et par timer.
     </p>
 
     <div class="keys-scroll">
@@ -291,8 +306,10 @@
           <tr><td>Spol frem, pause, spol tilbage</td><td><kbd>L</kbd> <kbd>K</kbd> <kbd>J</kbd></td><td><kbd>L</kbd> <kbd>K</kbd> <kbd>J</kbd></td></tr>
           <tr><td>Sæt startpunkt</td><td><kbd>I</kbd></td><td><kbd>I</kbd></td></tr>
           <tr><td>Sæt slutpunkt</td><td><kbd>O</kbd></td><td><kbd>O</kbd></td></tr>
+          <tr><td>Skift mellem source- og timeline-viewer</td><td><kbd>Q</kbd></td><td><kbd>Q</kbd></td></tr>
           <tr><td>En frame frem eller tilbage</td><td><kbd>.</kbd> <kbd>,</kbd></td><td><kbd>.</kbd> <kbd>,</kbd></td></tr>
           <tr><td>Se hele timelinen</td><td><kbd>Shift</kbd>+<kbd>Z</kbd></td><td><kbd>Shift</kbd>+<kbd>Z</kbd></td></tr>
+          <tr><td>Zoom ind og ud på timelinen</td><td><kbd>Alt</kbd>+musehjul</td><td><kbd>Option</kbd>+musehjul</td></tr>
         </tbody>
       </table>
     </div>
@@ -309,6 +326,10 @@
           <tr><td>Trimværktøj</td><td><kbd>T</kbd></td><td><kbd>T</kbd></td></tr>
           <tr><td>Klip ved playhead</td><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td><kbd>Cmd</kbd>+<kbd>B</kbd></td></tr>
           <tr><td>Slet det markerede</td><td><kbd>Backspace</kbd></td><td><kbd>Backspace</kbd></td></tr>
+          <tr><td>Tilføj klip til sidst (Append)</td><td><kbd>F12</kbd></td><td><kbd>F12</kbd></td></tr>
+          <tr><td>Skub markeret klip en frame ad gangen</td><td><kbd>,</kbd> <kbd>.</kbd></td><td><kbd>,</kbd> <kbd>.</kbd></td></tr>
+          <tr><td>Byt med klippet før</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>,</kbd></td><td><kbd>Shift</kbd>+<kbd>Cmd</kbd>+<kbd>,</kbd></td></tr>
+          <tr><td>Byt med klippet efter</td><td><kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>.</kbd></td><td><kbd>Shift</kbd>+<kbd>Cmd</kbd>+<kbd>.</kbd></td></tr>
           <tr><td>Snapping til og fra</td><td><kbd>N</kbd></td><td><kbd>N</kbd></td></tr>
           <tr><td>Lås lyd og billede sammen</td><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td></tr>
           <tr><td>Tilføj overgang</td><td><kbd>Ctrl</kbd>+<kbd>T</kbd></td><td><kbd>Cmd</kbd>+<kbd>T</kbd></td></tr>
@@ -324,6 +345,7 @@
           <tr><th scope="col">Handling</th><th scope="col">Windows</th><th scope="col">Mac</th></tr>
         </thead>
         <tbody>
+          <tr><td>Åbn Preferences</td><td><kbd>Ctrl</kbd>+<kbd>,</kbd></td><td><kbd>Cmd</kbd>+<kbd>,</kbd></td></tr>
           <tr><td>Gem</td><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td><kbd>Cmd</kbd>+<kbd>S</kbd></td></tr>
           <tr><td>Fortryd</td><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td><kbd>Cmd</kbd>+<kbd>Z</kbd></td></tr>
           <tr><td>Ny timeline</td><td><kbd>Ctrl</kbd>+<kbd>N</kbd></td><td><kbd>Cmd</kbd>+<kbd>N</kbd></td></tr>
@@ -336,6 +358,15 @@
 </section>
 
 </main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem sider">
+    <a class="nav__link" href="index.html">Forrige: Inden dagen</a>
+    <span class="lesson-nav__where">Program</span>
+    <a class="nav__link" href="lektion-1-interface.html">Næste: 01 Interface</a>
+  </nav>
+</div>
 
 <!-- ===================================================================== -->
 <footer class="footer">
