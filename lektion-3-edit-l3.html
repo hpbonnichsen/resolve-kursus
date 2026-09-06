@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit L3 – kursus i DaVinci Resolve</title>
+<meta name="description" content="Edit L3: se en forsvindingseffekt, prøv at genskabe den selv, og få bagefter forklaret hvordan den er lavet med compound clips, composite og keyframet opacitet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ANTAGELSE der skal bekræftes af HP: rammaterialet i 03 EDIT / L3-binnen
+     antages at være P1003232.MP4 som ét enkelt klip, som deltagerne selv skal
+     lægge ned to gange og trimme til to forskellige tidspunkter. Er det i
+     stedet allerede delt op i to færdige subclips, skal trin 2-3 i Del B
+     rettes til at matche. -->
+
+<a class="skip" href="#se-effekten">Spring til effekten</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 3 · Edit L3</p>
+    <h1 class="pagehead__title">Genskab en forsvindingseffekt</h1>
+    <p class="pagehead__intro">
+      Sidste del af Edit, og en anden slags øvelse end resten af dagen. I ser
+      effekten først, prøver at genskabe den selv, og får bagefter forklaret,
+      hvordan den er lavet.
+    </p>
+    <span class="scaffold">Se, gæt, få det forklaret</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">11:35–11:50</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">15 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Binnen 03 EDIT / L3</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="se-effekten">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">Se effekten</h2>
+
+    <div class="lead-in">
+      <p>
+        Find klippet <strong>F_Forsvinder</strong> i binnen, og spil det igennem.
+        Læg mærke til, hvad der sker med personen.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/l3-18-compound-clip.jpg"
+             alt="Klippet F_Forsvinder på timelinen, som ét samlet klip."
+             width="622" height="299" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        Sådan ligger det på timelinen: ét roligt klip, ikke noget der afslører,
+        hvordan det er bygget.
+      </figcaption>
+    </figure>
+
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s3); margin-top: var(--s4);">
+      <figure class="shot" style="margin-top:0;">
+        <div class="shot__frame">
+          <img src="assets/l3-20-synlig.jpg" alt="Personen fuldt synlig ved pillen." width="433" height="239" loading="lazy">
+        </div>
+        <figcaption class="shot__caption">Start: fuldt synlig.</figcaption>
+      </figure>
+      <figure class="shot" style="margin-top:0;">
+        <div class="shot__frame">
+          <img src="assets/l3-21-halvt-vaek.jpg" alt="Personen halvt gennemsigtig, baggrunden anes igennem." width="430" height="240" loading="lazy">
+        </div>
+        <figcaption class="shot__caption">Midt i overgangen.</figcaption>
+      </figure>
+      <figure class="shot" style="margin-top:0;">
+        <div class="shot__frame">
+          <img src="assets/l3-22-vaek.jpg" alt="Personen helt væk, kun baggrunden tilbage." width="430" height="241" loading="lazy">
+        </div>
+        <figcaption class="shot__caption">Slut: helt væk.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="proev-selv">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Prøv at genskabe den</h2>
+
+    <div class="lead-in">
+      <p>
+        I binnen ligger rammaterialet, kameraet stod stille under optagelsen.
+        Prøv at bygge effekten selv, med det I allerede ved fra Edit L1 og L2.
+        I skal ikke lykkes fuldt ud, det vigtige er at prøve.
+      </p>
+    </div>
+
+    <details class="hint">
+      <summary>Vi aner ikke hvor vi skal starte</summary>
+      <p>
+        Kameraet står stille hele optagelsen igennem, så baggrunden er den
+        samme fra start til slut. Se på hele klippet i source viewer: er der
+        et tidspunkt, hvor personen slet ikke er i billedet?
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="saadan-er-den-lavet">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+
+    <details class="unfold">
+      <summary>
+        Sådan er den lavet
+        <span class="unfold__note">Klik når I har prøvet selv, eller er gået i stå</span>
+      </summary>
+
+      <div class="unfold__body">
+        <div class="lead-in">
+          <p>
+            Samme kildefil, brugt to gange. Ingen tricks ud over det, I allerede
+            kender fra Edit L1 og L2.
+          </p>
+        </div>
+
+        <ol class="steps">
+
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">Læg klippet ned to gange</h3>
+              <p class="step__body">
+                Træk kildeklippet ned på to spor, det ene oven på det andet. På det
+                <strong>øverste</strong> spor: trim til det stykke, hvor personen
+                står ved pillen. På det <strong>nederste</strong> spor: trim til et
+                senere tidspunkt i samme optagelse, hvor personen allerede er gået.
+                Fordi kameraet ikke har flyttet sig, er baggrunden identisk begge
+                steder.
+              </p>
+
+              <figure class="shot">
+                <div class="shot__frame">
+                  <img src="assets/l3-19-to-spor.jpg"
+                       alt="Samme kildefil P1003232.MP4 på to spor. Det øverste har et diamant-ikon, som viser at det er keyframet."
+                       width="442" height="280" loading="lazy">
+                </div>
+                <figcaption class="shot__caption">
+                  Begge spor viser den samme fil. Diamanten på det øverste betyder,
+                  at der allerede er sat keyframes.
+                </figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">Keyframe Opacity på det øverste lag</h3>
+              <p class="step__body">
+                Vælg klippet på det <strong>øverste</strong> spor, åbn
+                <strong>Inspector → Composite</strong>. Sæt playheadet til
+                starten, og klik diamant-ikonet ud for <strong>Opacity</strong> for
+                at sætte et keyframe ved 100 %. Flyt playheadet et par sekunder
+                frem, og sæt Opacity til 0 %. Resolve keyframer overgangen
+                automatisk.
+              </p>
+
+              <figure class="shot">
+                <div class="shot__frame">
+                  <img src="assets/l3-24-opacity-keyframe.jpg"
+                       alt="Inspector, Composite-sektionen, med Opacity sat til 73,97 og keyframe-pilene synlige."
+                       width="410" height="303" loading="lazy">
+                </div>
+                <figcaption class="shot__caption">
+                  Opacity midt i overgangen, her 73,97. Pilene ved siden af feltet
+                  hopper mellem keyframes.
+                </figcaption>
+              </figure>
+            </div>
+          </li>
+
+          <li class="step reveal">
+            <div>
+              <h3 class="step__title">Saml det i et Compound Clip</h3>
+              <p class="step__body">
+                Marker begge klip, højreklik, og vælg <strong>New Compound Clip</strong>.
+                Giv det et navn. De to spor bliver nu til ét klip på hovedtimelinen,
+                akkurat som <strong>F_Forsvinder</strong>, I så i starten. Dobbeltklik
+                på det for at gå ind og redigere de to lag igen.
+              </p>
+
+              <figure class="shot">
+                <div class="shot__frame">
+                  <img src="assets/l3-23-new-compound-clip.jpg"
+                       alt="Højrekliksmenuen med New Compound Clip øverst, samt New Fusion Clip og andre valg."
+                       width="280" height="135" loading="lazy">
+                </div>
+                <figcaption class="shot__caption">
+                  Samme menu har også New Fusion Clip, som I stifter bekendtskab
+                  med om lidt.
+                </figcaption>
+              </figure>
+            </div>
+          </li>
+
+        </ol>
+
+        <details class="hint">
+          <summary>Personen forsvinder ikke, den bliver bare gennemsigtig</summary>
+          <p>
+            Tjek at det <strong>nederste</strong> spor rent faktisk er trimmet til
+            et tidspunkt uden personen. Er begge spor trimmet til samme øjeblik,
+            ser I personen på begge lag, og de blander sig i stedet for at
+            afsløre en tom baggrund.
+          </p>
+        </details>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-3-edit-l2.html">Forrige: Edit L2</a>
+    <span class="lesson-nav__where">Lektion 3 af 6</span>
+    <a class="nav__link" href="lektion-4-color.html">Næste: Color Page</a>
+  </nav>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

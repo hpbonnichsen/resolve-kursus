@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4 · Color Page – kursus i DaVinci Resolve</title>
+<meta name="description" content="Fjerde lektion: Color-sidens værktøjer, korrektion før kreativ grading, superviseret leg, og Color Space Transform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#interface">Spring til interfacet</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 4</p>
+    <h1 class="pagehead__title">Color Page</h1>
+    <p class="pagehead__intro">
+      Vi ser først på, hvad der er hvor. Derefter retter vi billedet, før vi
+      begynder at style det. Til sidst leger I selv, med det I lige har set.
+    </p>
+    <span class="scaffold">Demonstreret, med fri leg til sidst</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">12:30–13:15</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">45 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Binnen 04 COLOR PAGE</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="interface">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">Interfacet</h2>
+
+    <div class="lead-in">
+      <p>
+        Vi bruger flere forskellige klip undervejs, med forskellige kameraer og
+        formater. Det gør ikke noget hvis I ikke kan nå at følge med på jeres
+        egen skærm i denne del, det handler om at vide hvad tingene hedder og
+        hvor de bor.
+      </p>
+    </div>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/l4-11-demorulle.jpg"
+             alt="Syv klip i timeline-striben øverst i Color-siden, filmet på forskellige kameraer i forskellige formater: Blackmagic RAW, Avid DNxHR, Apple ProRes."
+             width="1200" height="109" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        Klippene, vi bruger i denne del. Kodeknavnet under hver thumbnail
+        fortæller hvilket kamera og format den er optaget i.
+      </figcaption>
+    </figure>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">
+            <img class="heading-icon" src="assets/icons/primarieslog-color-wheels.png" alt="" width="26" height="26">
+            Primaries
+          </h3>
+          <p class="step__body">
+            De fire farvehjul: <strong>Lift</strong> (skygger), <strong>Gamma</strong>
+            (mellemtoner), <strong>Gain</strong> (highlights) og
+            <strong>Offset</strong> (hele billedet på én gang). Det er her, I
+            kommer til at bruge mest tid.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-1-primaries.jpg"
+                   alt="Primaries – Color Wheels med Lift, Gamma, Gain og Offset, samt Temp, Tint, Contrast og Pivot øverst."
+                   width="718" height="343" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Curves</h3>
+          <p class="step__body">
+            Samme slags justering som Primaries, men tegnet som en kurve i
+            stedet for på hjul. Kurven giver mere præcis kontrol over
+            bestemte lysstyrker, på bekostning af at være sværere at læse ved
+            første øjekast.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-2-curves.jpg"
+                   alt="Curves – Custom, med et histogram og en diagonal kurvelinje."
+                   width="482" height="305" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Qualifier</h3>
+          <p class="step__body">
+            Vælger pixels ud fra farve, ikke position. Sæt <strong>Hue</strong>,
+            <strong>Saturation</strong> og <strong>Luminance</strong> til at
+            ramme fx en bestemt hudtone eller himlens blå, og kun de pixels
+            bliver påvirket af resten af nodens justeringer.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-3-qualifier.jpg"
+                   alt="Qualifier – HSL, med Hue, Saturation og Luminance som farverige skalaer, og Matte Finesse til højre."
+                   width="719" height="304" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Window</h3>
+          <p class="step__body">
+            Vælger pixels ud fra position i stedet for farve. Tegn en cirkel,
+            firkant eller et frit polygon direkte i billedet, og kun det
+            område bliver påvirket. Kan kombineres med Qualifier for at ramme
+            en bestemt farve på et bestemt sted.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-4-window.jpg"
+                   alt="Window-panelet med formerne Linear, Circle, Polygon, Curve og Gradient, samt Transform- og Softness-kontroller."
+                   width="721" height="307" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Key</h3>
+          <p class="step__body">
+            Finpudser den matte, en Qualifier eller et Window har lavet:
+            <strong>Key Input</strong>, <strong>Key Output</strong> og
+            <strong>Qualifier</strong>-sektionen styrer hver deres del af
+            overgangen mellem "helt med" og "helt udenfor".
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-5-key.jpg"
+                   alt="Key-panelet med en sort-hvid matte til venstre og Key Input, Key Output og Qualifier-kontroller til højre."
+                   width="720" height="305" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">
+            <img class="heading-icon" src="assets/icons/scopes.png" alt="" width="26" height="26">
+            Scopes
+          </h3>
+          <p class="step__body">
+            Grafer over billedets lys og farve, mere præcise end øjet.
+            <strong>Parade</strong> og <strong>Waveform</strong> viser lysstyrke
+            pr. farvekanal, <strong>Vectorscope</strong> viser farvemætning og
+            -retning, <strong>CIE Chromaticity</strong> viser hvor et kameras
+            farver ligger i forhold til hvad øjet kan se.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-6-scopes.jpg"
+                   alt="Fire scopes samtidig: Parade, Waveform, Vectorscope og CIE Chromaticity."
+                   width="1173" height="889" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Viewer og Highlight</h3>
+          <p class="step__body">
+            Viewer viser billedet, som det bliver. <strong>Highlight</strong>
+            (genvej: klik ikonet under viktoren) viser i stedet, hvad en
+            Qualifier eller et Window rammer lige nu, som en sort-hvid matte
+            oven på et gråt billede. Uundværlig, når man skal se om en
+            markering rammer det, den skal.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-7-viewer.jpg"
+                   alt="Viewer med et portrætbillede af en kvinde med krøllet hår i modlys."
+                   width="1000" height="387" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">Almindelig viewer.</figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-8-highlight.jpg"
+                   alt="Samme billede i Highlight-tilstand: håret vises som en hvid-grå matte, resten af billedet er nedtonet gråt."
+                   width="575" height="324" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Highlight slået til. Det hvide er det, en Qualifier på håret rammer.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Nodes</h3>
+          <p class="step__body">
+            Alt det ovenstående lever inde i en node. Vil I gøre noget mere,
+            tilføjer I endnu en node i serie, akkurat som i Fusion, bare med
+            farvekorrektion i stedet for effekter.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-9-nodes.jpg"
+                   alt="Node-editoren med ét enkelt node forbundet fra kilde til output."
+                   width="608" height="478" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Effects</h3>
+          <p class="step__body">
+            Nævnes kort: samme <strong>Effects</strong>-panel som i Edit og
+            Fusion findes også her, med filtre specielt lavet til
+            farvearbejde. Vi går ikke i dybden med det i dag.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-10-panel-knapper.jpg"
+                   alt="Panelknapperne Quick Export, Timeline, Nodes, Effects og Lightbox."
+                   width="525" height="35" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Samme knap, der åbner Nodes, sidder lige ved siden af Effects.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="korrektion-foer-kreativ">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Ret billedet, før I styler det</h2>
+
+    <div class="lead-in">
+      <p>
+        Rækkefølgen betyder noget. Først <strong>color correction</strong>: gør
+        billedet teknisk rigtigt, med hjælp fra Scopes, så eksponering og
+        hudtoner ligger, hvor de skal. Bagefter <strong>color grading</strong>:
+        den kreative del, hvor I bestemmer, hvordan billedet skal føles.
+      </p>
+      <p>
+        Gør man det omvendt, ender man med at style et billede, der i
+        virkeligheden er over- eller undereksponeret, og hele arbejdet skal
+        gøres om, når fejlen opdages.
+      </p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="fri-leg">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+    <h2 class="section__title">Superviseret leg</h2>
+
+    <div class="lead-in">
+      <p>
+        Nu er det jeres tur. Vælg et af klippene, og prøv jer frem med det, I
+        lige har set: farvehjul, en Qualifier, et Window. Der er ikke noget
+        facit, og I skal ikke genskabe noget bestemt. Spørg undervejs.
+      </p>
+      <p>
+        Mangler I noget at gå efter, er her tre valgfrie forslag. Vælg ét,
+        flere, eller ingen af dem, det er stadig jeres valg.
+      </p>
+    </div>
+
+    <ul class="ideas">
+      <li><strong>Skift en farve.</strong> Find klippet med rosen, og brug en
+        Qualifier til at vælge kun det røde, og skift det til blåt.</li>
+      <li><strong>Orange og teal.</strong> Prøv jer frem med det velkendte look
+        fra actionfilm og trailere: varme hudtoner, kølige skygger og baggrunde.</li>
+      <li><strong>Ret et blåt billede.</strong> Et klip fra <em>Hund på
+        efterårstur</em> er kraftigt blåt i sin hvidbalance. Prøv at rette det
+        tilbage til noget, der ser naturligt ud.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="cst">
+  <div class="wrap">
+    <p class="kicker">Fjerde del</p>
+    <h2 class="section__title">CST – Color Space Transform</h2>
+
+    <div class="lead-in">
+      <p>
+        Til sidst en node, der ikke retter farver, men <strong>oversætter</strong>
+        dem, fra det farverum, kameraet optog i, til det, I arbejder i. Det er
+        praktisk, fordi det giver jer kontrol, node for node, over noget der
+        ellers sker automatisk i baggrunden, og fordi det er den samme knap,
+        der løser problemet, uanset hvilket kamera footage kommer fra.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tilføj effekten Color Space Transform</h3>
+          <p class="step__body">
+            Find <strong>Color Space Transform</strong> i Effects, og træk den
+            på en node. Sæt <strong>Input Color Space</strong> og
+            <strong>Input Gamma</strong> til det, kameraet faktisk optog i.
+            <strong>Output</strong> kan som regel stå på <strong>Use timeline</strong>,
+            så det automatisk matcher jeres projekts egne indstillinger.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-12-cst-node.jpg"
+                   alt="Color Space Transform anvendt på en node, med Input Color Space sat til ARRI Wide Gamut 3 og Input Gamma til ARRI LogC3. Output Color Space og Output Gamma står begge på Use timeline."
+                   width="784" height="480" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Input skal matche kameraet. Output kan næsten altid blive stående
+              på Use timeline.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Se forskellen</h3>
+          <p class="step__body">
+            Før CST er sat rigtigt, ser billedet fladt og gråligt ud, uanset
+            hvor meget I skruer på Primaries. Bagefter er der styr på kontrast
+            og farve fra start, og resten af jeres grading bliver lettere.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l4-13-cst-foer-efter.jpg"
+                   alt="Split-visning af samme billede: venstre halvdel er fladt og gråligt uden CST, højre halvdel har fuld kontrast og mættede farver med CST."
+                   width="699" height="380" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Samme klip, samme node-graf, kun CST slået til på højre halvdel.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-3-edit-l3.html">Forrige: Edit L3</a>
+    <span class="lesson-nav__where">Lektion 4 af 6</span>
+    <a class="nav__link" href="lektion-5-fusion.html">Næste: Fusion</a>
+  </nav>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

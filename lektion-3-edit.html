@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit L1 – kursus i DaVinci Resolve</title>
+<meta name="description" content="Edit L1: de rå håndgreb på timelinen, og filmens åbning genskabt fra bunden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Denne side er nu KUN Edit L1 (de rå håndgreb + genskab filmens åbning),
+     40 minutter. Inspector/titler/effekter-udkastet, der tidligere lå som "Del 3"
+     her, hører til Edit L2 og er flyttet til
+     lektioner/udkast/edit-l2-inspector-titler.html til senere genbrug, inkl. de to
+     billeder l3-6-inspector.jpg og l3-7-titel-effekt.jpg, som stadig ligger i
+     assets/. Edit L2 og L3 har ikke deres egen side endnu. Siden er stadig ikke
+     linket fra program.html alle steder. Alle seks lektioner er nu færdige,
+     se CLAUDE.md for status. -->
+
+<a class="skip" href="#del1">Spring til første del</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 3 · Edit L1</p>
+    <h1 class="pagehead__title">De rå håndgreb</h1>
+    <p class="pagehead__intro">
+      Første del af Edit. Vi starter med de rå håndgreb, og bruger dem bagefter til
+      at genskabe filmens åbning fra bunden. Edit L2 og L3 kommer som egne sider
+      senere på dagen.
+    </p>
+    <span class="scaffold">Følg med skridt for skridt</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">10:30–11:50</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">40 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Kursusprojektet åbent, binnen 03 EDIT / L1</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="del1">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">De rå håndgreb</h2>
+
+    <div class="lead-in">
+      <p>
+        Klippene i denne bin er her kun for at øve på. De ender ikke i noget, I
+        skal vise frem, så det gør ikke noget, hvis I roder. Pointen er at få
+        hånden ind i det, før vi bygger noget rigtigt om lidt.
+      </p>
+      <p>
+        Vi lærer det i en bestemt rækkefølge: først at få ét klip ned og markere det
+        rigtigt, så at flytte rundt på flere klip, og til sidst en hurtigere måde at
+        tilføje endnu et klip på. Den sidste del giver først mening, når der allerede
+        er noget på timelinen, og derfor kommer den sidst.
+      </p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Opret en ny timeline</h3>
+          <p class="step__body">
+            Åbn binnen <strong>Del 1 – Øvelsesklip</strong> i Media Pool. Tryk
+            <kbd>Ctrl</kbd> + <kbd>N</kbd> (Windows) eller <kbd>Cmd</kbd> + <kbd>N</kbd>
+            (Mac) for at lave en ny, tom timeline at øve på.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Forhåndsvis et klip</h3>
+          <p class="step__body">
+            Før musen hen over et af klippene i binnen, uden at klikke. Klippet
+            spiller live i source viewer, mens musen bevæger sig hen over det. Det
+            kaldes at scrubbe, og det er den hurtigste måde at få et førstehåndsindtryk
+            af et klip på.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn klippet ordentligt</h3>
+          <p class="step__body">
+            Dobbeltklik på klippet. Nu ligger det fast i source viewer, og I kan
+            bruge <kbd>J</kbd>, <kbd>K</kbd> og <kbd>L</kbd> til at spille det:
+            <kbd>L</kbd> fremad, <kbd>K</kbd> stop, <kbd>J</kbd> baglæns. Flere tryk
+            på <kbd>L</kbd> eller <kbd>J</kbd> giver højere fart.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-1-source-viewer.jpg"
+                   alt="Source viewer med klippet hus_3 åbnet, klar til afspilning."
+                   width="708" height="522" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Klippet hus_3 åbnet i source viewer.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Marker det rigtige stykke</h3>
+          <p class="step__body">
+            Find stedet, hvor klippet skal starte, og tryk <kbd>I</kbd> for at sætte
+            et startpunkt. Spil videre til det skal slutte, og tryk <kbd>O</kbd> for
+            slutpunktet. Det markerede stykke er det, der lander på timelinen, ikke
+            resten af klippet.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-2-io-markering.jpg"
+                   alt="Samme klip med start- og slutpunkt sat. Det markerede stykke er fremhævet i grønt i lydkurven forneden."
+                   width="718" height="523" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Det grønne felt i bunden er stykket mellem jeres I og O.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Træk klippet ned på timelinen</h3>
+          <p class="step__body">
+            Klik midt i source viewer, og træk ned på timelinen. Det markerede
+            stykke lander der, hvor I slipper det.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-3-traek-til-timeline.jpg"
+                   alt="Timeline med fem klip lagt ned efter hinanden: hus_7 og fire andre, med et lyserødt Solid Color-spor under."
+                   width="339" height="204" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Sådan ser det ud, når I har gjort det et par gange. Det lyserøde spor
+              nedenunder skal I ikke røre, det bruges senere.
+            </figcaption>
+          </figure>
+
+          <p class="step__body">
+            Et fif: tryk <kbd>Q</kbd> for at skifte frem og tilbage mellem source
+            viewer og timeline viewer. Det er hurtigere end at klikke, når I skal
+            se det næste klip og kigge på resultatet på timelinen i samme ombæring.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Gentag med et par klip mere</h3>
+          <p class="step__body">
+            Gør det samme med to eller tre andre klip fra binnen: scrub, dobbeltklik,
+            JKL, I og O, træk ned. I skal ikke tænke over rækkefølgen endnu, den
+            retter vi i næste trin.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Byt om på rækkefølgen</h3>
+          <p class="step__body">
+            Marker et klip på timelinen, og tryk
+            <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>,</kbd> (Windows) eller
+            <kbd>Shift</kbd> + <kbd>Cmd</kbd> + <kbd>,</kbd> (Mac) for at bytte det
+            med klippet før. Byt med klippet efter ved at bruge <kbd>.</kbd> i
+            stedet for <kbd>,</kbd>. Det er den hurtigste måde at flytte rundt på,
+            uden at trække og risikere at lave et hul.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tilføj ét mere med Append</h3>
+          <p class="step__body">
+            Nu hvor der allerede ligger noget, kan I bruge en hurtigere vej: åbn et
+            nyt klip i source viewer, marker I og O, og tryk <kbd>F12</kbd>, eller
+            gå til <strong>Timeline → Append at End</strong>. Klippet lægger sig
+            automatisk efter det sidste, uden at I skal ramme det rigtige sted med
+            musen.
+          </p>
+          <p class="step__body">
+            Samme sted findes <strong>Insert</strong> og <strong>Overwrite</strong>.
+            I skal ikke lære dem udenad nu, bare vide at de findes, hvis I en dag
+            har brug for at lægge et klip et andet sted end til sidst.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Værktøjerne over timelinen</h3>
+          <p class="step__body">
+            Over timelinen sidder en lille værktøjslinje. I skal kende tre af dem:
+            <strong>Selection</strong> (<kbd>A</kbd>) er den, I har brugt hele tiden,
+            til at vælge og flytte klip. <strong>Trim</strong> (<kbd>T</kbd>)
+            bruges til at trimme et klips kant uden at flytte selve klippet.
+            <strong>Blade</strong> (<kbd>B</kbd>) skærer et klip over dér, hvor I
+            klikker.
+          </p>
+          <p class="step__body">
+            Der findes også et fjerde værktøj, Dynamic Trim. Det er I ikke med i dag,
+            det er lidt for meget på én gang, når JKL allerede fylder.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-5-trim-vaerktoejer.jpg"
+                   alt="Værktøjslinjen over timelinen: Selection, Trim og Blade til venstre, link- og snap-ikonerne til højre."
+                   width="455" height="50" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              De tre til venstre er dem, I skal kende. Læg mærke til magnet- og
+              kæde-ikonerne til højre, I møder dem igen om lidt.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Link, unlink og snap</h3>
+          <p class="step__body">
+            Klip med både lyd og billede er som udgangspunkt <strong>linket</strong>:
+            flytter I det ene, følger det andet med. Vil I flytte kun lyden eller
+            kun billedet, højreklikker I klippet og vælger <strong>Unlink</strong>.
+          </p>
+          <p class="step__body">
+            <strong>Snap</strong> (genvej <kbd>N</kbd>) gør, at klip snapper til
+            hinanden, når I trækker dem tæt sammen, så I ikke efterlader et hul uden
+            at opdage det. Prøv at slå den fra og til, mens I flytter et klip.
+          </p>
+          <p class="step__body">
+            Begge ikoner sidder i samme værktøjslinje som Selection, Trim og Blade
+            ovenfor, helt ude til højre.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Zoom ind og ud af timelinen</h3>
+          <p class="step__body">
+            Hold <kbd>Alt</kbd> (Windows) eller <kbd>Option</kbd> (Mac) nede og
+            brug musehjulet til at zoome ind og ud, centreret om playheadet. Er I
+            zoomet for langt ind eller ud til at finde rundt, trykker
+            <kbd>Shift</kbd> + <kbd>Z</kbd> jer tilbage til at se hele timelinen på
+            én gang.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-11-zoom.jpg"
+                   alt="Zoom-kontrollerne nederst til højre i timeline-panelet: zoom til at se det hele, zoom ud, zoom ind og en skyder."
+                   width="271" height="47" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Samme sted findes en skyder, hvis I foretrækker at trække frem for
+              at bruge musehjulet.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+
+    <details class="hint">
+      <summary>JKL reagerer ikke</summary>
+      <p>
+        Klik først på selve billedet i source viewer eller timelinen, så tastaturet
+        ved, hvilket vindue det skal styre. Det er en almindelig faldgrube: markøren
+        kan stå i et tekstfelt eller et andet panel uden at I kan se det.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="del2">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Genskab filmens åbning</h2>
+    <span class="scaffold">Byg selv, med facit som støtte</span>
+
+    <div class="lead-in">
+      <p>
+        Nu bruger vi det, I lige har lært, på noget rigtigt: åbningen af HP's egen
+        film, <strong>Hund på efterårstur</strong>. I timelinen <strong>PUZZLE</strong>
+        er de første cirka 20 sekunder tomme. 15 klip plus lyd er fjernet. Jeres
+        opgave er at lægge dem tilbage.
+      </p>
+      <p>
+        I skal ikke blive færdige. Det er en øvelse i at komme i gang med at lægge
+        rigtige optagelser ned på en rigtig timeline, ikke en test.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/l3-8-facit.jpg"
+             alt="Facit-timelinen: filmens færdige åbning med huset, haven, dekorationer og til sidst guitaristen der spiller."
+             width="954" height="1238" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        FACIT-timelinen. Det er dette, I arbejder hen imod, ikke noget I skal kopiere
+        klip for klip.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/l3-9-puzzle.jpg"
+             alt="PUZZLE-timelinen: helt tom fra start til omkring 20 sekunder, derefter begynder klippene med guitaristen."
+             width="712" height="375" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        Sådan ser jeres egen PUZZLE-timeline ud lige nu. Det tomme stykke i starten
+        er det, I skal fylde ud.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/l3-10-raaklip.jpg"
+             alt="Media Pool, mappen 03 EDIT / L1 / Råmateriale / Video, med 15 klip: perle_01 og hus_1 til hus_15."
+             width="489" height="492" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        De 15 klip, I mangler, ligger her: <strong>03 EDIT → L1 → Råmateriale →
+        Video</strong>.
+      </figcaption>
+    </figure>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn PUZZLE-timelinen</h3>
+          <p class="step__body">
+            Find den i binnen <strong>L1 → Timelines</strong>. Spil FACIT-timelinen
+            igennem én gang først, så I ved hvad I bygger hen imod.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Byg fra starten</h3>
+          <p class="step__body">
+            Gå til <strong>Råmateriale → Video</strong>. Brug det, I lærte i Del 1:
+            scrub jer igennem klippene, åbn dem i source viewer, brug JKL, sæt I og
+            O, og træk dem ned i den rigtige rækkefølge, sammenlignet med FACIT.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Brug swap, hvis rækkefølgen driller</h3>
+          <p class="step__body">
+            Ligger to klip forkert i forhold til hinanden, er det hurtigere at
+            bruge swap-genvejen fra Del 1 end at trække dem forfra igen.
+          </p>
+        </div>
+      </li>
+
+    </ol>
+
+    <details class="hint">
+      <summary>Vi når ikke igennem alle 15 klip</summary>
+      <p>
+        Helt i orden. Byg så langt I kan, og gå videre, når vi siger til. Det
+        vigtige er at have prøvet håndgrebene på rigtigt materiale, ikke at nå
+        i mål.
+      </p>
+    </details>
+  </div>
+</section>
+
+
+
+</main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-2-siderne.html">Forrige: Siderne og dit materiale</a>
+    <span class="lesson-nav__where">Lektion 3 af 6</span>
+    <a class="nav__link" href="lektion-3-edit-l2.html">Næste: Edit L2</a>
+  </nav>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

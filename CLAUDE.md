@@ -23,21 +23,52 @@ Kanoniske dokumenter, læs dem, ikke kun denne fil:
 |---|---|
 | L1 · Interface og indstillinger | Bygget, `lektion-1-interface.html`. Ét skærmbillede mangler retagning (viser stadig 24 fps, skal være 23,976, markeret med `ROUGH CUT`-kommentar i HTML'en) |
 | L2 · Siderne og dit materiale | Bygget, `lektion-2-siderne.html`. To billeder er placeholders: source viewer er tomt (skal vise et åbnet klip), Photo-siden mangler ikon (findes ikke i ikonsættet) |
-| L3 · Edit L1 | **Færdig**, `lektion-3-edit.html`. Rigtige skærmbilleder fra HP's "Hund på efterårstur"-projekt. Linket fra `program.html` begge steder (programmet og lektionsoversigten) |
-| L3 · Edit L2 | Ikke bygget. Indholdsudkast (Inspector, Transform, Crop, titler/effekter) gemt i `lektioner/udkast/edit-l2-inspector-titler.html` til genbrug, inkl. to brugbare billeder (`assets/l3-6-inspector.jpg`, `assets/l3-7-titel-effekt.jpg`) |
-| L3 · Edit L3 | Ikke bygget. Indhold ifølge `kursusplan.md`: simpel composite-øvelse, bro til Color |
-| L4 · Color, L5 · Fusion, L6 · Eget materiale | Ikke påbegyndt. Indhold og fokus er besluttet (se `kursusplan.md`), sider ikke bygget |
+| L3 · Edit L1, L2, L3 | **Alle tre færdige.** `lektion-3-edit.html` (L1), `lektion-3-edit-l2.html` (L2), `lektion-3-edit-l3.html` (L3). Edit er dermed hele lektionen færdigbygget, linket fra `program.html` alle steder |
+| L4 · Color | **Færdig**, `lektion-4-color.html`. Interfacet (9 emner) → korrektion før grading → superviseret leg med tre valgfrie opgaver (skift rosens farve, orange/teal, ret et blåt klip fra "Hund på efterårstur") → CST, med før/efter-billede |
+| L5 · Fusion | **Færdig**, `lektion-5-fusion.html`. Nodes genopfrisket → titel (hands-on) → custom transition (hands-on) → avanceret HUD-effekt (ren demo) → green screen (valgfri bonus) |
+| L6 · Eget materiale | **Færdig**, `lektion-6-eget-materiale.html`. Frit valg mellem fire retninger → Deliver-siden. Eget materiale kræver bevidst et helt nyt projekt (test af L1's opsætning uden hjælp), de tre andre retninger fortsætter i kursusprojektet |
 
-**Edit L1 er færdig og består af to dele i samme fil**, adskilt af `<hr>` men uden
-separate sider: "De rå håndgreb" (drag/JKL/I-O, swap, Append, trim-værktøjer,
-link/snap, zoom) og "Genskab filmens åbning" (FACIT + PUZZLE-timeline hvor 15 klip
-er fjernet, deltagerne genindsætter dem fra en råklip-bin). 40 minutter i alt.
+**Edit L1 består af to dele i samme fil**, adskilt af `<hr>` men uden separate
+sider: "De rå håndgreb" (drag/JKL/I-O, swap, Append, trim-værktøjer, link/snap,
+zoom) og "Genskab filmens åbning" (FACIT + PUZZLE-timeline hvor 15 klip er fjernet,
+deltagerne genindsætter dem fra en råklip-bin). 40 minutter i alt.
 
-**Edit L2 og L3 har ikke egne HTML-sider endnu.** `program.html`s undernavigation
-viser dem som "(kommer snart)", uden links, indtil de er bygget. Byg dem efter samme
-mønster som Edit L1 (egen fil eller nyt afsnit, ramme → trinliste → assets → HTML),
-ikke som en fjerde sektion i `lektion-3-edit.html`. Den fejl (Inspector-indhold
-liggende som "Del 3" i Edit L1's fil) er allerede rettet én gang, 2026-09-05.
+**Edit L2 er sin egen fil, `lektion-3-edit-l2.html`**, ikke et afsnit i Edit L1's
+fil. Det er den lektion, hvor `lektioner/udkast/edit-l2-inspector-titler.html`
+(Inspector + titler) blev genbrugt. To af de seks dele har et ikon fra
+`assets/icons/` ved siden af overskriften (`add-transition.png`, `freeze-frame.png`);
+de øvrige fire (Inspector, Handles, Speed/Clip Attributes, Keyframing) har intet
+matchende ikon i pakken og klarer sig med skærmbilleder alene.
+
+**Edit L3 er sin egen fil, `lektion-3-edit-l3.html`**, bygget 2026-09-06. Anden
+struktur end L1/L2: en "se effekten, gæt, få det forklaret"-opbygning i stedet for
+trin-for-trin fra start. Effekten er en person, der forsvinder via samme kildeklip
+lagt på to spor (én med personen, én trimmet til et senere, tomt tidspunkt) og
+Opacity keyframet fra 100 til 0 på det øverste lag, samlet i et Compound Clip.
+**Én uafklaret antagelse** står som kommentar øverst i filen: at rammaterialet i
+`03 EDIT / L3`-binnen er ét enkelt klip, deltagerne selv skal lægge ned to gange.
+Er binnen allerede delt i to færdige subclips, skal trin 1 i "Sådan er den lavet"
+rettes.
+
+**Hele Edit-lektionen (L1, L2, L3) er nu færdigbygget.**
+
+**L4 Color afviger fra den oprindelige plan i `kursusplan.md`** (den beskrev Parsons
+med distraktor-klip og shot matching). Det faktiske indhold, leveret af HP
+2026-09-06, er demonstreret, ikke en øvelse med facit: en interface-tour over ni
+navngivne værktøjer, konceptet "ret før du styler", superviseret fri leg uden facit,
+og en afsluttende forklaring af CST. `kursusplan.md` er opdateret til at matche.
+To ikoner fra `assets/icons/` bruges (`primarieslog-color-wheels.png`,
+`scopes.png`), samme regel som i Edit L2: kun ved sikkert match.
+
+**CST-billederne kom 2026-09-06.** To billeder bruges: node-panelet med Input/
+Output Color Space, og et split før/efter-billede der viser forskellen visuelt.
+
+**Ny genanvendelig komponent: `.heading-icon`** i `css/style.css`, erstatter en
+inline-style, der var brugt to gange (L2 og L4) til ikon-foran-overskrift. Brug
+den fremover i stedet for at gentage inline CSS.
+
+**`.ideas`** er en ny, let komponent til valgfrie forslag i en fri-leg-øvelse,
+adskilt fra `.steps` fordi der hverken er rækkefølge eller facit.
 
 ## Nøglebeslutninger, med begrundelse, så de ikke skal tages om
 
@@ -77,7 +108,12 @@ index.html                  onboarding før dagen
 program.html                dagens program, download, genveje
 lektion-1-interface.html    L1, færdig
 lektion-2-siderne.html      L2, færdig
-lektion-3-edit.html         Edit L1, færdig (kun L1, se status ovenfor)
+lektion-3-edit.html         Edit L1, færdig
+lektion-3-edit-l2.html      Edit L2, færdig
+lektion-3-edit-l3.html      Edit L3, færdig
+lektion-4-color.html        L4 Color, færdig
+lektion-5-fusion.html       L5 Fusion, færdig
+lektion-6-eget-materiale.html  L6, færdig
 css/style.css               hele designsystemet, se README for tokens
 assets/                     billeder, ikoner (assets/icons/, baggrund fjernet)
 kursusplan.md               dagsplan
@@ -87,10 +123,28 @@ lektioner/udkast/           indhold flyttet ud af en side, til senere genbrug
 research/                   kildemateriale, IKKE committet (se .gitignore)
 ```
 
+**L5 Fusion afviger fra den oprindelige plan** (som havde tre hands-on trin med
+distraktor-klip). Det faktiske indhold, bekræftet af HP 2026-09-06: to dele
+hands-on (titel, custom transition), én ren demo uden byggeøvelse (avanceret
+HUD-effekt med Tracker-node), og en fjerde, valgfri del (green screen), der ligger
+på siden men ikke er en del af de 40 minutter på dagen, samme rolle som
+Fairlight-bonussen. `kursusplan.md` er opdateret til at matche.
+
+**L6 afviger fra den oprindelige plan** (som antog en reservebin med kaffevideo-
+klip, der aldrig blev bygget). Det faktiske indhold, bekræftet af HP 2026-09-06:
+et frit valg mellem fire retninger, ingen af dem har facit. `kursusplan.md` er
+rettet, og en stale reference til kaffevideoen i `program.html`s dagsprogram er
+også rettet.
+
+## Alle seks lektioner er nu færdigbygget
+
+L1 til L6 findes alle som sider, linket fra `program.html` alle steder. Tilbage
+står kun det, der er noteret som ikke gjort undervejs: Edit L2/L3 dækker ikke hele
+den oprindelige liste 1:1 (se deres egne statuslinjer ovenfor), og bonuslektionen
+om Fairlight er aldrig bygget (nævnt i `kursusplan.md`, ingen side findes).
+
 ## Umiddelbart næste skridt
 
-Byg Edit L2 (Inspector, transitions, freeze frame, keyframing, handles, slow
-motion, clip attributes, title basics) som sin egen side. Start med udkastet i
-`lektioner/udkast/edit-l2-inspector-titler.html`, som allerede har Inspector- og
-titel-indhold med rigtige billeder, men mangler resten af listen fra
-`kursusplan.md`. Følg samme proces som hidtil: ramme til godkendelse først.
+Ingen ny lektion venter. Muligt næste arbejde: Fairlight-bonussen, en gennemgang
+af om alle "kommer snart"-rester er væk fra `program.html`, eller push til git
+(se tidligere `.gitignore`-arbejde og commit-mønster i denne fils historik).

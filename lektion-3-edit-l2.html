@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit L2 – kursus i DaVinci Resolve</title>
+<meta name="description" content="Edit L2: Inspector, transitions, fades, freeze frame, speed change, clip attributes, keyframing og titler, i overblik.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#inspector">Spring til Inspector</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 3 · Edit L2</p>
+    <h1 class="pagehead__title">Udvidet</h1>
+    <p class="pagehead__intro">
+      Anden del af Edit. Et hurtigt overblik over en række værktøjer, I får brug
+      for løbende. De fleste er vist, ikke øvet. Kun tre steder bygger I noget selv.
+    </p>
+    <span class="scaffold">Overblik, med enkelte øvelser</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">11:10–11:35</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">25 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Scenen fra Edit L1, stadig åben</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="inspector">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">Inspector</h2>
+
+    <div class="lead-in">
+      <p>
+        I brugte allerede Inspector kort i Edit L1. Nu ser vi lidt mere på, hvad
+        den kan.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Åbn Inspector</h3>
+          <p class="step__body">
+            Vælg et klip i jeres scene, og klik på <strong>Inspector</strong> i
+            øverste højre hjørne. Her styrer I klippets egne indstillinger:
+            <strong>Transform</strong> (position, skalering, rotation) og
+            <strong>Crop</strong> (beskær kanten af billedet).
+          </p>
+          <p class="step__body">
+            Et fif: skal I se transform-håndtagene direkte i billedet og ikke kun
+            som tal, skal I ændre overlayet i timeline viewer, så det viser
+            transform-kontroller.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-6-inspector.jpg"
+                   alt="Inspector med klippet MVI_9835.MOV valgt. Transform, Cropping, Dynamic Zoom, Composite og Speed Change er synlige."
+                   width="413" height="521" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Der er mange sektioner herunder også. I skal kun bruge Transform og
+              Cropping i dag.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="transitions">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">
+      <img class="heading-icon" src="assets/icons/add-transition.png" alt="" width="28" height="28">
+      Transitions
+    </h2>
+
+    <div class="lead-in">
+      <p>
+        En overgang mellem to klip, i stedet for et hårdt klip. Den mest brugte
+        hedder <strong>Cross Dissolve</strong>, og I finder den under
+        <strong>Effects → Video Transitions</strong>.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Sæt en cross dissolve ind</h3>
+          <p class="step__body">
+            Klik på det lille grønne felt mellem to klip på timelinen, og
+            højreklik. Vælg <strong>Add Transition</strong>. Standarden er Cross
+            Dissolve.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-14-transition.jpg"
+                   alt="Cross Dissolve sat ind mellem to klip på timelinen, vist som en sommerfugl-form."
+                   width="495" height="97" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Sommerfugl-formen er tegnet direkte på timelinen, ikke et selvstændigt klip.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <details class="hint">
+      <summary>Hvornår skal jeg bruge en overgang?</summary>
+      <p>
+        Sparsomt. En cross dissolve markerer et tidsspring eller et stemningsskift.
+        Brug den ikke bare for at blødgøre et almindeligt klip, det sender et
+        forkert signal til seeren.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="handles">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+    <h2 class="section__title">Handles</h2>
+
+    <div class="lead-in">
+      <p>
+        Den hurtigste fade, I kan lave. Ingen menuer, kun et lille håndtag i
+        klippets hjørne.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Træk i håndtaget</h3>
+          <p class="step__body">
+            Før musen hen over det øverste hjørne af et klip på timelinen. Der
+            dukker en lille cirkel op. Træk den ind mod midten af klippet for at
+            lave en fade ind eller fade ud. Samme håndtag findes i begge hjørner.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-13-handles.jpg"
+                   alt="Et klip på timelinen med fade-håndtagene synlige som små hvide firkanter i de øverste hjørner."
+                   width="736" height="123" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              De to små firkanter i toppen er håndtagene, uberørte her.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="tid">
+  <div class="wrap">
+    <p class="kicker">Fjerde del</p>
+    <h2 class="section__title">
+      <img class="heading-icon" src="assets/icons/freeze-frame.png" alt="" width="28" height="28">
+      Freeze Frame, Speed Change og Clip Attributes
+    </h2>
+
+    <div class="lead-in">
+      <p>
+        Tre forskellige måder at ændre et klips forhold til tid på. De ligner
+        hinanden, men løser hver sin opgave.
+      </p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Speed Change og Freeze Frame</h3>
+          <p class="step__body">
+            Højreklik på et klip og vælg <strong>Change Clip Speed</strong>. Sæt
+            <strong>Speed</strong> under 100 % for slow motion, over 100 % for
+            hurtigere afspilning. Flueben ved <strong>Freeze Frame</strong> i
+            samme dialog gør klippet til et stillbillede i stedet.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-12-speed-freeze.jpg"
+                   alt="Change Clip Speed-dialogen med Speed, Frames per Second, Duration og et flueben ved Freeze Frame."
+                   width="469" height="317" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Freeze Frame sidder i samme dialog som Speed Change, ikke sit eget sted.
+            </figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-16-speed-badge.jpg"
+                   alt="Et klip på timelinen med et gult 'Speed Change 50%'-mærke og skrå gule pile hen over billedet."
+                   width="369" height="135" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Sådan ser det ud på selve klippet, når hastigheden er ændret.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Clip Attributes</h3>
+          <p class="step__body">
+            En anden vej til slow motion: højreklik på et klip og vælg
+            <strong>Clip Attributes</strong>, fanen <strong>Video</strong>. Sæt
+            <strong>Video Frame Rate</strong> højere end timelinens egen. Har I
+            fx optaget i 60 fps på en timeline, der kører 23,976, spiller klippet
+            automatisk i slow motion, uden at I skal regne en procent ud selv.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-17-clip-attributes.jpg"
+                   alt="Clip Attributes-dialogen, fanen Video, med Video Frame Rate sat til 23,976."
+                   width="610" height="707" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Video Frame Rate er feltet, der gør arbejdet. Resten kan stå som det er.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+
+    <details class="hint">
+      <summary>Hvornår bruger jeg hvilken?</summary>
+      <p>
+        Speed Change, hvis I selv bestemmer en procent. Clip Attributes, hvis
+        optagelsen allerede er skudt i en højere framerate, og I vil have Resolve
+        til at regne det om for jer. Freeze Frame, når billedet skal stå helt
+        stille.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="keyframing">
+  <div class="wrap">
+    <p class="kicker">Femte del</p>
+    <h2 class="section__title">Simpel keyframing</h2>
+
+    <div class="lead-in">
+      <p>
+        Keyframes lader jer animere en indstilling over tid. Vi laver en custom
+        transform: klippet bevæger sig hen over billedet, i stedet for at stå stille.
+      </p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Sæt det første keyframe</h3>
+          <p class="step__body">
+            Vælg et klip, åbn <strong>Inspector → Transform</strong>, og flyt
+            playheadet til klippets start. Klik på diamant-ikonet ud for
+            <strong>Position</strong>. Det sætter et keyframe med den nuværende
+            værdi.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Flyt playheadet og ændr værdien</h3>
+          <p class="step__body">
+            Flyt playheadet et stykke frem i klippet, og ændr <strong>Position</strong>
+            til noget andet. Resolve sætter automatisk et nyt keyframe. Spil
+            klippet igennem, og billedet bevæger sig fra den ene position til den
+            anden.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-15-keyframe-marker.jpg"
+                   alt="Et klip på timelinen med et lille diamant-ikon i klippets bjælke, som viser at der er sat keyframes."
+                   width="236" height="135" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Diamanten i selve klippets bjælke er et hurtigt tegn på, at der er
+              keyframes sat, uden at I skal åbne Inspector for at se det.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+
+    <details class="hint">
+      <summary>Der sker ikke noget, når jeg ændrer værdien</summary>
+      <p>
+        Tjek at playheadet rent faktisk står et andet sted end det første keyframe,
+        før I ændrer værdien. Ændrer I værdien på samme sted som det første
+        keyframe, opdaterer I bare det, i stedet for at lave et nyt.
+      </p>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="titler">
+  <div class="wrap">
+    <p class="kicker">Sjette del</p>
+    <h2 class="section__title">Title basics</h2>
+
+    <div class="lead-in">
+      <p>
+        Til sidst en titel på jeres scene. Det enkleste værktøj er nok til det
+        meste.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tilføj en titel</h3>
+          <p class="step__body">
+            Åbn <strong>Effects</strong> i øverste venstre hjørne. Under
+            <strong>Titles</strong> finder I flere typer. <strong>Text</strong>
+            er den enkleste: træk den ned på et tomt spor over jeres scene, og
+            skriv teksten i Inspector.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/l3-7-titel-effekt.jpg"
+                   alt="Effects-panelet, med Titles åbnet: Left Lower Third, Middle Lower Third, MultiText, Right Lower Third, Scroll, Text og Text+."
+                   width="492" height="487" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              Basic Title-værktøjet, som hedder "Text", er det enkleste at komme
+              i gang med.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-3-edit.html">Forrige: Edit L1</a>
+    <span class="lesson-nav__where">Lektion 3 af 6</span>
+    <a class="nav__link" href="lektion-3-edit-l3.html">Næste: Edit L3</a>
+  </nav>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>

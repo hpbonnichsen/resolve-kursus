@@ -125,63 +125,78 @@ som skal opdateres til at matche (den beskriver stadig en helt blank timeline).
 
 ## 12:30–13:15 · L4 · Color Page
 
-Bin: `04 COLOR PAGE`. Fokus er **nodes**, samme princip som Fusion bygger videre på
-efter frokost, nu i sin enkleste form. Interfacet skåret ned først: skjul de paneler
-vi ikke bruger.
+Bin: `04 COLOR PAGE`. Opdateret 2026-09-06 til det, HP faktisk underviser i, se
+`lektion-4-color.html`. Fire dele:
 
-- Primary color wheels: lift, gamma, gain og offset
-- Kontrast, pivot og mætning: de tre greb der gør mest
-- Nodes: hvad de er, og hvorfor man lægger justeringer i serie i stedet for at
-  proppe alt ind i én
-- Shift+D: se før og efter hele tiden
-- **Shot matching:** vælg et referenceshot, grab still, split screen, ret de øvrige ind
+**Interfacet (demonstreret, ni emner):** Primaries, Curves, Qualifier, Window, Key,
+Scopes, Viewer og Highlight, Nodes, og Effects nævnt kort. Vist på syv klip filmet
+på forskellige kameraer og i forskellige formater, ikke ét facit-klip.
 
-Derefter fri leg: deltagerne farvegraderer selv, med det de lige har lært, uden en
-facit at ramme.
+**Korrektion før kreativ grading:** rækkefølgen er selve pointen. Ret billedet
+teknisk rigtigt med hjælp fra Scopes, før den kreative styling begynder. Gør man
+det omvendt, styler man et billede der reelt er for lyst eller for mørkt.
 
-*Stilladsering: Parsons med distraktorer, der ligger klip i binnen som ikke skal bruges.*
+**Superviseret leg:** deltagerne vælger selv et klip og prøver sig frem med
+farvehjul, Qualifier og Window. Intet facit, intet der skal genskabes.
+
+**CST (Color Space Transform):** en node der oversætter mellem farverum i stedet
+for at rette farver. Forklares som den manuelle, node-baserede modstykke til
+farvestyringen, der blev sat op automatisk i L1.
+
+*Stilladsering: demonstreret, ikke Parsons. Ingen distraktor-klip, ingen puzzle her,
+i modsætning til den oprindelige plan.*
 
 ## 13:15–13:55 · L5 · Fusion
 
-Bin: `05 FUSION`, opdelt som Edit i navngivne dele (`L1` set i mappestrukturen, flere
-formentlig på vej). Tre byggetrin i stigende sværhedsgrad, samme rækkefølge som
-Blackmagic-bogens eget Fusion-kapitel bruger:
+Bin: `05 FUSION`. Opdateret 2026-09-06, se `lektion-5-fusion.html`. Fire dele:
 
-1. **Titel**: det letteste at komme i gang med, og det der bekræfter node-modellen
-   fra Color
-2. **Custom transition**: en overgang bygget i Fusion i stedet for valgt fra en liste
-3. **En mere avanceret comp**: en simpel VFX-effekt, det dagens mest abstrakte emne
-   ender med at vise er muligt
+**Nodes, kort genopfrisket:** samme flowdiagram-idé som Color. De fire nodetyper
+(image, effect, merge, mask) nævnes igen, samt hvordan man søger en node frem med
+dobbeltklik + navn i stedet for at lede i værktøjslinjen.
 
-- Node graph som flowdiagram: råmateriale ind, resultat ud
-- De fire nodetyper: image, effect, merge, mask. Der findes over 300 nodes; de opfører
-  sig som fire
-- Tilbage til Edit Page og se resultatet ligge i timelinen
+**Titel (hands-on):** en glødende neon-titel ("KØBENHAVN") vises som inspiration,
+bygget af Background → Text → Merge plus en lang kæde af glød- og støj-effekter.
+Deltagerne bygger kun kernen: Background, Text, Merge.
 
-40 minutter til tre trin er stramt. Løber det over, skæres der i trin 3, ikke i
-titel eller transition. De to første er dem, der cementerer node-forståelsen.
+**Custom transition (hands-on):** en polygon-maske tegnet om Perle fra "Hund på
+efterårstur", forbundet til en Merge-nodes maske-indgang, så overgangen afslører
+det næste klip gennem maskens form. Samme wipe-transition-teknik som i det
+oprindelige 2022-hæfte.
 
-*Stilladsering: Parsons med distraktorer.*
+**En avanceret effekt (ren demo, bekræftet 2026-09-06: de skal ikke bygge den
+selv):** en sporet HUD-effekt på et ansigt, bygget af en Tracker-node og flere
+navngivne node-grupper. Formålet er at vise, hvor langt værktøjet kan gå, ikke at
+øve noget.
+
+**Green screen (valgfri, ikke en del af de 40 minutter):** Delta Keyer, oprydning
+af kanten, og en ny baggrund lagt ind med Merge. Ligger på siden som ekstra
+materiale, samme rolle som Fairlight-bonussen.
+
+*Stilladsering: to dele hands-on, én ren demo, én valgfri bonus. Ikke Parsons med
+distraktorer, som den oprindelige plan beskrev.*
 
 ## 14:05–14:45 · L6 · Eget materiale + eksport
 
-Dagens payoff, bygget om HP's kaffevideo. Deltagerne blev i onboardingen bedt om
-selv at filme noget i samme stil (`index.html`, "Optag noget selv"), så "eget
-materiale" er reelt deres egen version af den samme øvelse, ikke vilkårligt medbragt
-footage.
+Opdateret 2026-09-06. Ingen reservebin med kaffevideo findes (rettet fra en tidligere
+version af denne plan). I stedet er L6 et frit valg mellem fire retninger, se
+`lektion-6-eget-materiale.html`:
 
-- Import af eget materiale (eller kaffevideoen som reserve)
-- Klip det sammen på blank timeline, ingen facit
-- Deliver-siden: presets, filnavn, destination
-- Add to Render Queue og Render All
+- **Eget materiale:** et helt nyt projekt, ikke importeret ind i kursusprojektet.
+  Med vilje: en test af om L1's opsætning sidder uden hjælp (Project Manager,
+  Project Settings, den rigtige framerate for deres eget materiale)
+- **Gør Lund-filmen færdig:** tilbage til `03 EDIT`, fortsæt Edit L1's genskabte
+  intro eller en Edit L2-teknik
+- **Leg videre med Color:** tilbage til `04 COLOR PAGE`, tag en af de valgfrie
+  opgaver (skift en farve, orange/teal, ret det blå klip)
+- **Byg en egen titel i Fusion:** tilbage til `05 FUSION`, eller prøv green screen
 
-De går hjem med en fil de selv har lavet. Det er forskellen på at have set et program og
-at have brugt det.
+Derefter eksport fra Deliver: vælg et preset (fx YouTube 720p) eller Custom Export,
+Add to Render Queue, Render All.
 
-*Stilladsering: blank. Ingen brikker, ingen facit.*
+De går hjem med en fil de selv har lavet, uanset hvilken retning de valgte. Det er
+forskellen på at have set et program og at have brugt det.
 
-For dem der ikke har eget materiale med, ligger der en reservebin med kaffevideo-
-klippene, de kan bruge i stedet.
+*Stilladsering: frit valg, ingen facit i nogen af de fire retninger.*
 
 ### Regn med at billedhastigheden kolliderer her
 

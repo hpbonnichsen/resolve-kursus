@@ -936,3 +936,75 @@ kbd {
 
 /* Markerer om siden bruges på dagen. Arver .tag fra forsiden. */
 .pages__item .tag { margin-left: auto; flex: none; }
+
+/* --------------------------------------------------------------------------
+   Unfold — en stor, tydelig foldning til hele afsnit, ikke kun et FAQ-svar.
+   Bruges hvor pointen er at skjule facit for en øvelse, indtil man beder om
+   det: pilen er amber, fordi klikket er en handling, ikke bare struktur.
+   -------------------------------------------------------------------------- */
+
+.unfold {
+  margin-top: var(--s4);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.unfold > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s4);
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ink);
+  list-style: none;
+}
+.unfold > summary::-webkit-details-marker { display: none; }
+
+.unfold > summary::before {
+  content: "\25B6";
+  flex: none;
+  font-size: 0.7em;
+  color: var(--amber);
+  transition: transform 0.15s var(--ease);
+}
+.unfold[open] > summary::before { transform: rotate(90deg); }
+
+.unfold > summary:hover { color: var(--amber); }
+
+.unfold__note {
+  margin: 0 0 0 calc(0.7em + var(--s2));
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--ink-dim);
+}
+
+.unfold__body { padding: 0 var(--s4) var(--s4); }
+
+/* --------------------------------------------------------------------------
+   Ideas — valgfrie forslag i en fri-leg-øvelse. Ikke en trinliste (der er
+   ingen rækkefølge eller facit), bare inspiration hvis nogen mangler retning.
+   -------------------------------------------------------------------------- */
+
+.ideas {
+  margin: var(--s3) 0 0;
+  padding-left: 1.2em;
+  max-width: var(--measure);
+  color: var(--ink-dim);
+}
+.ideas li { margin-bottom: var(--s2); }
+.ideas li:last-child { margin-bottom: 0; }
+.ideas strong { color: var(--ink); }
+
+/* --------------------------------------------------------------------------
+   Ikon foran en overskrift, når et emne har et sikkert match i assets/icons/.
+   Bruges sparsomt: kun ved et præcist tematisk match, se README.
+   -------------------------------------------------------------------------- */
+
+.heading-icon {
+  display: inline-block;
+  vertical-align: -5px;
+  margin-right: 0.3em;
+}

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 · Fusion – kursus i DaVinci Resolve</title>
+<meta name="description" content="Femte lektion: node-baserede titler og overgange i Fusion, en demonstreret avanceret effekt, og valgfri green screen-fjernelse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#noder">Spring til nodes</a>
+
+<nav class="nav" aria-label="Kursets sider">
+  <div class="wrap">
+    <ul class="nav__list">
+      <li><a class="nav__link" href="index.html">Inden dagen</a></li>
+      <li><a class="nav__link" href="program.html">Program</a></li>
+      <li><a class="nav__link" href="program.html#genveje">Genveje</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="pagehead">
+    <p class="kicker">Lektion 5</p>
+    <h1 class="pagehead__title">Fusion</h1>
+    <p class="pagehead__intro">
+      Dagens mest abstrakte side, men samme grundidé som Color: nodes i serie.
+      Her bruges de til effekter og motion graphics i stedet for farve. I
+      bygger to ting selv, ser én avanceret effekt demonstreret, og har en
+      valgfri fjerde del at tage videre med.
+    </p>
+    <span class="scaffold">Byg to selv, se én demonstreret</span>
+
+    <div class="meta">
+      <div>
+        <p class="meta__key">Tid</p>
+        <p class="meta__val">13:15–13:55</p>
+      </div>
+      <div>
+        <p class="meta__key">Varighed</p>
+        <p class="meta__val">40 minutter</p>
+      </div>
+      <div>
+        <p class="meta__key">Du skal bruge</p>
+        <p class="meta__val">Binnen 05 FUSION</p>
+      </div>
+    </div>
+  </header>
+</div>
+
+<hr class="rule">
+
+<main>
+
+<!-- ===================================================================== -->
+<section class="section" id="noder">
+  <div class="wrap">
+    <p class="kicker">Før vi starter</p>
+    <h2 class="section__title">Nodes, igen</h2>
+
+    <div class="lead-in">
+      <p>
+        Samme idé som i Color: et flowdiagram, hvor billedet løber gennem en
+        kæde af nodes fra venstre mod højre. Der findes over 300 forskellige
+        nodes i Fusion, men langt de fleste er en af fire slags:
+      </p>
+    </div>
+
+    <ul class="ideas">
+      <li><strong>Image.</strong> Et udgangspunkt: en baggrund, en tekst, jeres
+        rå klip.</li>
+      <li><strong>Effect.</strong> Ændrer et billede, der løber igennem: en
+        glød, en sløring, en farvekorrektion.</li>
+      <li><strong>Merge.</strong> Lægger ét billede oven på et andet.</li>
+      <li><strong>Mask.</strong> Bestemmer hvor en effekt eller en merge skal
+        virke, og hvor den ikke skal.</li>
+    </ul>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/fusion-7-toolbar.jpg"
+             alt="Fusion-værktøjslinjen med generatorer, filtre, masker og 3D-værktøjer."
+             width="1100" height="39" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        Alle fire slags nodes ligger her. I skal ikke kende dem alle sammen.
+      </figcaption>
+    </figure>
+
+    <details class="hint">
+      <summary>Jeg kan ikke finde den node, jeg leder efter</summary>
+      <p>
+        Dobbeltklik i et tomt område af node-graf'en, og skriv navnet på det,
+        I leder efter. Fusion foreslår alt, der matcher, uden at I skal vide
+        præcis hvor det ligger i værktøjslinjen.
+      </p>
+      <figure class="shot" style="margin-top: var(--s2);">
+        <div class="shot__frame">
+          <img src="assets/fusion-8-soeg-node.jpg"
+               alt="Select Tool-dialogen med søgeordet 'trans' skrevet, og en liste af Transform-noder som forslag."
+               width="244" height="503" loading="lazy">
+        </div>
+      </figure>
+    </details>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="titel">
+  <div class="wrap">
+    <p class="kicker">Første del</p>
+    <h2 class="section__title">Byg en titel</h2>
+
+    <div class="lead-in">
+      <p>
+        Sådan langt kan det gå, når man bliver ved med at føje nodes til:
+      </p>
+    </div>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/fusion-2-titel-resultat.jpg"
+             alt="Den glødende neon-tekst KØBENHAVN i pink, med lysstråler i baggrunden."
+             width="707" height="301" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">Det færdige resultat, som inspiration.</figcaption>
+    </figure>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/fusion-1-titel-noder.jpg"
+             alt="Node-graf med Background1 og Text1 der merges, derefter en kæde af fire SoftGlow-noder, CameraShake, PrismBlur, LightRays, FlickerAdditive og FilmGrain."
+             width="985" height="220" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        Kernen er de tre første nodes: Background, Text, Merge. Resten er
+        glød og støj lagt oven på, node for node.
+      </figcaption>
+    </figure>
+
+    <div class="lead-in">
+      <p>
+        I bygger kernen, ikke hele kæden.
+      </p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Lav en baggrund og en tekst</h3>
+          <p class="step__body">
+            Dobbeltklik i node-graf'en, og tilføj en <strong>Background</strong>-
+            node og en <strong>Text+</strong>-node. Skriv jeres tekst i Text-
+            nodens Inspector, og vælg font, farve og størrelse.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/fusion-3-text-inspector.jpg"
+                   alt="Text-node Inspector med teksten KØBENHAVN, font Open Sans Bold, pink farve, og en Write On-animation med start- og slutpunkt."
+                   width="418" height="859" loading="lazy">
+            </div>
+            <figcaption class="shot__caption">
+              <strong>Write On</strong> nederst lader teksten skrive sig selv frem
+              over tid, hvis I vil gå et skridt videre.
+            </figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Læg teksten oven på baggrunden</h3>
+          <p class="step__body">
+            Tilføj en <strong>Merge</strong>-node. Forbind Background til dens
+            baggrund-indgang, og Text til dens forgrund-indgang. Forbind Merge
+            til <strong>MediaOut</strong>, og se titlen i vieweren.
+          </p>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="transition">
+  <div class="wrap">
+    <p class="kicker">Anden del</p>
+    <h2 class="section__title">Byg en custom transition</h2>
+
+    <div class="lead-in">
+      <p>
+        En overgang, I selv har bygget med en maske, i stedet for at vælge en
+        fra listen i Edit. Vi bruger et klip fra <em>Hund på efterårstur</em>,
+        hvor Perle løber med en pind.
+      </p>
+    </div>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/fusion-4-transition-kilde.jpg"
+               alt="Til venstre en polygon-maske trukket rundt om hunden på et gennemsigtigt lærred. Til højre det samme klip fuldt synligt med et grønt maske-håndtag ved hunden."
+               width="1100" height="423" loading="lazy">
+        </div>
+        <figcaption class="shot__caption">
+          En polygon-maske tegnet rundt om Perle. Formen bestemmer, hvor
+          overgangen skal afsløre det næste klip.
+        </figcaption>
+      </figure>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tegn en maske rundt om motivet</h3>
+          <p class="step__body">
+            Vælg <strong>Polygon</strong> i værktøjslinjen, og klik jer rundt
+            om hunden i vieweren, punkt for punkt. Luk formen ved at klikke
+            tilbage på det første punkt.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Forbind masken til en Merge</h3>
+          <p class="step__body">
+            Tilføj en <strong>Merge</strong>-node. Forbind det første klip til
+            baggrunden, det næste klip til forgrunden, og polygon-masken til
+            Mergens maske-indgang forneden.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/fusion-5-transition-noder.jpg"
+                   alt="Node-graf: Polygon1 forbundet til en Fusion Clip, som går ind i Merge2's maske-indgang. En anden Fusion Clip går ind foroven, og Merge2 går videre til MediaOut1."
+                   width="649" height="227" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Animer overgangen</h3>
+          <p class="step__body">
+            I Mergens Inspector kan I keyframe <strong>Center</strong> eller
+            <strong>Size</strong> over tid, så masken vokser eller flytter sig
+            hen over billedet, i stedet for at stå stille. Samme keyframe-
+            princip som opacity i Edit L3.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/fusion-6-merge-inspector.jpg"
+                   alt="Merge-node Inspector med Center, Size, Angle, Apply Mode, Operator og Blend."
+                   width="418" height="595" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="avanceret">
+  <div class="wrap">
+    <p class="kicker">Tredje del</p>
+    <h2 class="section__title">En avanceret effekt</h2>
+    <span class="scaffold">Ren demo, I skal ikke bygge den</span>
+
+    <div class="lead-in">
+      <p>
+        Til sidst et kig på, hvor langt Fusion kan gå: en sporet HUD-effekt på
+        et ansigt, bygget af flere navngivne grupper af nodes.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <div class="shot__frame">
+        <img src="assets/fusion-10-avanceret-resultat.jpg"
+             alt="Nærbillede af et ansigt med en glødende, sporet HUD-effekt og glasskår-linjer hen over øjnene og næsen."
+             width="710" height="307" loading="lazy">
+      </div>
+    </figure>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/fusion-9-avanceret-noder.jpg"
+             alt="Stor node-graf med en Tracker-node og fire navngivne grupper: ColorFX, HUDFX, GlassBowl og GlassFX."
+             width="1100" height="309" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">
+        En <strong>Tracker</strong>-node følger ansigtet gennem klippet, så
+        effekten flytter sig med. Grupperne holder styr på, hvad der hører
+        sammen.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ===================================================================== -->
+<section class="section" id="green-screen">
+  <div class="wrap">
+    <p class="kicker">Fjerde del</p>
+    <h2 class="section__title">Green screen</h2>
+    <span class="scaffold">Valgfri, ikke en del af dagens 40 minutter</span>
+
+    <div class="lead-in">
+      <p>
+        Vi når det ikke på selve dagen, men det ligger her, hvis I vil videre
+        på egen hånd. At fjerne en grøn baggrund og sætte noget andet ind i
+        stedet.
+      </p>
+    </div>
+
+    <figure class="shot shot--wide">
+      <div class="shot__frame">
+        <img src="assets/fusion-12-greenscreen-foer-efter.jpg"
+             alt="Til venstre en fugl foran en ren grøn baggrund. Til højre den samme fugl sat ind foran en bjergkæde med farverig himmel."
+             width="1200" height="265" loading="lazy">
+      </div>
+      <figcaption class="shot__caption">Samme klip, før og efter nøgling.</figcaption>
+    </figure>
+
+    <ol class="steps">
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Tilføj en Delta Keyer</h3>
+          <p class="step__body">
+            Find <strong>Delta Keyer</strong> i værktøjslinjen, og forbind
+            klippet med den grønne baggrund til den. Delta Keyer fjerner den
+            valgte farve og gør den gennemsigtig i stedet.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Rens kanten op</h3>
+          <p class="step__body">
+            Rå nøgling efterlader ofte en grøn kant eller støj. En
+            <strong>Defocus</strong>- og en farvekorrektions-node lige efter
+            Delta Keyer blødgør kanten, så den ser mere naturlig ud.
+          </p>
+        </div>
+      </li>
+
+      <li class="step reveal">
+        <div>
+          <h3 class="step__title">Læg den nye baggrund ind</h3>
+          <p class="step__body">
+            Tilføj en <strong>Merge</strong>-node. Jeres nye baggrund er
+            Mergens baggrund, og den nøglede optagelse (den, der kommer ud af
+            Delta Keyer) er dens forgrund. Brug <strong>Transform</strong> og
+            <strong>MatchTint</strong> til at få størrelse og farve til at
+            passe sammen.
+          </p>
+
+          <figure class="shot">
+            <div class="shot__frame">
+              <img src="assets/fusion-11-greenscreen-noder.jpg"
+                   alt="Node-graf: Fusion Clip 2 ind i DeltaKeyer1, videre til Defocus1 og ColorCorrect, så Transform1 og MatchTint1, ind i Merge1 sammen med en ny baggrund via MatchTint2, ud til MediaOut1."
+                   width="886" height="329" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================================================================== -->
+<div class="wrap">
+  <nav class="lesson-nav" aria-label="Mellem lektioner">
+    <a class="nav__link" href="lektion-4-color.html">Forrige: Color Page</a>
+    <span class="lesson-nav__where">Lektion 5 af 6</span>
+    <a class="nav__link" href="lektion-6-eget-materiale.html">Næste: Dit eget materiale</a>
+  </nav>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Går der noget galt inden er i velkomne til at skrive til mig på mail.</p>
+  </div>
+</footer>
+
+</body>
+</html>
