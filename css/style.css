@@ -519,7 +519,9 @@ a:hover { color: var(--ink); }
 @media (max-width: 720px) {
   :root { --s5: 3rem; --s6: 4rem; }
 
-  .hero { min-height: auto; padding-block: var(--s5); }
+  /* Topvattet ekstra, så den absolut placerede Menu-knap (se .nav__toggle
+     længere nede) ikke klipper ind i kicker-teksten under sig. */
+  .hero { min-height: auto; padding-block: var(--s5); padding-top: 4.75rem; }
 
   /* Gitteroverlejringen giver ikke mening på en smal skærm. Cirklen bliver en
      baggrundsform bag teksten, og kameraet lægger sig under overskriften i
@@ -1076,4 +1078,76 @@ kbd {
 
 @media (max-width: 720px) {
   .nav__sub { margin-top: var(--s1); border: none; padding: 0 0 0 var(--s3); }
+}
+
+/* --------------------------------------------------------------------------
+   Mobilmenu – to kopier af nav__list, kun én vist ad gangen.
+
+   .nav__list--desktop er den oprindelige, altid synlige liste, brugt over
+   720px. .nav__toggle er en details/summary med sin egen kopi af listen,
+   brugt under 720px, samme mønster som .nav__fold ovenfor.
+
+   To kopier lyder som dobbeltarbejde, men en lukket details' indhold kan
+   IKKE tvinges til at vises med CSS: hverken display eller content-visibility
+   slår igennem på Chromium, det er afprøvet direkte. Så i stedet for at
+   kæmpe mod den, får hvert breakpoint sin egen liste, og den anden er bare
+   display:none. Uden dette lagde nav sig enten oven på hero-overskriften på
+   forsiden, eller fyldte fem linjer, før man nåede lektionens indhold, alt
+   efter breakpoint.
+   -------------------------------------------------------------------------- */
+
+.nav__toggle > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.nav__toggle > summary::-webkit-details-marker { display: none; }
+
+@media (max-width: 720px) {
+  .nav__list--desktop { display: none; }
+
+  .nav__toggle > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    margin: var(--s2) 0;
+    padding: 0.5em 1em;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .nav__toggle-current { color: var(--ink-dim); font-weight: 500; }
+  .nav__toggle > summary::after {
+    content: "";
+    width: 0.4em;
+    height: 0.4em;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.15s var(--ease);
+  }
+  .nav__toggle[open] > summary::after { transform: rotate(-135deg) translateY(2px); }
+
+  .nav__toggle .nav__list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: var(--s2);
+    margin: 0 0 var(--s2);
+    padding: var(--s3);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+  }
+
+  /* Heroens nav er position: absolute (se ovenfor). Lukket fylder knappen
+     næsten intet, men når den åbnes, skal panelet ikke flyde frit oven på
+     figuren uden en synlig baggrund at læse teksten på. */
+  .hero .nav__toggle[open] .nav__list { position: relative; z-index: 6; }
+}
+
+@media (min-width: 721px) {
+  .nav__toggle { display: none; }
 }

@@ -190,14 +190,48 @@ tilføjede `.heading-icon` hvor der var et sikkert match: `play-forward.png`
 trin), `blade-edit-mode.png` (Edit L1's værktøjslinje-trin, dækker Blade-værktøjet
 i teksten), `link-clips.png` (Edit L1's link/unlink/snap-trin), `new-timeline.png`
 (Edit L1's "Opret en ny timeline"), `zoom-viewer-to-fit.png` (Edit L1's zoom-trin),
-`viewer-overlay-on-off.png` (Edit L2's "Åbn Inspector", dækker fif'et om
-transform-overlay), `add-keyframe.png` (Edit L2's keyframe-trin, Edit L3's
-opacity-keyframe-trin), `deliver.png` (L6's Eksport-overskrift, genbrug af samme
-ikon som L2's Deliver-tour). `background.png` blev omdøbt til `add-keyframe.png`
-undervejs, fordi filens faktiske motiv er "Add Keyframe"-diamanten, ikke en
-baggrund. Bevidst fravalgt: L1 (dialogtungt, intet toolbar-match), programmets
+`add-keyframe.png` (Edit L2's keyframe-trin, Edit L3's opacity-keyframe-trin),
+`deliver.png` (L6's Eksport-overskrift, genbrug af samme ikon som L2's
+Deliver-tour). `background.png` blev omdøbt til `add-keyframe.png` undervejs,
+fordi filens faktiske motiv er "Add Keyframe"-diamanten, ikke en baggrund.
+Bevidst fravalgt: L1 (dialogtungt, intet toolbar-match), programmets
 genvejstabel (ville rode), "Append"-trinnet i Edit L1 (intet ikon adskiller
 Append fra Insert/Overwrite).
+
+**Rettet 2026-09-06 (samme dag, efter HP's screenshot):** `viewer-overlay-on-off.png`
+var fejlagtigt sat på Edit L2's "Åbn Inspector"-trin. Det er ikke Inspector-ikonet,
+og pakken har intet Inspector-ikon (penslen + skruenøglen), tjekket ved at liste
+alle 70 filnavne i `assets/icons/`. Ikonet er fjernet fra overskriften igen.
+Hvis HP finder Inspector-ikonet i samme kilde-pakke (samme opløsning, hvid
+streg-grafik på transparent baggrund som resten af `assets/icons/`), kan det
+tilføjes som `inspector.png` og sættes på samme sted.
+
+## Mobilnavigation: to kopier af nav__list, ikke én tvunget åben
+
+2026-09-06, efter HP testede mobilvisningen: den ni-punkts navigation brød om
+til fire linjer på en telefon. På forsiden er `.hero .nav` `position: absolute`,
+så den wrappede nav lagde sig oven på hero-overskriften i stedet for at skubbe
+den ned, helt ulæseligt. På lektionssiderne var det ikke i stykker, men det
+fyldte cirka fem linjer, før man nåede lektionens indhold.
+
+Første forsøg: pakke hele `nav__list` ind i en `<details class="nav__toggle">`,
+lukket under 720px, og prøve at TVINGE den åben igen over 720px med CSS
+(`display: flex` på listen, `display: none` på summary). Det virker ikke.
+Testet direkte: en lukket details' indhold kan ikke gøres synligt med
+`display` eller `content-visibility` fra forældrekoden, uanset specificitet
+eller `!important`. Chromium skjuler indholdet på et niveau CSS ikke kan
+overskrive udefra.
+
+Løsningen blev i stedet to kopier af `nav__list` i markuppet, kun én vist ad
+gangen: `.nav__list--desktop` (den oprindelige, altid synlige liste, vist over
+720px) og en separat kopi inde i `.nav__toggle` (details/summary, samme
+mønster som `.nav__fold`, vist under 720px, lukket som standard). CSS skjuler
+bare den ene halvdel med almindelig `display: none` per breakpoint, ingen
+kamp mod details-interna. `.hero { padding-top: 4.75rem }` under 720px er
+tilføjet samme sted, så den lukkede Menu-knap har luft til kicker-teksten
+under sig. Genereret med et engangs-script, ikke gemt i repoet, samme
+tilgang som selve nav-opbygningen tidligere. Testet visuelt med chromium
+`--headless --screenshot` i flere bredder og åben/lukket-tilstande før commit.
 
 ## Umiddelbart næste skridt
 
